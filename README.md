@@ -1,0 +1,1 @@
+# ajou-newbie
