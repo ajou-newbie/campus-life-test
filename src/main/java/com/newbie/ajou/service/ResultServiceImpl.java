@@ -12,17 +12,15 @@ public class ResultServiceImpl implements ResultService {
 	@Override
 	public String getType(AnswerDto answerDto) {
 		int[] answerArr = answerDto.getAnswers();
-		ResultTypeGetter resultTypeGetter = new ResultTypeGetter(answerArr);
 
-		return resultTypeGetter.getResultType();
+		return ResultTypeGetter.extractTraitsData(answerArr);
 	}
 
 	@Override
 	public String getAddress(AnswerDto answerDto) {
 		String resultType = getType(answerDto);
-		ResultAddressGetter resultAddressGetter = new ResultAddressGetter(resultType);
 
-		return resultAddressGetter.getResultUrl();
+		return ResultAddressGetter.getResultInUrl(resultType);
 	}
 
 	@Override

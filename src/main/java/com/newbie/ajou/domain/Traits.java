@@ -1,6 +1,6 @@
 package com.newbie.ajou.domain;
 
-import com.newbie.ajou.util.TraitPointsGetter;
+import com.newbie.ajou.util.TraitPointsCalculator;
 import lombok.Getter;
 
 @Getter
@@ -11,8 +11,7 @@ public class Traits {
 	private final double JP;
 
 	public Traits(int[] choices) {
-		TraitPointsGetter traitPointsGetter = new TraitPointsGetter(choices);
-		double[] points = traitPointsGetter.getPoints();
+		double[] points = TraitPointsCalculator.calculatePoints(choices);
 
 		this.EI = points[0];
 		this.SN = points[1];

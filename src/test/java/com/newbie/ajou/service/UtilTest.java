@@ -1,7 +1,6 @@
 package com.newbie.ajou.service;
 
 import com.newbie.ajou.domain.Traits;
-import com.newbie.ajou.util.TraitPointsGetter;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

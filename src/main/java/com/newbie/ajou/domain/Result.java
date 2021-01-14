@@ -4,11 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class Result {
-	private final String resultType;
-	private final String resultUrl;
+	private final String type;
+	private final String url;
 
 	public Result(String type, String url) {
-		this.resultType = type;
-		this.resultUrl = url;
+		this.type = type;
+		this.url = url;
 	}
 }
