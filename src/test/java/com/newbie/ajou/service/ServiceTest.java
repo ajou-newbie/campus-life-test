@@ -3,6 +3,7 @@ package com.newbie.ajou.service;
 import com.newbie.ajou.domain.Result;
 import com.newbie.ajou.web.dto.AnswerDto;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,7 +11,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class ServiceTest {
 
-	private ResultService resultService = new ResultServiceImpl();
+	@Autowired
+	private ResultService resultService;
 
 	@Test
 	public void ResultServiceTest() {
@@ -26,7 +28,7 @@ public class ServiceTest {
 		//then
 		assertThat(type).isEqualTo("ISFJ");
 		assertThat(address).isEqualTo("/result.ISFJ");
-		assertThat(result.getResultType()).isEqualTo("ISFJ");
-		assertThat(result.getResultUrl()).isEqualTo("/result.ISFJ");
+		assertThat(result.getType()).isEqualTo("ISFJ");
+		assertThat(result.getUrl()).isEqualTo("/result.ISFJ");
 	}
 }

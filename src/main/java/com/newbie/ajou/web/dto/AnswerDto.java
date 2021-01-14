@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class AnswerDto {
-	private int[] answers;
+	private final int[] answers;
 
 	public AnswerDto(int answers[]) {
 		this.answers = answers;
