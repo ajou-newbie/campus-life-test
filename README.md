@@ -29,7 +29,13 @@ Spring boot, MySQL, React.js
 <br>
 
 # Git commit 컨벤션
-[Commit message 참고](https://doublesprogramming.tistory.com/256)
+- Commit messsage 컨벤션 : [Commit message 참고](https://doublesprogramming.tistory.com/256)
+
+- Pull Request Message : [#issueNumber] feat: issueName
+    - ex) [#3] feat: 설문 결과에 따른 유형 매핑 기능
+    
+- Merge Commit Message : [Merge] [#issueNumber] feat: issueName
+    - ex) [Merge] [#3] feat: 설문 결과에 따른 유형 매핑 기능
 <br>
 
 ### 브랜치 이름
