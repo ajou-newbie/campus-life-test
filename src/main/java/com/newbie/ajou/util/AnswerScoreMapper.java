@@ -7,7 +7,6 @@ public class AnswerScoreMapper {
 	}
 
 	public static double mapAnswerToScore(int idx) {
-
 		return score[idx];
 	}
 }

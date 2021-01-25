@@ -17,7 +17,6 @@ public class CampusLifeTestController {
 
 	@PostMapping("/result")
 	public String openResult(@RequestBody @Valid ResultRequestDto resultRequestDto) {
-		System.out.println(resultService.getAddress(resultRequestDto));
 		return resultService.getAddress(resultRequestDto);
 	}
 }

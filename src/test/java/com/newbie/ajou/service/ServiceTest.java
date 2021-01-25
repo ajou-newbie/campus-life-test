@@ -41,7 +41,6 @@ public class ServiceTest {
 
 	@Test
 	public void 결과_url_매핑_동작_확인() {
-
 		//given
 		int[] answers = new int[]{0, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2};
 		String college = "의학";
