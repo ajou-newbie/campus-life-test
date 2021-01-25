@@ -1,5 +1,6 @@
 package com.newbie.ajou.domain.user;
 
+import com.newbie.ajou.domain.JpaEntity;
 import com.newbie.ajou.domain.college.College;
 import lombok.NoArgsConstructor;
 
@@ -7,7 +8,7 @@ import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
-public class User {
+public class User extends JpaEntity {
 	@Column(name = "user_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
