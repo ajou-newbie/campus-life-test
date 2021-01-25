@@ -1,7 +1,6 @@
 package com.newbie.ajou.service;
 
-import com.newbie.ajou.domain.Result;
-import com.newbie.ajou.web.dto.AnswerDto;
+import com.newbie.ajou.web.dto.ResultRequestDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,20 +14,17 @@ public class ServiceTest {
 	private ResultService resultService;
 
 	@Test
-	public void ResultServiceTest() {
+	public void 결과_url_매핑_동작_확인() {
 
 		//given
-		AnswerDto answerDto = new AnswerDto(new int[]{0, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2});
+		int[] answers = new int[]{0, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2};
+		String college = "의학";
+		ResultRequestDto resultRequestDto = new ResultRequestDto(answers, college);
 
 		//when
-		String type = resultService.getType(answerDto);
-		String address = resultService.getAddress(answerDto);
-		Result result = resultService.getResult(answerDto);
+		String address = resultService.getAddress(resultRequestDto);
 
 		//then
-		assertThat(type).isEqualTo("ISFJ");
-		assertThat(address).isEqualTo("/result.ISFJ");
-		assertThat(result.getType()).isEqualTo("ISFJ");
-		assertThat(result.getUrl()).isEqualTo("/result.ISFJ");
+		assertThat(address).isEqualTo("/result/0101");
 	}
 }
