@@ -4,4 +4,6 @@ import com.newbie.ajou.web.dto.ResultRequestDto;
 
 public interface ResultService {
 	String getAddress(ResultRequestDto resultRequestDto);
+
+	void saveResult(String collegeName, String resultUrl);
 }

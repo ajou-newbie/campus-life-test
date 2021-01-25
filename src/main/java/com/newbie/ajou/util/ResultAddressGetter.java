@@ -6,6 +6,6 @@ public class ResultAddressGetter {
 	}
 
 	public static String getResultUrl(String resultUrl) {
-		return "/result/" + resultUrl;
+		return resultUrl;
 	}
 }
