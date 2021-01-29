@@ -12,7 +12,6 @@ public class Traits {
 
 	public Traits(int[] choices) {
 		double[] points = TraitPointsCalculator.calculatePoints(choices);
-
 		this.EI = points[0];
 		this.SN = points[1];
 		this.TF = points[2];
