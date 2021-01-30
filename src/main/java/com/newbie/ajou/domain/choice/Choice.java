@@ -15,7 +15,7 @@ public class Choice extends JpaEntity {
 	@Column(name = "choice_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private int id;
 
 	@Column
 	private String content;

@@ -16,7 +16,7 @@ public class Question extends JpaEntity {
 	@Column(name = "question_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private int id;
 
 	@Column
 	private String content;

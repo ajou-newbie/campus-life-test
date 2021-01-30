@@ -13,7 +13,7 @@ public class College extends JpaEntity {
 	@Column(name = "college_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private int id;
 
 	@Column
 	private String name;

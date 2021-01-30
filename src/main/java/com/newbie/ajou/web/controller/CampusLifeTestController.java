@@ -22,7 +22,7 @@ public class CampusLifeTestController {
 	@GetMapping("/questions")
 	public Map<String,Object> getQuestionData() {
 		Map<String,Object> map = new HashMap<String,Object>();
-		map.put("question_data", questionService.findAll());
+		map.put("questions", questionService.findAll());
 		return map;
 	}
 
