@@ -13,58 +13,58 @@ public class College extends JpaEntity {
 	@Column(name = "college_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private int id;
 
 	@Column
 	private String name;
 
 	@Column
-	private int istj;
+	private Long istj;
 
 	@Column
-	private int isfj;
+	private Long isfj;
 
 	@Column
-	private int infj;
+	private Long infj;
 
 	@Column
-	private int intj;
+	private Long intj;
 
 	@Column
-	private int istp;
+	private Long istp;
 
 	@Column
-	private int isfp;
+	private Long isfp;
 
 	@Column
-	private int infp;
+	private Long infp;
 
 	@Column
-	private int intp;
+	private Long intp;
 
 	@Column
-	private int estp;
+	private Long estp;
 
 	@Column
-	private int esfp;
+	private Long esfp;
 
 	@Column
-	private int enfp;
+	private Long enfp;
 
 	@Column
-	private int entp;
+	private Long entp;
 
 	@Column
-	private int estj;
+	private Long estj;
 
 	@Column
-	private int esfj;
+	private Long esfj;
 
 	@Column
-	private int enfj;
+	private Long enfj;
 
 	@Column
-	private int entj;
+	private Long entj;
 
 	public College(String name) {
 		this.name = name;
