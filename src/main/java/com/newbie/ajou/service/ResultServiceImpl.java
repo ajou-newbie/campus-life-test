@@ -12,14 +12,16 @@ import com.newbie.ajou.util.ResultAddressGetter;
 import com.newbie.ajou.util.ResultTypeGetter;
 import com.newbie.ajou.util.UrlToTypeConverter;
 import com.newbie.ajou.web.dto.ResultRequestDto;
+import com.newbie.ajou.web.dto.ResultResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class ResultServiceImpl implements ResultService {
-	private static final String RESULT_PREFIX = "/result/";
 
 	private final CollegeRepositoryCustom collegeRepositoryCustom;
 	private final TypeRepositoryCustom typeRepositoryCustom;
@@ -28,19 +30,23 @@ public class ResultServiceImpl implements ResultService {
 
 	@Transactional
 	@Override
-	public String getAddress(ResultRequestDto resultRequestDto) {
+	public ResultResponseDto getResult(ResultRequestDto resultRequestDto) {
 		String resultType = ResultTypeGetter.getResultType(resultRequestDto.getAnswers());
 		String resultUrl = ResultAddressGetter.getResultUrl(resultType);
-		saveResult(resultRequestDto.getCollege(), resultUrl);
-		return RESULT_PREFIX + resultUrl;
+		String typeName = UrlToTypeConverter.getType(resultUrl);
+
+		College college = collegeRepositoryCustom.findByName(resultRequestDto.getCollege());
+		Type type = typeRepositoryCustom.findByName(typeName);
+		saveResult(type, college);
+
+		List<String> colleges = typeCountRepositoryCustom.findTop2CollegeByType(type);
+		return new ResultResponseDto(resultUrl, colleges);
 	}
+
 
 	@Transactional
 	@Override
-	public void saveResult(String collegeName, String resultUrl) {
-		String typeName = UrlToTypeConverter.getType(resultUrl);
-		College college = collegeRepositoryCustom.findByName(collegeName);
-		Type type = typeRepositoryCustom.findByName(typeName);
+	public void saveResult(Type type, College college) {
 		TypeCount typeCount = typeCountRepositoryCustom.findByTypeAndCollege(type, college);
 		typeCount.increase();
 

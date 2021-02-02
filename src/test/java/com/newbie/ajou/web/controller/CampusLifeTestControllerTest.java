@@ -1,8 +1,6 @@
 package com.newbie.ajou.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.newbie.ajou.domain.college.CollegeRepositoryCustom;
-import com.newbie.ajou.domain.user.UserRepositoryCustom;
 import com.newbie.ajou.web.dto.ResultRequestDto;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,7 +13,6 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
@@ -26,12 +23,6 @@ class CampusLifeTestControllerTest {
 
 	@Autowired
 	WebApplicationContext context;
-
-	@Autowired
-	private CollegeRepositoryCustom collegeRepositoryCustom;
-
-	@Autowired
-	private UserRepositoryCustom userRepositoryCustom;
 
 	private MockMvc mvc;
 
@@ -55,9 +46,5 @@ class CampusLifeTestControllerTest {
 				.content(new ObjectMapper().writeValueAsString(dto)))
 				.andDo(print())
 				.andReturn();
-		String resultUrl = result.getResponse().getContentAsString();
-
-		//then
-		assertThat(resultUrl).isEqualTo("/result/0101");
 	}
 }

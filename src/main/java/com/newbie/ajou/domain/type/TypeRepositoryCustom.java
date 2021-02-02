@@ -20,6 +20,14 @@ public class TypeRepositoryCustom {
 				.orElseThrow();
 	}
 
+	public Type save(Type type) {
+		return typeRepository.save(type);
+	}
+
+	public void deleteAll() {
+		typeRepository.deleteAll();
+	}
+
 	@PostConstruct
 	public void init() {
 		typeRepository.save(new Type("istj"));

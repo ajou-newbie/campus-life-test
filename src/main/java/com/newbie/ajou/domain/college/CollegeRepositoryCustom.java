@@ -32,7 +32,7 @@ public class CollegeRepositoryCustom {
 	@PostConstruct
 	public void init() {
 		collegeRepository.save(new College("선택안함"));
-		collegeRepository.save(new College("예체"));
+		collegeRepository.save(new College("예체능"));
 		collegeRepository.save(new College("공학"));
 		collegeRepository.save(new College("의학"));
 		collegeRepository.save(new College("상경"));

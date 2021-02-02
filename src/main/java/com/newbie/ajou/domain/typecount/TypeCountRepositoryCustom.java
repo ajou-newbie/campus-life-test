@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Repository
@@ -18,13 +19,28 @@ public class TypeCountRepositoryCustom {
 	private final TypeRepositoryCustom typeRepositoryCustom;
 	private final CollegeRepositoryCustom collegeRepositoryCustom;
 
+	public List<String> findTop2CollegeByType(Type type) {
+		return typeCountRepository.findTop2ByTypeOrderByCountDesc(type).stream()
+				.map(TypeCount::getCollege)
+				.map(College::getName)
+				.collect(Collectors.toList());
+	}
+
 	public TypeCount findByTypeAndCollege(Type type, College college) {
 		return typeCountRepository.findByTypeAndCollege(type, college)
 				.orElseThrow(TypeCountNotFoundException::new);
 	}
 
+	public List<TypeCount> findAll() {
+		return typeCountRepository.findAll();
+	}
+
 	public TypeCount save(TypeCount typeCount) {
 		return typeCountRepository.save(typeCount);
+	}
+
+	public void deleteAll() {
+		typeCountRepository.deleteAll();
 	}
 
 	@PostConstruct
