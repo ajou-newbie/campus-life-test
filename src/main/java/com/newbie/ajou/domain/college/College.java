@@ -17,4 +17,8 @@ public class College extends JpaEntity {
 
 	@Column
 	private String name;
+
+	public College(String name) {
+		this.name = name;
+	}
 }

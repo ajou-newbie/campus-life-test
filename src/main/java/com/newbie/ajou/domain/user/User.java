@@ -1,7 +1,7 @@
 package com.newbie.ajou.domain.user;
 
 import com.newbie.ajou.domain.JpaEntity;
-import com.newbie.ajou.domain.college.College;
+import com.newbie.ajou.domain.type.Type;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -14,11 +14,11 @@ public class User extends JpaEntity {
 	@Id
 	private Long id;
 
-	@JoinColumn(name = "college_id")
+	@JoinColumn(name = "type_id")
 	@ManyToOne
-	private College college;
+	private Type type;
 
-	public void setCollege(College college) {
-		this.college = college;
+	public void setType(Type type) {
+		this.type = type;
 	}
 }

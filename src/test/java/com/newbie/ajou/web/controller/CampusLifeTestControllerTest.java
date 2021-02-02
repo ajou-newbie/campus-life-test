@@ -1,11 +1,9 @@
 package com.newbie.ajou.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.newbie.ajou.domain.college.College;
-import com.newbie.ajou.domain.college.CollegeRepository;
-import com.newbie.ajou.domain.user.UserRepository;
+import com.newbie.ajou.domain.college.CollegeRepositoryCustom;
+import com.newbie.ajou.domain.user.UserRepositoryCustom;
 import com.newbie.ajou.web.dto.ResultRequestDto;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -30,10 +28,10 @@ class CampusLifeTestControllerTest {
 	WebApplicationContext context;
 
 	@Autowired
-	private CollegeRepository collegeRepository;
+	private CollegeRepositoryCustom collegeRepositoryCustom;
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepositoryCustom userRepositoryCustom;
 
 	private MockMvc mvc;
 
@@ -42,14 +40,6 @@ class CampusLifeTestControllerTest {
 		mvc = MockMvcBuilders
 				.webAppContextSetup(context)
 				.build();
-		College college = new College(TEST_COLLEGE_NAME);
-		collegeRepository.save(college);
-	}
-
-	@AfterAll
-	void clearUp() {
-		userRepository.deleteAll();
-		collegeRepository.deleteAll();
 	}
 
 	@Test

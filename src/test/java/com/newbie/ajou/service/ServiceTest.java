@@ -1,11 +1,13 @@
 package com.newbie.ajou.service;
 
 import com.newbie.ajou.domain.college.College;
-import com.newbie.ajou.domain.college.CollegeRepository;
-import com.newbie.ajou.domain.user.UserRepository;
+import com.newbie.ajou.domain.college.CollegeRepositoryCustom;
+import com.newbie.ajou.domain.type.Type;
+import com.newbie.ajou.domain.type.TypeRepositoryCustom;
+import com.newbie.ajou.domain.typecount.TypeCount;
+import com.newbie.ajou.domain.typecount.TypeCountRepositoryCustom;
+import com.newbie.ajou.domain.user.UserRepositoryCustom;
 import com.newbie.ajou.web.dto.ResultRequestDto;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +24,16 @@ public class ServiceTest {
 	private ResultService resultService;
 
 	@Autowired
-	private CollegeRepository collegeRepository;
+	private CollegeRepositoryCustom collegeRepositoryCustom;
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepositoryCustom userRepositoryCustom;
 
-	@BeforeEach
-	void setUp() {
-		College college = new College(TEST_COLLEGE_NAME);
-		collegeRepository.save(college);
-	}
+	@Autowired
+	private TypeCountRepositoryCustom typeCountRepositoryCustom;
 
-	@AfterEach
-	void init() {
-		userRepository.deleteAll();
-		collegeRepository.deleteAll();
-	}
+	@Autowired
+	private TypeRepositoryCustom typeRepositoryCustom;
 
 	@Test
 	public void 결과_url_매핑_동작_확인() {
@@ -58,13 +54,15 @@ public class ServiceTest {
 		//given
 		int[] answers = new int[]{0, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2};
 		ResultRequestDto resultRequestDto = new ResultRequestDto(answers, TEST_COLLEGE_NAME);
+		College college = collegeRepositoryCustom.findByName(TEST_COLLEGE_NAME);
+		Type type = typeRepositoryCustom.findByName("isfj");
 
 		//when
 		resultService.saveResult(resultRequestDto.getCollege(), "0101");
-		College collage = collegeRepository.findByName(TEST_COLLEGE_NAME);
+		TypeCount typeCount = typeCountRepositoryCustom.findByTypeAndCollege(type, college);
 
 		//then
-		assertThat(collage.getIsfj()).isEqualTo(1);
-		assertThat(userRepository.findAll().size()).isEqualTo(1);
+		assertThat(typeCount.getCount()).isEqualTo(1);
+		assertThat(userRepositoryCustom.findAll().size()).isEqualTo(1);
 	}
 }

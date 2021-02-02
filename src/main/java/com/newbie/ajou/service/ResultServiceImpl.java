@@ -1,11 +1,16 @@
 package com.newbie.ajou.service;
 
 import com.newbie.ajou.domain.college.College;
-import com.newbie.ajou.domain.college.CollegeRepository;
+import com.newbie.ajou.domain.college.CollegeRepositoryCustom;
+import com.newbie.ajou.domain.type.Type;
+import com.newbie.ajou.domain.type.TypeRepositoryCustom;
+import com.newbie.ajou.domain.typecount.TypeCount;
+import com.newbie.ajou.domain.typecount.TypeCountRepositoryCustom;
 import com.newbie.ajou.domain.user.User;
-import com.newbie.ajou.domain.user.UserRepository;
+import com.newbie.ajou.domain.user.UserRepositoryCustom;
 import com.newbie.ajou.util.ResultAddressGetter;
 import com.newbie.ajou.util.ResultTypeGetter;
+import com.newbie.ajou.util.UrlToTypeConverter;
 import com.newbie.ajou.web.dto.ResultRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,8 +21,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class ResultServiceImpl implements ResultService {
 	private static final String RESULT_PREFIX = "/result/";
 
-	private final CollegeRepository collegeRepository;
-	private final UserRepository userRepository;
+	private final CollegeRepositoryCustom collegeRepositoryCustom;
+	private final TypeRepositoryCustom typeRepositoryCustom;
+	private final UserRepositoryCustom userRepositoryCustom;
+	private final TypeCountRepositoryCustom typeCountRepositoryCustom;
 
 	@Transactional
 	@Override
@@ -31,9 +38,14 @@ public class ResultServiceImpl implements ResultService {
 	@Transactional
 	@Override
 	public void saveResult(String collegeName, String resultUrl) {
-		College college = collegeRepository.findByName(collegeName);
+		String typeName = UrlToTypeConverter.getType(resultUrl);
+		College college = collegeRepositoryCustom.findByName(collegeName);
+		Type type = typeRepositoryCustom.findByName(typeName);
+		TypeCount typeCount = typeCountRepositoryCustom.findByTypeAndCollege(type, college);
+		typeCount.increase();
+
 		User user = new User();
-		user.setCollege(college);
-		userRepository.save(user);
+		user.setType(type);
+		userRepositoryCustom.save(user);
 	}
 }
