@@ -32,7 +32,6 @@ public class ResultServiceImpl implements ResultService {
 	@Override
 	public void saveResult(String collegeName, String resultUrl) {
 		College college = collegeRepository.findByName(collegeName);
-		college.increase(resultUrl);
 		User user = new User();
 		user.setCollege(college);
 		userRepository.save(user);
