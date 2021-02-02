@@ -3,6 +3,7 @@ package com.newbie.ajou.web.controller;
 import com.newbie.ajou.service.QuestionService;
 import com.newbie.ajou.service.ResultService;
 import com.newbie.ajou.web.dto.ResultRequestDto;
+import com.newbie.ajou.web.dto.ResultResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,14 +21,14 @@ public class CampusLifeTestController {
 	private final ResultService resultService;
 
 	@GetMapping("/questions")
-	public Map<String,Object> getQuestionData() {
-		Map<String,Object> map = new HashMap<String,Object>();
+	public Map<String, Object> getQuestionData() {
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("questions", questionService.findAll());
 		return map;
 	}
 
 	@PostMapping("/result")
-	public String openResult(@RequestBody @Valid ResultRequestDto resultRequestDto) {
-		return resultService.getAddress(resultRequestDto);
+	public ResultResponseDto openResult(@RequestBody @Valid ResultRequestDto resultRequestDto) {
+		return resultService.getResult(resultRequestDto);
 	}
 }

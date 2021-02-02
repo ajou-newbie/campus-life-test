@@ -1,6 +1,6 @@
 package com.newbie.ajou.service;
 
-import com.newbie.ajou.domain.question.QuestionRepository;
+import com.newbie.ajou.domain.question.QuestionRepositoryCustom;
 import com.newbie.ajou.web.dto.QuestionResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class QuestionServiceImpl implements QuestionService {
-	private final QuestionRepository questionRepository;
+	private final QuestionRepositoryCustom questionRepositoryCustom;
 
 	@Transactional(readOnly = true)
 	public List<QuestionResponseDto> findAll() {
-		return questionRepository.findAll().stream()
+		return questionRepositoryCustom.findAll().stream()
 				.map(QuestionResponseDto::new)
 				.collect(Collectors.toList());
 	}

@@ -21,6 +21,6 @@ public class Question extends JpaEntity {
 	@Column
 	private String content;
 
-	@OneToMany(mappedBy = "question",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
 	private List<Choice> choices = new ArrayList<>();
 }
