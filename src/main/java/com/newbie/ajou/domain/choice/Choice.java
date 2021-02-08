@@ -31,5 +31,6 @@ public class Choice extends JpaEntity {
 
 	public void setQuestions(Question question) {
 		this.question = question;
+		question.getChoices().add(this);
 	}
 }
