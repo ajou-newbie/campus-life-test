@@ -23,4 +23,8 @@ public class Question extends JpaEntity {
 
 	@OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
 	private List<Choice> choices = new ArrayList<>();
+
+	public Question(String content) {
+		this.content = content;
+	}
 }
