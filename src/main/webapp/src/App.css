@@ -1,38 +1,38 @@
-.App {
+.imagestyle {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.btnstyle {
+    position: absolute;
+    background: '/Users/beanee/Desktop/newbie/newbie-app/src/Newbie_button.png';
+    width: 50vh;
+    height: 5vw;
+    bottom: 30vh;
+    left: 73vh;
+}
+
+.imgtext {
+    position: absolute;
     text-align: center;
+    width: 30vw;
+    bottom: 30vw;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.container {
+    display: grid;
+    background: white;
+    border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.questionText {
+    position: absolute;
+    bottom: 20vh;
+    left: 80vh;
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.answeroptionsli {
+    marginBottom: 10px;
+    width: 300px;
 }

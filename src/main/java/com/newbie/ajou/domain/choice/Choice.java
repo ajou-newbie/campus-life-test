@@ -24,4 +24,13 @@ public class Choice extends JpaEntity {
 	@JoinColumn(name = "question_id")
 	@JsonIgnore
 	private Question question;
+
+	public Choice(String content) {
+		this.content = content;
+	}
+
+	public void setQuestions(Question question) {
+		this.question = question;
+		question.getChoices().add(this);
+	}
 }

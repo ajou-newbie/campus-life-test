@@ -5,10 +5,7 @@ import com.newbie.ajou.service.ResultService;
 import com.newbie.ajou.web.dto.ResultRequestDto;
 import com.newbie.ajou.web.dto.ResultResponseDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
@@ -20,6 +17,7 @@ public class CampusLifeTestController {
 	private final QuestionService questionService;
 	private final ResultService resultService;
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/questions")
 	public Map<String, Object> getQuestionData() {
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -27,6 +25,7 @@ public class CampusLifeTestController {
 		return map;
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/result")
 	public ResultResponseDto openResult(@RequestBody @Valid ResultRequestDto resultRequestDto) {
 		return resultService.getResult(resultRequestDto);

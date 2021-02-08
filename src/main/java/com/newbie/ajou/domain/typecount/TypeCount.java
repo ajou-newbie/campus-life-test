@@ -14,7 +14,7 @@ public class TypeCount {
 	@Column(name = "type_count_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private int id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "type_id")
