@@ -8,8 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,10 +18,8 @@ public class CampusLifeTestController {
 
 	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/questions")
-	public Map<String, Object> getQuestionData() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("questions", questionService.findAll());
-		return map;
+	public List<QuestionResponseDto> getQuestionData() {
+		return questionService.findAll();
 	}
 
 	@CrossOrigin(origins = "http://localhost:3000")
