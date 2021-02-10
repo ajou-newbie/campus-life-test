@@ -2,6 +2,8 @@ package com.newbie.ajou.web.controller;
 
 import com.newbie.ajou.service.QuestionService;
 import com.newbie.ajou.service.ResultService;
+import com.newbie.ajou.service.UserCountService;
+import com.newbie.ajou.web.dto.QuestionResponseDto;
 import com.newbie.ajou.web.dto.ResultRequestDto;
 import com.newbie.ajou.web.dto.ResultResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +15,15 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class CampusLifeTestController {
+	private final UserCountService userCountService;
 	private final QuestionService questionService;
 	private final ResultService resultService;
+
+	@CrossOrigin(origins = "http://localhost:3000")
+	@GetMapping("/")
+	public Long getUserCount() {
+		return userCountService.count();
+	}
 
 	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/questions")
