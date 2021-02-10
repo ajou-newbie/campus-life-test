@@ -1,8 +1,10 @@
+import React from 'react';
+
 function TypeDef() {
     return (
-        < div >
-        < /div>
-)
+        <div>
+        </div>
+    )
 };
 
 export default TypeDef;

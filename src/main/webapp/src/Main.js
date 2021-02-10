@@ -1,7 +1,7 @@
-import {useEffect, useState} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import mainImage from './image/Newbie_background2.png'
 import IndexButton from './image/IndexButton.png'
 import IndexButtonOnClick from './image/IndexButtonOnClick.png';
@@ -62,13 +62,13 @@ function Main() {
     const [error, setError] = useState(false);
 
     const fetchCounts = async () => {
-        try {
+        try{
             setError(null);
             setCounts(null);
             setLoading(true);
             const getCounts = await axios.get('https://jsonplaceholder.typicode.com/users')
             setCounts(getCounts.data);
-        } catch (e) {
+        } catch(e) {
             setError(e)
         }
         setLoading(false);
@@ -78,29 +78,18 @@ function Main() {
         fetchCounts();
     }, [])
 
-    if (loading) return
-<
-    div > 로딩중
-...<
-    /div>
-    if (error) return
-<
-    div > 에러가
-    발생했습니다. < /div>
+    if (loading) return <div>로딩중...</div>
+    if (error) return <div>에러가 발생했습니다.</div>
 
     return (
-    < MainImage >
-    < GlobalFonts / >
-    < NewbieCount > 현재 < b > 123, 456
-    명의
-    새내기 < /b>가 입학했어요</
-    NewbieCount >
-    < Link
-    to = "/college" >
-        < MainButton > < /MainButton>
-        < /Link>
-        < /MainImage>
-)
+        <MainImage>
+            <GlobalFonts/>
+            <NewbieCount>현재 <b>123,456명의 새내기</b>가 입학했어요</NewbieCount>
+            <Link to = "/college" >
+                <MainButton></MainButton>
+            </Link>
+        </MainImage>
+    )
 }
 
 export default Main;

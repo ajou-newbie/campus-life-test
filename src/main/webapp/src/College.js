@@ -1,10 +1,11 @@
-import {useState} from "react";
+import React, { useState } from "react";
 import Downshift from "downshift";
-import styled, {css} from "styled-components";
-import {Link} from "react-router-dom";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import collegeBackImg from './image/back.jpg';
 import triangle from './image/mbti_tri.png'
 import GlobalFonts from "./fonts"
+import {VscTriangleDown} from 'react-icons/vsc';
 
 const Main = styled.div`
   background-image: url(${collegeBackImg});
@@ -76,18 +77,18 @@ const Menu = styled.ul`
 `;
 
 const Items = styled.li`
-  ${({highlighted, selected}) => {
+  ${({ highlighted, selected }) => {
     if (highlighted) {
-        return css`
+      return css`
           background: mistyrose;
         `;
     }
     if (selected) {
-        return css`
+      return css`
         background: linen;
       `;
     }
-}};
+  }};
 
   &::after{
     content: "";
@@ -128,102 +129,65 @@ const DecisionBtn = styled.button`
 const items = ["선택안함", "경영대학", "공과대학", "사회과학대학", "예체능대학", "의학/간호대학", "인문대학", "자연과학대학"];
 
 function College() {
-    const [selectedOption, setSelectedOption] = useState({
-        college: ''
-    });
+  const [selectedOption, setSelectedOption] = useState({
+    college: ''
+  });
 
-    const onSelect = (selection) => {
-        const selectCollege = {
-            college: selection
-        };
-        return setSelectedOption(selectCollege);
-    };
+const onSelect = (selection) => {
+  const selectCollege = {
+    college: selection
+  };
+  return setSelectedOption(selectCollege);
+};
 
-    return (
-        < Main >
-        < GlobalFonts / >
-        < Downshift
-    onChange = {selection
-=>
-    onSelect(selection)
-}
-    onClick = {console.log(selectedOption)} >
+  return (
+    <Main >
+      <GlobalFonts/>
+        <Downshift onChange={selection => onSelect(selection)
+    } onClick={console.log(selectedOption)}>
         {({
-            getInputProps,
-            getItemProps,
-            getMenuProps,
-            getToggleButtonProps,
-            isOpen,
-            highlightedIndex,
-            selectedItem,
-        })
-=>
-    (
-    < div >
-    < Input >
-    < input
-    readOnly = {true}
-    placeholder = "단과대학 선택"
-    {...
-        getInputProps()
-    }
-    />
-    < button
-    {...
-        getToggleButtonProps()
-    }
-><
-    /button>
-    < /Input>
-    {
-        isOpen ? (
-            < Menu {...getMenuProps()} >
-            {
-                items.map((item, index) => (
-                    < Items
-                highlighted = {highlightedIndex === index
-            }
-        selected = {selectedItem === item
-    }
-        {...
-            getItemProps({
-                key: item,
-                index,
-                item
-            })
-        }
-    >
-        {
-            item
-        }
-    <
-        /Items>
-    ))
-    }
-    <
-        /Menu>
-    ) :
-        null
-    }
-<
-    Link
-    to = './questions' >
-        < DecisionBtn
-    {...
-        isOpen ? {style: {display: "none"}} : {style: {visibility: "visible"}}
-    }
->
-    결정
-    ! < /DecisionBtn>
-    < /Link>
-    < /div>
-)
-}
-<
-    /Downshift>
-    < /Main>
-)
-    ;
+          getInputProps,
+          getItemProps,
+          getMenuProps,
+          getToggleButtonProps,
+          isOpen,
+          highlightedIndex,
+          selectedItem,
+        }) => (
+          <div>
+            <Input>
+              <input
+                readOnly={true}
+                placeholder="단과대학 선택"
+                {...getInputProps()}
+              />
+              <button {...getToggleButtonProps()}></button>
+            </Input>
+            {isOpen ? (
+              <Menu {...getMenuProps()}>
+                {items.map((item, index) => (
+                  <Items 
+                    highlighted={highlightedIndex === index}
+                    selected={selectedItem === item}
+                    {...getItemProps({
+                      key: item,
+                      index,
+                      item
+                    })}
+                  >
+                    {item}
+                  </Items>
+                ))}
+              </Menu>
+            ) : null}
+            <Link to = './questions'>
+              <DecisionBtn {...isOpen ? {style : {display:"none"}} : {style : {visibility:"visible"}} }>결정!</DecisionBtn>
+            </Link>
+          </div>
+        )}
+      </Downshift>
+  </Main>
+  );
 }
 
 export default College;
