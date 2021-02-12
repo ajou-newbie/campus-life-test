@@ -1,7 +1,7 @@
-import {useEffect, useState} from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import axios from "axios";
-import {Link} from 'react-router-dom';
+import {BrowserRouter as Router,Link } from 'react-router-dom';
 import ProgressBar from './components/ProgressBar';
 import backImg from './image/Newbie_qu_background.png';
 import GlobalFonts from "./fonts"
@@ -18,7 +18,7 @@ const QuestionsImg = styled.div`
 `;
 
 const QuestionsContainer = styled.div`
-    width: 50%;
+    width: 60%;
     object-fit: cover;
     text-align: center;
     justify-content: center;
@@ -35,7 +35,7 @@ const QuestionWrapper = styled.div`
     justify-content: center;
     align-items: center;
     object-fit: cover;
-    margin: 500px 0px 50px 0px;
+    margin: 0px 0px 80px 0px;
     color: white;
     font-size: 20px;
     font-family: 'BMeU';
@@ -60,7 +60,7 @@ const Text2Container = styled.div`
 const ButtonOptions = styled.button`
     text-align: center;
     color: #1C515A;
-    width: 70%;
+    width: 50%;
     border-radius: 20px;
     background-color: white;
     padding: 20px 20px 20px 20px;
@@ -69,10 +69,6 @@ const ButtonOptions = styled.button`
     font-family: 'BMeU';
     margin: 5px;
     padding: 20px;
-
-    &:focus {
-        outline:none;
-    }
 `;
 
 const UlOptions = styled.ul`
@@ -101,9 +97,10 @@ function whiteBackground(e) {
 
 function Questions({selection}) {
     const [questions, setQuestions] = useState(null); // test data
+    const [text, setTexts] = useState(null);
     const [id, setId] = useState(0); // id
     const [questChoice, setQuestChoice] = useState({ // 문항 선택 정보 저장 test
-        choice: ''
+        choice: '' //바꿔줘야함
     })
 
     const [college, setCollege] = useState({ // college state
@@ -119,10 +116,9 @@ function Questions({selection}) {
         //     choiceId: quetions[id].choices.choiceId
         // }
         const choiceQuestion = {
-            name: questions[id].name,
+            name: questions[id].questionContent,
         };
-
-        setQuestChoice([...questChoice, choiceQuestion]);
+        setQuestChoice([...questChoice,choiceQuestion]);
         setId(id + 1);
     };
 
@@ -157,7 +153,7 @@ function Questions({selection}) {
             setLoading(true);
             const postResponse = await axios.post('http://localhost:8080/result', {
                 choiceId: questChoice,
-                college: "사회과학대학"
+                college : "사회과학대학"
             });
             setQuestChoice(postResponse.questChoice);
         } catch (e) {
@@ -166,7 +162,7 @@ function Questions({selection}) {
         setLoading(false);
     }
 
-    //components가 처음 렌더링 될 때 요청 
+    //components가 처음 렌더링 될 때 요청
     useEffect(() => {
         onCollege();
         fetchQuestions();
@@ -175,72 +171,42 @@ function Questions({selection}) {
         };
     }, [])
 
-    if (loading) return
-<
-    div > 로딩중
-...<
-    /div>
+    if (loading) return <div>로딩중...</div>
     if (!questions) return null;
-    if (id === 13) {
-        return
-    <
-        Link
-        to = './result' >
-            < LiOptions >
-            < ButtonOptions
-        onMouseEnter = {blueBackground}
-        onMouseLeave = {whiteBackground} >
-            결과보기
-            < /ButtonOptions>
-            < /LiOptions>
-            < /Link>
+    if(id === 10) {
+        return <Link to = './result'>
+            <LiOptions>
+                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground}>
+                    결과보기
+                </ButtonOptions>
+            </LiOptions>
+        </Link>
     }
 
     return (
-        < QuestionsImg >
-        < GlobalFonts / >
-        < QuestionsContainer >
-        < ProgressBar
-    bgcolor = "#14276b"
-    completed = {id+1}
-    />
-    < Text1Container > 개강 < /Text1Container>
-    < Text2Container > 종강 < /Text2Container>
-    < QuestionWrapper > {console.log(questions)}
-    {
-        questions[2].questionContent
-    }
-<
-    /QuestionWrapper>
-    < UlOptions >
-    < LiOptions >
-    < ButtonOptions
-    onMouseEnter = {blueBackground}
-    onMouseLeave = {whiteBackground}
-    onClick = {onQuetions} > < /ButtonOptions>
-        < /LiOptions>
-        < LiOptions >
-        < ButtonOptions
-    onMouseEnter = {blueBackground}
-    onMouseLeave = {whiteBackground}
-    onClick = {onQuetions} > < /ButtonOptions>
-        < /LiOptions>
-        < LiOptions >
-        < ButtonOptions
-    onMouseEnter = {blueBackground}
-    onMouseLeave = {whiteBackground}
-    onClick = {onQuetions} > < /ButtonOptions>
-        < /LiOptions>
-        < LiOptions >
-        < ButtonOptions
-    onMouseEnter = {blueBackground}
-    onMouseLeave = {whiteBackground}
-    onClick = {onQuetions} > < /ButtonOptions>
-        < /LiOptions>
-        < /UlOptions>
-        < /QuestionsContainer>
-        < /QuestionsImg>
-)
+        <QuestionsImg>
+            <GlobalFonts />
+            <QuestionsContainer >
+                <ProgressBar bgcolor="#14276b" completed={id} />
+                <Text1Container>개강</Text1Container>
+                <Text2Container>종강</Text2Container>
+                <QuestionWrapper>{questions[id].questionContent}{console.log(questChoice)}</QuestionWrapper>
+                <UlOptions>
+                    <LiOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[0].choiceContent}</ButtonOptions>
+                    </LiOptions>
+                    <LiOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[1].choiceContent}</ButtonOptions>
+                    </LiOptions>
+                    <LiOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[2].choiceContent}</ButtonOptions>
+                    </LiOptions>
+                    <LiOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[3].choiceContent}</ButtonOptions>
+                    </LiOptions>
+                </UlOptions>
+            </QuestionsContainer>
+        </QuestionsImg>
+    )
 }
-
 export default Questions;

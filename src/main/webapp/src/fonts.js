@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import KoPubDotum from './fonts/KOPUBWORLDDOTUMMEDIUM.TTF';
 import BMEU from './fonts/BMEULJIROTTF.TTF';

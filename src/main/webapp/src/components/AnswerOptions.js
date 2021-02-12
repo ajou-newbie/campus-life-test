@@ -2,10 +2,10 @@
 // <AnswerOptions dataParentToChild = {1} />
 // Reference: https://medium.com/@jasminegump/passing-data-between-a-parent-and-child-in-react-deea2ec8e654 (Parent to Child using Function Components)
 
-import {useEffect, useState} from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import axios from "axios";
-import {Link} from 'react-router-dom';
+import {BrowserRouter as Router,Link } from 'react-router-dom';
 
 const ButtonOptions = styled.button`
     text-align: center;
@@ -18,7 +18,7 @@ const ButtonOptions = styled.button`
     border: 2px solid white;
   `;
 
-const UlOptions = styled.ul`
+  const UlOptions = styled.ul`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -27,19 +27,19 @@ const UlOptions = styled.ul`
     margin: 0 auto;
   `;
 
-const LiOptions = styled.li`
+  const LiOptions = styled.li`
     margin-bottom: 10px;
   `;
 
-function blueBackground(e) {
-  e.target.style.background = "rgb(81,138,247)";
-  e.target.style.color = "white";
-}
+  function blueBackground(e) {
+    e.target.style.background = "rgb(81,138,247)";
+    e.target.style.color = "white";
+  }
 
-function whiteBackground(e) {
-  e.target.style.background = "white";
-  e.target.style.color = "rgb(17, 47, 56)";
-}
+  function whiteBackground(e) {
+    e.target.style.background = "white";
+    e.target.style.color = "rgb(17, 47, 56)";
+  }
 
 function AnswerOptions() {
   const [users, setUsers] = useState(null);
@@ -65,55 +65,36 @@ function AnswerOptions() {
 
   //components가 처음 렌더링 될 때 요청 
   useEffect(() => {
-    fetchUsers();
+      fetchUsers();
   }, [])
 
-  if (loading) return
-<
-  div > 로딩중
-...<
-  /div>
-  if (error) return
-<
-  div > 에러가
-  발생했습니다. < /div>
+  if (loading) return <div>로딩중...</div>
+  if (error) return <div>에러가 발생했습니다.</div>
   if (!users) return null;
 
   return (
-      < div >
-      < UlOptions >
-      < LiOptions >
-      < ButtonOptions
-  onMouseEnter = {blueBackground}
-  onMouseLeave = {whiteBackground} > {} < /ButtonOptions>
-      < /LiOptions>
-      < LiOptions >
-      < ButtonOptions
-  onMouseEnter = {blueBackground}
-  onMouseLeave = {whiteBackground} > {} < /ButtonOptions>
-      < /LiOptions>
-      < LiOptions >
-      < ButtonOptions
-  onMouseEnter = {blueBackground}
-  onMouseLeave = {whiteBackground} > {} < /ButtonOptions>
-      < /LiOptions>
-      < LiOptions >
-      < ButtonOptions
-  onMouseEnter = {blueBackground}
-  onMouseLeave = {whiteBackground} > {} < /ButtonOptions>
-      < /LiOptions>
-      < Link
-  to = '/result' >
-      < LiOptions >
-      < ButtonOptions
-  onMouseEnter = {blueBackground}
-  onMouseLeave = {whiteBackground} > 결과
-  보기 < /ButtonOptions>
-  < /LiOptions>
-  < /Link>
-  < /UlOptions>
-  < /div>
-)
+    <div>
+      <UlOptions>
+        <LiOptions>
+          <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} >{}</ButtonOptions>
+          </LiOptions>
+        <LiOptions>
+          <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} >{}</ButtonOptions>
+          </LiOptions>
+        <LiOptions>
+          <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} >{}</ButtonOptions>
+          </LiOptions>
+        <LiOptions>
+          <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} >{}</ButtonOptions>
+          </LiOptions>
+        <Link to = '/result'>
+          <LiOptions>
+            <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} >결과 보기</ButtonOptions>
+          </LiOptions>
+        </Link>
+      </UlOptions>
+    </div>
+  )
 }
 
 export default AnswerOptions;

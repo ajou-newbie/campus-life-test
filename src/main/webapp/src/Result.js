@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from 'styled-components';
 import backImg from './image/Newbie_qu_background.png';
@@ -62,25 +62,18 @@ function Result() {
         fetchUsers();
     }, [])
 
-    if (loading) return
-<
-    div > 로딩중
-...<
-    /div>
-    if (error) return
-<
-    div > 에러가
-    발생했습니다. < /div>
+    if (loading) return <div>로딩중...</div>
+    if (error) return <div>에러가 발생했습니다.</div>
     if (!users) return null;
 
-    return (
-        < ResultImg >
-        < Header > < /Header>
-        < ResultContainer >
-        {users[idx].name}
-        < /ResultContainer>
-        < /ResultImg>
-)
+    return(
+        <ResultImg>
+            <Header></Header>
+            <ResultContainer>
+                {users[idx].name}
+            </ResultContainer>
+        </ResultImg>
+    )
 }
 
 export default Result;

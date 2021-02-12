@@ -24,6 +24,9 @@ public class ServiceTest {
 	private static final String TEST_COLLEGE_NAME = "의학";
 
 	@Autowired
+	private UserCountService userCountService;
+
+	@Autowired
 	private ResultService resultService;
 
 	@Autowired
@@ -43,6 +46,27 @@ public class ServiceTest {
 		userRepositoryCustom.deleteAll();
 	}
 
+	@Test
+	public void 사용자_수_count_동작_확인() {
+		//given
+		int[] answers = new int[]{0, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2};
+
+		ResultRequestDto dto1 = new ResultRequestDto(answers, "의학");
+		ResultRequestDto dto2 = new ResultRequestDto(answers, "의학");
+		ResultRequestDto dto3 = new ResultRequestDto(answers, "의학");
+		ResultRequestDto dto4 = new ResultRequestDto(answers, "공학");
+		ResultRequestDto dto5 = new ResultRequestDto(answers, "공학");
+
+		//when 0101, 1101, 0000
+		resultService.getResult(dto1);
+		resultService.getResult(dto2);
+		resultService.getResult(dto3);
+		resultService.getResult(dto4);
+		resultService.getResult(dto5);
+
+		//then
+		assertThat(userCountService.count()).isEqualTo(5);
+	}
 
 	@Test
 	public void 결과_url_매핑_동작_확인() {
