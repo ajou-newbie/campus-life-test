@@ -193,16 +193,16 @@ function Questions({selection}) {
                 <QuestionWrapper>{questions[id].questionContent}{console.log(questChoice)}</QuestionWrapper>
                 <UlOptions>
                     <LiOptions>
-                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].questionContent}</ButtonOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[0].choiceContent}</ButtonOptions>
                     </LiOptions>
                     <LiOptions>
-                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].questionContent}</ButtonOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[1].choiceContent}</ButtonOptions>
                     </LiOptions>
                     <LiOptions>
-                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].questionContent}</ButtonOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[2].choiceContent}</ButtonOptions>
                     </LiOptions>
                     <LiOptions>
-                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].questionContent}</ButtonOptions>
+                        <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={onQuetions}>{questions[id].choices[3].choiceContent}</ButtonOptions>
                     </LiOptions>
                 </UlOptions>
             </QuestionsContainer>
