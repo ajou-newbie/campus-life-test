@@ -1,5 +1,6 @@
 package com.newbie.ajou.domain.typecount;
 
+import com.newbie.ajou.domain.JpaEntity;
 import com.newbie.ajou.domain.college.College;
 import com.newbie.ajou.domain.type.Type;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class TypeCount {
+public class TypeCount extends JpaEntity {
 	@Column(name = "type_count_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
