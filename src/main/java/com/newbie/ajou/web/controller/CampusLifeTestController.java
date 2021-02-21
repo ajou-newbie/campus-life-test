@@ -20,7 +20,7 @@ public class CampusLifeTestController {
 	private final ResultService resultService;
 
 	@CrossOrigin(origins = "http://localhost:3000")
-	@GetMapping("/")
+	@GetMapping("/index")
 	public Long getUserCount() {
 		return userCountService.count();
 	}
