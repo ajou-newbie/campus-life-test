@@ -39,8 +39,9 @@ public class ResultServiceImpl implements ResultService {
 		Type type = typeRepositoryCustom.findByName(typeName);
 		saveResult(type, college);
 
-		List<String> colleges = typeCountRepositoryCustom.findTop2CollegeByType(type);
-		return new ResultResponseDto(resultUrl, colleges);
+		//List<String> colleges = typeCountRepositoryCustom.findTop2CollegeByType(type);
+		//return new ResultResponseDto(resultUrl, colleges);
+		return new ResultResponseDto(resultUrl);
 	}
 
 
