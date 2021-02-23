@@ -69,5 +69,53 @@ public class ChoiceRepositoryCustom {
 		choices6.add(new Choice("상대방이 말을 걸지 않는 이상 먼저 입을 열지 않는다."));
 		choices6.add(new Choice("짧게 인사를 하고 과방을 나와 다른 쉴 곳을 찾아 떠난다."));
 		this.saveAll(choices6, question6);
+
+		Question question7 = questionRepository.findById(7);
+		List<Choice> choices7 = new ArrayList<>();
+		choices7.add(new Choice("학생회관 3층 우측 복도 29번 사물함안에 있어."));
+		choices7.add(new Choice("과방에 있어!"));
+		choices7.add(new Choice("과방에,,있을걸,,?"));
+		choices7.add(new Choice("너도 없어? 야 나두!"));
+		this.saveAll(choices7, question7);
+
+		Question question8 = questionRepository.findById(8);
+		List<Choice> choices8 = new ArrayList<>();
+		choices8.add(new Choice("내가 잘못 한게 있나? 카톡을 모두 훑어 본다."));
+		choices8.add(new Choice("쿨한척 하고 싶지만 계속 신경쓰여 답장을 기다린다."));
+		choices8.add(new Choice("많이 바쁜가보다 하고 그냥 넘어간다."));
+		choices8.add(new Choice("읽씹인지도 몰랐다."));
+		this.saveAll(choices8, question8);
+
+		Question question9 = questionRepository.findById(9);
+		List<Choice> choices9 = new ArrayList<>();
+		choices9.add(new Choice("너를 영혼까지 털어버리겠어. 상대의 모든 논리적 허점을 반박한다."));
+		choices9.add(new Choice("조금 강하게 주장하더라도 일단 이기고 나서 생각하자."));
+		choices9.add(new Choice("상대의 기분을 최대한 존중하며 토론에 임한다."));
+		choices9.add(new Choice("토론이 끝난 뒤 상대방이 느꼈을 혹시 모를 불쾌감에 대해 사과한다."));
+		this.saveAll(choices9, question9);
+
+		Question question10 = questionRepository.findById(10);
+		List<Choice> choices10 = new ArrayList<>();
+		choices10.add(new Choice("불만을 모두 표출하여 싹 재개발해버린다."));
+		choices10.add(new Choice("상대의 반응을 살피며 개선점을 지적한다."));
+		choices10.add(new Choice("그 자리에서는 지적하지 않고, 후에 직접 수정한다."));
+		choices10.add(new Choice("퀄리티가 좋든 나쁘든, 일단은 고생했다고 칭찬해준다."));
+		this.saveAll(choices10, question10);
+
+		Question question11 = questionRepository.findById(11);
+		List<Choice> choices11 = new ArrayList<>();
+		choices11.add(new Choice("거의 아이디어 무한리필집. 상상 속에서만 존재했던 아이디어를 마구 서술한다."));
+		choices11.add(new Choice("독창적인 아이디어를 바탕으로 내 생각을 서술한다."));
+		choices11.add(new Choice("최근 트렌트를 반영한 창업 아이템을 바탕으로 아이디어를 서술한다."));
+		choices11.add(new Choice("자금, 시간, 가능성 등 현실적인 부분을 중점으로 창업 아이디어를 서술한다."));
+		this.saveAll(choices11, question11);
+
+		Question question12 = questionRepository.findById(12);
+		List<Choice> choices12 = new ArrayList<>();
+		choices12.add(new Choice("평점 몇점인데?"));
+		choices12.add(new Choice("다음에 더 열심히하면 되지 뭐~"));
+		choices12.add(new Choice("헐 ㅠ ㅠ 교수님이 잘못하셨네 !"));
+		choices12.add(new Choice("많이 속상했겠다...어떡해...(이미 우는 중)"));
+		this.saveAll(choices12, question12);
 	}
 }
