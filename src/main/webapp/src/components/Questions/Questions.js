@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
 import backImg from '../../image/Newbie_qu_background.png';
 import QuestionsMobile from '../../image/m_question_bg.png';
@@ -11,7 +10,7 @@ const QuestionsImg = styled.div`
     display: flex;
     background-image: url(${backImg});
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     justify-content: center;
@@ -43,7 +42,7 @@ const QuestionWrapper = styled.div`
     object-fit: cover;
     margin: 60px 0px 57px 0px;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'BMeU';
     text-align: center;
     text-shadow: 1px 1px gray;
@@ -69,14 +68,14 @@ const ButtonOptions = styled.button`
     text-align: left;
     color: #343434;
     width: 400px;
-    height: 13vh;
-    border-radius: 35px;
+    height: 10vh;
+    border-radius: 15px;
     background-color: white;
-    padding: 20px;
+    padding: 0px 20px 0px 20px;
     border: 2px solid white;
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'BMeU';
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 20px 0px;
     cursor: pointer;
 
     &:focus {
@@ -97,20 +96,14 @@ function whiteBackground(e) {
 function Questions(props) {
     const [questions, setQuestions] = useState(null); // test data
     const [id, setId] = useState(0); // id
-    const [questChoice, setQuestChoice] = useState({ // 문항 선택 정보 저장 test
-        choice: ''
-    })
+    const [questChoice, setQuestChoice] = useState([0]);
     const [error, setError] = useState(false);
-    const [url, setUrl] = useState(null); //post data
-    const [local, setLocal] = useState(null);
-    const history = useHistory();
 
     // questions 선택 항목 저장
-    const onQuetions = (index) => {
+    const onQuestions = (index) => {
         const choiceQuestion = index + 1;
         setQuestChoice([...questChoice,choiceQuestion]);
         setId(id + 1);
-        goResult();
     };
 
     // get questions
@@ -119,10 +112,8 @@ function Questions(props) {
             // 요청이 시작 할 때에는 초기화
             setError(null);
             setQuestions(null);
-            setQuestChoice([0]);
-            setLocal('/result/0010');
             const getResponse = await axios.get('http://localhost:8080/questions');
-            setQuestions(getResponse.data); // 데이터는 getResponse.data, setQuestions();
+            setQuestions(getResponse.data);
         } catch (e) {
             setError(e);
         }
@@ -133,47 +124,40 @@ function Questions(props) {
         try {
             setError(null);
             const postResponse = await axios.post('http://localhost:8080/result', {
-                choiceId: questChoice,
+                answers: questChoice,
                 college : props.location.state.selectedOption
             });
-            setUrl(postResponse.data); //url 저장
+
+            window.location.href = postResponse.data.url;
         } catch (e) {
             setError(e);
         }
     }
 
-    //components가 처음 렌더링 될 때 요청 
     useEffect(() => {
         fetchQuestions();
         return () => {
             postUsers();
         };
-    }, [])
-    console.log(local);
 
-    const goResult = () => {
-        if (id >= 11) {
-            history.push({
-                pathname: url,
-                state: {local: local}
-            });
-        }
-    };
+    }, [questChoice, id])
 
     if (!questions) return null;
 
-    return (
+    if(id === 12) postUsers();
+
+    else if(id < 12) return (
         <QuestionsImg>
             <GlobalFonts />
             <QuestionsContainer >
                 <ProgressBar bgcolor="#14276b" completed={id+1} />
                 <Text1Container>개강</Text1Container>
-                <Text2Container>종강❤︎</Text2Container>
+                <Text2Container>종강♥︎</Text2Container>
                 <QuestionWrapper >{questions[id].questionContent}</QuestionWrapper>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuetions(0)} >{questions[id].choices[0].choiceContent}</ButtonOptions>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() =>onQuetions(1)} >{questions[id].choices[1].choiceContent}</ButtonOptions>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() =>onQuetions(2)} >{questions[id].choices[2].choiceContent}</ButtonOptions>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() =>onQuetions(3)} >{questions[id].choices[3].choiceContent}</ButtonOptions>
+                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(0)} >{questions[id].choices[0].choiceContent}</ButtonOptions>
+                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(1)} >{questions[id].choices[1].choiceContent}</ButtonOptions>
+                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(2)} >{questions[id].choices[2].choiceContent}</ButtonOptions>
+                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(3)} >{questions[id].choices[3].choiceContent}</ButtonOptions>
             </QuestionsContainer>
         </QuestionsImg>
     )
