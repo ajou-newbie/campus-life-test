@@ -19,7 +19,7 @@ const MainImage = styled.div`
     background-repeat: no-repeat;
     text-align: center;
 
-    @media screen and (max-width: 500px) {
+    @media only screen and (max-width: 800px) {
         background-image: url(${MobileBack});
     }
 `;
@@ -76,7 +76,7 @@ function Main() {
             setError(null);
             setCounts(null);
             setLoading(true);
-            const getCounts = await axios.get('https://jsonplaceholder.typicode.com/users') //http://localhost:8080/result
+            const getCounts = await axios.get('http://localhost:8080/index')
             setCounts(getCounts.data);
         } catch(e) {
             setError(e)
@@ -94,7 +94,7 @@ function Main() {
     return (
         <MainImage>
             <GlobalFonts/>
-            <NewbieCount>현재 <b>123,456명의 새내기</b>가 입학했어요</NewbieCount>
+            <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
             <Link to = "/college" >
                 <MainButton></MainButton>
             </Link>

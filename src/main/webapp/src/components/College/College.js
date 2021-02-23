@@ -99,17 +99,17 @@ const Menu = styled.ul`
 
 const Items = styled.li`
   ${({ highlighted, selected }) => {
-    if (highlighted) {
-      return css`
+  if (highlighted) {
+    return css`
           background: #64939B;
         `;
-    }
-    if (selected) {
-      return css`
+  }
+  if (selected) {
+    return css`
         background: white;
       `;
-    }
-  }};
+  }
+}};
 
   &::after{
     content: "";
@@ -149,26 +149,23 @@ const DecisionBtn = styled.button`
   }
 `;
 
-
-const items = ["선택안함", "경영대학", "공과대학", "사회과학대학", "예체능대학", "의학/간호대학", "인문대학", "자연과학대학"];
+const items = ['선택안함', '인문계열', '교육계열', '공학계열', '사회계열', '자연계열', '의약계열', '예체능계열']
 
 function College() {
   const [selectedOption, setSelectedOption] = useState({
     college: ''
   });
 
-const onSelect = (selection) => {
-  const selectCollege = {
-    college: selection
+  const onSelect = (selection) => {
+    const selectCollege = selection
+    return setSelectedOption(selectCollege)
   };
-  return setSelectedOption(selectCollege);
-};
 
   return (
-    <Main >
+    <Main>
       <GlobalFonts/>
-        <Downshift onChange={selection => onSelect(selection)
-    } onClick={console.log(selectedOption)}>
+      <Downshift onChange={selection => onSelect(selection)
+      } onClick={console.log(selectedOption)}>
         {({
           getInputProps,
           getItemProps,
@@ -182,7 +179,7 @@ const onSelect = (selection) => {
             <Input>
               <input
                 readOnly={true}
-                placeholder="단과대학 선택"
+                placeholder="전공계열 선택"
                 {...getInputProps()}
               />
               <button {...getToggleButtonProps()}></button>
@@ -190,7 +187,7 @@ const onSelect = (selection) => {
             {isOpen ? (
               <Menu {...getMenuProps()}>
                 {items.map((item, index) => (
-                  <Items 
+                  <Items
                     highlighted={highlightedIndex === index}
                     selected={selectedItem === item}
                     {...getItemProps({
@@ -210,7 +207,7 @@ const onSelect = (selection) => {
           </div>
         )}
       </Downshift>
-  </Main>
+    </Main>
   );
 }
 

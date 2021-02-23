@@ -14,7 +14,7 @@ const ProgressBar = (props) => {
 
   const FillerStyles = styled.div`
     height: 100%;
-    width: ${completed/10*100}%;
+    width: ${completed/12*100}%;
     background-color: #001981;
     border-radius: inherit;
     text-align: right;
@@ -22,9 +22,9 @@ const ProgressBar = (props) => {
   `;
 
   return (
-      <ContainerStyles>
-        <FillerStyles/>
-      </ContainerStyles>
+    <ContainerStyles>
+      <FillerStyles/>
+    </ContainerStyles>
   );
 };
 
