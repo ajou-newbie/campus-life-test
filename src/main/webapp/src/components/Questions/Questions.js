@@ -5,6 +5,7 @@ import ProgressBar from './ProgressBar';
 import backImg from '../../image/Newbie_qu_background.png';
 import QuestionsMobile from '../../image/m_question_bg.png';
 import GlobalFonts from "../fonts"
+import { useMutex } from 'react-context-mutex';
 
 const QuestionsImg = styled.div`
     display: flex;
@@ -120,33 +121,34 @@ function Questions(props) {
     };
 
     // post users (questions, college)
-    const postUsers = async () => {
-        try {
-            setError(null);
-            const postResponse = await axios.post('http://localhost:8080/result', {
-                answers: questChoice,
-                college : props.location.state.selectedOption
-            });
+    const PostUsers = async () => {
+        const MutexRunner = useMutex();
+        const mutex = new MutexRunner("mutexLock");
 
-            window.location.href = postResponse.data.url;
-        } catch (e) {
-            setError(e);
-        }
-    }
+        mutex.run(async () => {
+            mutex.lock();
+            try {
+                const postResponse = await axios.post('http://localhost:8080/result', {
+                    answers: questChoice,
+                    college: props.location.state.selectedOption
+                });
+                window.location.href = postResponse.data.url;
+                mutex.unlock();
+            } catch (e) {
+                mutex.unlock();
+            }
+        })
+    };
 
     useEffect(() => {
         fetchQuestions();
-        return () => {
-            postUsers();
-        };
-
-    }, [questChoice, id])
+    }, []);
 
     if (!questions) return null;
 
-    if(id === 12) postUsers();
+    if(id === 12) PostUsers();
 
-    else if(id < 12) return (
+    return (
         <QuestionsImg>
             <GlobalFonts />
             <QuestionsContainer >
