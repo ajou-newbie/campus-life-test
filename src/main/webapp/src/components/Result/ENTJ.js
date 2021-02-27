@@ -258,7 +258,7 @@ const FlexContainer = styled.div`
 `;
 
 const Similar = styled.div`
-    background-image: url(${ISFJ});
+    background-image: url(${ISFP});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -269,7 +269,7 @@ const Similar = styled.div`
 `;
 
 const Different = styled.div`
-    background-image: url(${ISFP});
+    background-image: url(${ISFJ});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -456,11 +456,11 @@ function Result() {
                   <ResultName>과대표 답정너</ResultName>
                   <ResultImg>
                   </ResultImg>
-                  <ResultText>- 성실하고 부지런해서 어느 것 하나 빠짐없이 열심히 하는 당신!
-                      <br></br><br></br>- 그러나 이런 완벽한 모습 뒤에는 매일 나를 채찍질하는 나 자신이 있습니다.(지금도 채찍질 말자하고 채찍질 중...)
-                      <br></br><br></br>- 협동하는 것을 매우 싫어하는 학우분께도 조별과제라는 시련이 종종 찾아오는데요. 팀원과의 프로젝트 회의 중 이야기가 딴 데로 새기 시작하면 그 때부터 머리가 지끈지끈거려 옵니다.
-                      <br></br><br></br>- 결국 어느 순간 모든 것을 혼자 하고 있는 자신을 발견하게 되죠.
-                      <br></br><br></br>- 남에게 부탁하는 것보다는 혼자 하는게 제일 편하고 빠르다고 생각하는 조별과제 헌터의 모습입니다.
+                  <ResultText>- 태어나는 순간부터 이미 리더상! 넘치는 자신감과 모두를 사로잡는 카리스마!
+                      <br></br><br></br>- 빠른 결정력과 판단력 그리고 정확성을 바탕으로 완벽한 대학 생활을 계획할 수 있어요.
+                      <br></br><br></br>- 학생회, 동아리, 조별과제 등 단체 활동에서 스스로 리더를 자청하면 누구보다 그 역할을 잘 수행해낼 수 있어요.
+                      <br></br><br></br>- 만약 주위에 자신과 비슷한 동기들이 함께한다면 더 많은 일을 해낼 수 있을 거예요. 항상 성공한 리더 곁에는 좋은 동료들이 함께한다는 것을 잊지 마세요.
+                      <br></br><br></br>- 타고난 리더로서의 능력을 발휘하여 주변 동기들과 함께 주체적으로 과를 이끌어 나간다면 보람찬 대학 생활을 보낼 수 있을 거예요.
                   </ResultText>
               </MBTIResult>
               <SimiAndDiff>

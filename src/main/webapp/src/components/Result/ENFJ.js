@@ -457,11 +457,10 @@ function Result() {
                   <ResultName>너의 명예소방관</ResultName>
                   <ResultImg>
                   </ResultImg>
-                  <ResultText>- 성실하고 부지런해서 어느 것 하나 빠짐없이 열심히 하는 당신!
-                      <br></br><br></br>- 그러나 이런 완벽한 모습 뒤에는 매일 나를 채찍질하는 나 자신이 있습니다.(지금도 채찍질 말자하고 채찍질 중...)
-                      <br></br><br></br>- 협동하는 것을 매우 싫어하는 학우분께도 조별과제라는 시련이 종종 찾아오는데요. 팀원과의 프로젝트 회의 중 이야기가 딴 데로 새기 시작하면 그 때부터 머리가 지끈지끈거려 옵니다.
-                      <br></br><br></br>- 결국 어느 순간 모든 것을 혼자 하고 있는 자신을 발견하게 되죠.
-                      <br></br><br></br>- 남에게 부탁하는 것보다는 혼자 하는게 제일 편하고 빠르다고 생각하는 조별과제 헌터의 모습입니다.
+                  <ResultText>- 자신보다 동기, 선후배를 먼저 생각하는 당신은 늘 주변을 기쁘게 해주려 최선을 다합니다.
+                      <br></br><br></br>- 눈치가 빨라 상대의 동기나 의도를 정확하게 파악하지만, 그렇다보니 모든 일에 의미를 부여하려는 경항이 있습니다.
+                      <br></br><br></br>- 심지어는 수업 시간 교수님의 농담까지 받아적기도 하죠.
+                      <br></br><br></br>- 친구들과 어울리는 것을 좋아하지만, 때로는 혼밥, 혼영을 하며 고독을 즐기기도 하는 당신은 F4의 고독한 바이올리니스트, 지후 선배를 연상시키는군요!
                   </ResultText>
               </MBTIResult>
               <SimiAndDiff>
@@ -474,8 +473,8 @@ function Result() {
                       <Different/>
                   </FlexContainer>
                   <FlexContainer>
-                      <SimiAndDiffName>공부는 내일 부터</SimiAndDiffName>
-                      <SimiAndDiffName>족보 기부천사</SimiAndDiffName>
+                      <SimiAndDiffName>냉철한 반인반컴</SimiAndDiffName>
+                      <SimiAndDiffName>조별과제 헌터</SimiAndDiffName>
                   </FlexContainer>
               </SimiAndDiff>
               <Share>

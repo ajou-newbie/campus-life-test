@@ -476,7 +476,7 @@ function Result() {
                   </FlexContainer>
                   <FlexContainer>
                       <SimiAndDiffName>자체 휴강 마스터</SimiAndDiffName>
-                      <SimiAndDiffName>너의 명예 소방관</SimiAndDiffName>
+                      <SimiAndDiffName>너의 명예소방관</SimiAndDiffName>
                   </FlexContainer>
               </SimiAndDiff>
               <Share>

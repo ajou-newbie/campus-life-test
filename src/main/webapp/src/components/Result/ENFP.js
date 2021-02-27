@@ -457,11 +457,12 @@ function Result() {
                   <ResultName>자체휴강 마스터</ResultName>
                   <ResultImg>
                   </ResultImg>
-                  <ResultText>- 성실하고 부지런해서 어느 것 하나 빠짐없이 열심히 하는 당신!
-                      <br></br><br></br>- 그러나 이런 완벽한 모습 뒤에는 매일 나를 채찍질하는 나 자신이 있습니다.(지금도 채찍질 말자하고 채찍질 중...)
-                      <br></br><br></br>- 협동하는 것을 매우 싫어하는 학우분께도 조별과제라는 시련이 종종 찾아오는데요. 팀원과의 프로젝트 회의 중 이야기가 딴 데로 새기 시작하면 그 때부터 머리가 지끈지끈거려 옵니다.
-                      <br></br><br></br>- 결국 어느 순간 모든 것을 혼자 하고 있는 자신을 발견하게 되죠.
-                      <br></br><br></br>- 남에게 부탁하는 것보다는 혼자 하는게 제일 편하고 빠르다고 생각하는 조별과제 헌터의 모습입니다.
+                  <ResultText>- 밖에 핀 벚꽃이 예쁘니까, 날씨가 포근하니까, 오늘은 기분이 안 좋으니까 휴강! 아무튼 휴강!
+                      <br></br><br></br>- 시험걱정은 나중에 해요. 어차피 벼락치기 잘 하거든요!
+                      <br></br><br></br>- 출튀하고 친구들과 놀기까지 한다면 금상첨화! 공부할 시간에 새로운 친구를 사귈 수 있다면 더 즐거울 것 같아요.
+                      <br></br><br></br>- 특히 이전에 해보지 않았던 새로운 무언가에 도전하는 걸 좋아해요. 하지만 쉽게 일을 벌리는 만큼 금방 질려해서 일이 흐지부지 되는 경우가 많아요
+                      <br></br><br></br>- 쉴 새 없이 말하지만, 그만큼 친구들의 이야기도 큰 리액션으로 잘 들어주기 때문에 친구들이 좋아해줘요. 당신이 없으면 허전할걸요?
+                      <br></br><br></br>- 그래도 결석 너무 많이 하면 F니까 조심해요! 맘이 에푸니까..
                   </ResultText>
               </MBTIResult>
               <SimiAndDiff>
@@ -474,8 +475,8 @@ function Result() {
                       <Different/>
                   </FlexContainer>
                   <FlexContainer>
-                      <SimiAndDiffName>족보 기부천사</SimiAndDiffName>
-                      <SimiAndDiffName>공부는 내일 부터</SimiAndDiffName>
+                      <SimiAndDiffName>조별과제 헌터</SimiAndDiffName>
+                      <SimiAndDiffName>냉철한 반인반컴</SimiAndDiffName>
                   </FlexContainer>
               </SimiAndDiff>
               <Share>
