@@ -10,8 +10,8 @@ import FixImg from '../../image/result_bg_fix.png';
 import FixImgw384 from '../../image/result_bg_fix_w384.png'
 import GlobalFonts from "../fonts";
 import ISTJ from '../../image/MBTI_ISTJ.png';
+import ENFP from '../../image/MBTI_ENFP.png';
 import ENFJ from '../../image/MBTI_ENFJ.png';
-import ISFP from '../../image/MBTI_ISFP.png';
 import kakao from '../../image/kakaotalk_2x.png'
 import url from '../../image/url_2x.png'
 
@@ -258,7 +258,7 @@ const FlexContainer = styled.div`
 `;
 
 const Similar = styled.div`
-    background-image: url(${ENFJ});
+    background-image: url(${ENFP});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -269,7 +269,7 @@ const Similar = styled.div`
 `;
 
 const Different = styled.div`
-    background-image: url(${ISFP});
+    background-image: url(${ENFJ});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -475,8 +475,8 @@ function Result() {
                       <Different/>
                   </FlexContainer>
                   <FlexContainer>
+                      <SimiAndDiffName>자체 휴강 마스터</SimiAndDiffName>
                       <SimiAndDiffName>너의 명예 소방관</SimiAndDiffName>
-                      <SimiAndDiffName>공부는 내일 부터</SimiAndDiffName>
                   </FlexContainer>
               </SimiAndDiff>
               <Share>
