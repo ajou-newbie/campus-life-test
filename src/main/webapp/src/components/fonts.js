@@ -37,4 +37,16 @@ export default createGlobalStyle`
         src: local("ELAND"),
         url(${Eland}) format('truetype');
     }
+
+    @font-face {
+        font-family: "Recipekorea";
+        src: local("Recipekorea"),
+        url(${Eland}) format('truetype');
+    }
+
+    @font-face {
+        font-family: "TheFacaeShop";
+        src: local("TheFacaeShop"),
+        url(${Eland}) format('truetype');
+    }
 `;

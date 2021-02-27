@@ -1,4 +1,4 @@
-import React, {useState} from 'react'; 
+import React, {useState} from 'react';
 import ReactLoading from 'react-loading';
 import styled from 'styled-components';
 import backImg from '../../image/Newbie_qu_background.png';
@@ -34,22 +34,22 @@ const LoadText = styled.h1`
 const message = ['성적 공고<br>기다리는중...', '여행 계획<br>세우는중...', '아르바이트<br>찾는중...'];
 
 function Loader({type, color}) {
-    const [id, setId] = useState(0);
-    const msgToHtml = () => {
-        setInterval(() => {
-            setId(id +1);
-        }, 1000)
-        return {__html: message[id]};
-    }
-    return(
-        <LoadImg >
-            <GlobalFonts/>
-            <LoadContainer>
-                <ReactLoading type={type} color={color} height={150} width={150} />
-                <LoadText dangerouslySetInnerHTML={msgToHtml()}></LoadText>
-            </LoadContainer>
-        </LoadImg>
-    )
+  const [id, setId] = useState(0);
+  const msgToHtml = () => {
+    setInterval(() => {
+      setId(id +1);
+    }, 1000)
+    return {__html: message[id]};
+  }
+  return(
+    <LoadImg >
+      <GlobalFonts/>
+      <LoadContainer>
+        <ReactLoading type={type} color={color} height={150} width={150} />
+        <LoadText dangerouslySetInnerHTML={msgToHtml()}></LoadText>
+      </LoadContainer>
+    </LoadImg>
+  )
 };
 
 export default Loader;

@@ -2,13 +2,16 @@ import React, { useState, createContext } from "react";
 import Downshift from "downshift";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import collegeBackImg from '../../image/college_bg.png';
-import collegeMobileBackImg from '../../image/m_college_bg.png';
+import MobileBack from '../../image/m_main_bg.png';
+import MobileBackw384 from '../../image/m_main_bg_w384.png';
+import MobileBackh740 from '../../image/m_main_bg_h740.png';
+import MobileBackw1280 from '../../image/main_bg_w1280.png';
+import MobileBackw1024 from '../../image/main_bg_w1024.png';
 import triangle from '../../image/mbti_tri.png'
 import GlobalFonts from "../fonts"
 
 const Main = styled.div`
-  background-image: url(${collegeBackImg});
+  background-image: url(${MobileBackw1280});
   width: 100%;
   height: 100vh;
   background-size: 100% 100%;
@@ -19,15 +22,177 @@ const Main = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 500px) {
-        background-image: url(${collegeMobileBackImg});
+        background-image: url(${MobileBack});
+  }
+
+  @media only screen and (max-width: 384px) {
+        background-image: url(${MobileBackw384});
+  }
+
+    @media only screen and (min-height: 740px) {
+        background-image: url(${MobileBackh740});
+  }
+
+    @media only screen and (min-width: 1024px) {
+        background-image: url(${MobileBackw1024});
+  }
+
+    @media only screen and (min-width: 1280px) {
+        background-image: url(${MobileBackw1280});
+  }
+`;
+
+const TextContainer = styled.div`
+    width: 100%;
+    padding: 220px 0px 0px 0px;
+
+    @media (device-width: 360px) { 
+      margin-top: 50px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+      padding: 160px 0px 0px 0px;
+    }
+
+    @media (device-width: 360px) and (device-height: 640px) { 
+      padding: 140px 0px 0px 0px;
+    }
+
+    @media (device-width: 428px) { 
+      padding: 340px 0px 0px 0px;
+    }
+
+    @media (device-width: 390px) { 
+      padding: 300px 0px 0px 0px;
+    }
+
+    @media (device-width: 414px) { 
+      padding: 230px 0px 0px 0px;
+    }
+
+    @media (device-width: 375px) { 
+      padding: 210px 0px 0px 0px;
+    }
+
+    @media (device-width: 375px) and (min-height: 812px) { 
+      padding: 300px 0px 0px 0px;
+    }
+
+    @media (device-width: 414px) and (min-height: 896px) { 
+      padding: 330px 0px 0px 0px;
+    }
+
+    @media (device-width: 1280px) { 
+      padding: 250px 0px 0px 0px;
+    }
+
+    @media (device-width: 1024px) { 
+      padding: 250px 0px 0px 0px;
+    }
+
+    @media (device-width: 1112px) { 
+      padding: 265px 0px 0px 0px;
+    }
+
+    @media (device-width: 1194px) { 
+      padding: 255px 0px 0px 0px;
+    }
+
+    @media (device-width: 1366px) { 
+      padding: 355px 0px 0px 0px;
+    }
+
+    @media (device-width: 1366px) and (device-height: 768px) { 
+        padding: 240px 0px 0px 0px;
+    }
+
+`;
+
+const FlexContainer = styled.div`
+    display: flex;
+    text-align: center;
+    justify-content: center;
+`;
+
+const WhiteText = styled.div`
+    font-family: 'SANDOLL';
+    font-size: 60px;
+    color: white;
+    text-shadow: 4px 4px #29879599;
+    text-align: center;
+
+    @media (device-width: 360px) { 
+      font-size: 50px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+      font-size: 50px;
+    }
+
+    @media (device-width: 375px) { 
+      font-size: 55px;
+    }
+
+`;
+
+const YellowText = styled.div`
+    font-family: 'SANDOLL';
+    font-size: 60px;
+    color: #FFFF00;
+    text-shadow: 4px 4px #29879599;
+
+    @media (device-width: 360px) { 
+      font-size: 50px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+      font-size: 50px;
+    }
+
+    @media (device-width: 375px) { 
+      font-size: 55px;
     }
 `;
 
+const FooterText = styled.div`
+    font-family: 'KoPub Dotum';
+    font-size: 15px;
+    color: white;
+    padding: 30px 0px 0px 0px;
+    text-align: center;
+
+    @media (device-width: 360px) { 
+      font-size: 15px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+      font-size: 13px;
+    }
+
+    @media (device-width: 360px) and (device-height: 640px) { 
+      font-size: 13px;
+    }
+`;
+
+
 const Input = styled.div`
-  margin-top: 60vh;
+  margin-top: 3vh;
   display: flex;
+  justify-content: center;
   width: 350px;
   height: 50px;
+
+  @media (device-width: 360px) { 
+    width: 290px;
+  }
+
+  @media (device-width: 384px) and (device-height: 538px) { 
+    width: 250px;
+  }
+
+  @media (device-width: 375px) { 
+    width: 300px;
+  }
 
   input {
     border: none;
@@ -43,7 +208,7 @@ const Input = styled.div`
       text-align: center;
       padding: 5px;
       font-size: 30px;
-      color: #64939B;
+      color: #1C515A;
     }
   }
 
@@ -79,22 +244,19 @@ const Menu = styled.ul`
   margin: 0px;
   padding: 0px;
 
-  /* &::-webkit-scrollbar {
-    width: 15px;
+  @media (device-width: 360px) { 
+    width: 290px;
   }
-  &::-webkit-scrollbar-thumb {
-    background-color: #1C515A;
-    border-radius: 200px;
-    height: 1px;
+
+  @media (device-width: 384px) and (device-height: 538px) { 
+    width: 250px;
+    height: 100px;
   }
-  &::-webkit-scrollbar-track{
-    width: 1px;
-    height: 1px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    background-color: #1C515A;
-    background-clip: content-box;
-  } */
+
+  @media (device-width: 375px) { 
+    width: 300px;
+  }
+
 `;
 
 const Items = styled.li`
@@ -116,7 +278,6 @@ const Items = styled.li`
     display: block;
     justify-content: center;
     width: 250px;
-    /* border-bottom: 0.25px solid #929292; */ // 밑줄
     margin: 3px auto;
   }
 
@@ -147,14 +308,13 @@ const DecisionBtn = styled.button`
   &:hover {
     background-color: rgb(81,138,247);
   }
+
 `;
 
 const items = ['선택안함', '인문계열', '교육계열', '공학계열', '사회계열', '자연계열', '의약계열', '예체능계열']
 
 function College() {
-  const [selectedOption, setSelectedOption] = useState({
-    college: ''
-  });
+  const [selectedOption, setSelectedOption] = useState('선택안함');
 
   const onSelect = (selection) => {
     const selectCollege = selection
@@ -176,10 +336,17 @@ function College() {
           selectedItem,
         }) => (
           <div>
+            <TextContainer>
+              <FlexContainer>
+                <WhiteText>당신의&nbsp;</WhiteText><YellowText>전공</YellowText><WhiteText>을</WhiteText>
+              </FlexContainer>
+              <WhiteText>알려주세요!</WhiteText>
+              <FooterText>* 가고 싶거나 관심있는 전공을 고르셔도 됩니다:)</FooterText>
+            </TextContainer>
             <Input>
               <input
                 readOnly={true}
-                placeholder="전공계열 선택"
+                placeholder="선택안함"
                 {...getInputProps()}
               />
               <button {...getToggleButtonProps()}></button>

@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import axios from "axios";
 import ProgressBar from './ProgressBar';
-import backImg from '../../image/Newbie_qu_background.png';
-import QuestionsMobile from '../../image/m_question_bg.png';
+import MobileBack from '../../image/m_question_bg.png';
+import MobileBackw384 from '../../image/m_question_bg_w384.png';
+import MobileBackh740 from '../../image/m_question_bg_h740.png';
+import MobileBackw1280 from '../../image/question_bg_w1280.png';
+import MobileBackw1024 from '../../image/m_question_bg_w1024.png';
 import GlobalFonts from "../fonts"
 import { useMutex } from 'react-context-mutex';
 
 const QuestionsImg = styled.div`
     display: flex;
-    background-image: url(${backImg});
+    background-image: url(${MobileBackw1280});
     width: 100%;
     min-height: 100vh;
     background-size: 100% 100%;
@@ -18,8 +21,24 @@ const QuestionsImg = styled.div`
     align-items: center;
 
     @media screen and (max-width: 500px) {
-        background-image: url(${QuestionsMobile});
+        background-image: url(${MobileBack});
     }
+
+    @media only screen and (max-width: 384px) {
+        background-image: url(${MobileBackw384});
+  }
+
+    @media only screen and (min-height: 740px) {
+        background-image: url(${MobileBackh740});
+  }
+
+    @media only screen and (min-width: 1024px) {
+        background-image: url(${MobileBackw1024});
+  }
+
+    @media only screen and (min-width: 1280px) {
+        background-image: url(${MobileBackw1280});
+  }
 `;
 
 const QuestionsContainer = styled.div`
@@ -28,12 +47,28 @@ const QuestionsContainer = styled.div`
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    
-    @media screen and (max-width: 30%) {
-        height: 80%;
-        object-fit: cover;    
+
+    @media (device-width: 360px) { //S10, S8
+        width: 300px;
     }
+
+    @media (device-width: 384px) and (device-height: 538px) { //Fold
+        width: 300px;
+    }    
+
+    @media (device-width: 390px) { //iPhone 12, 12Pro
+        width: 350px;
+    }
+
+    @media (device-width: 414px) { //iPhone 6,7,8 Plus
+        width: 360px;
+    }
+
+    @media (device-width: 375px) { //iPhone 6,7,8 SE
+        width: 330px;
+    }
+
+
 `;
 
 const QuestionWrapper = styled.div`
@@ -47,6 +82,13 @@ const QuestionWrapper = styled.div`
     font-family: 'BMeU';
     text-align: center;
     text-shadow: 1px 1px gray;
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    @media (device-width: 384px) and (device-height: 538px) { //Fold
+        margin: 10px 0px 15px 0px;
+        font-size: 25px;
+    }  
 `;
 
 const Text1Container = styled.div`
@@ -55,6 +97,10 @@ const Text1Container = styled.div`
     font-size: 20px;
     margin: 5px;
     color: #001981;
+
+    @media (device-width: 384px) and (device-height: 538px) { //Fold
+        font-size: 15px;
+    }  
 `;
 
 const Text2Container = styled.div`
@@ -63,25 +109,37 @@ const Text2Container = styled.div`
     font-size: 20px;
     margin-top: -25px;
     color: #001981;
+
+    @media (device-width: 384px) and (device-height: 538px) { //Fold
+        font-size: 15px;
+    }  
 `;
 
 const ButtonOptions = styled.button`
     text-align: left;
     color: #343434;
-    width: 400px;
+    width: 100%;
     height: 10vh;
-    border-radius: 15px;
+    border-radius: 30px;
     background-color: white;
     padding: 0px 20px 0px 20px;
     border: 2px solid white;
     font-size: 17px;
     font-family: 'BMeU';
     margin: 0px 0px 20px 0px;
+    word-wrap: break-word;
+    word-break: keep-all;
+    
     cursor: pointer;
 
     &:focus {
         outline:none;
     }
+
+    @media (device-width: 384px) and (device-height: 538px) { //Fold
+        padding: 0px 20px 0px 20px;
+        height: 12vh;
+    }  
 `;
 
 function blueBackground(e) {
@@ -95,22 +153,23 @@ function whiteBackground(e) {
 }
 
 function Questions(props) {
-    const [questions, setQuestions] = useState(null); // test data
-    const [id, setId] = useState(0); // id
+    const [questions, setQuestions] = useState(null);
+    const [id, setId] = useState(0);
     const [questChoice, setQuestChoice] = useState([0]);
     const [error, setError] = useState(false);
 
-    // questions 선택 항목 저장
+    useEffect(() => {
+        fetchQuestions();
+    }, [])
+
     const onQuestions = (index) => {
         const choiceQuestion = index + 1;
         setQuestChoice([...questChoice,choiceQuestion]);
         setId(id + 1);
     };
 
-    // get questions
     const fetchQuestions = async () => {
         try {
-            // 요청이 시작 할 때에는 초기화
             setError(null);
             setQuestions(null);
             const getResponse = await axios.get('http://localhost:8080/questions');
@@ -120,7 +179,7 @@ function Questions(props) {
         }
     };
 
-    // post users (questions, college)
+
     const PostUsers = async () => {
         const MutexRunner = useMutex();
         const mutex = new MutexRunner("mutexLock");
@@ -140,28 +199,28 @@ function Questions(props) {
         })
     };
 
-    useEffect(() => {
-        fetchQuestions();
-    }, []);
-
     if (!questions) return null;
 
-    if(id === 12) PostUsers();
+    if(id === 12) {
+        PostUsers();
+    }
 
-    return (
-        <QuestionsImg>
-            <GlobalFonts />
-            <QuestionsContainer >
-                <ProgressBar bgcolor="#14276b" completed={id+1} />
-                <Text1Container>개강</Text1Container>
-                <Text2Container>종강♥︎</Text2Container>
-                <QuestionWrapper >{questions[id].questionContent}</QuestionWrapper>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(0)} >{questions[id].choices[0].choiceContent}</ButtonOptions>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(1)} >{questions[id].choices[1].choiceContent}</ButtonOptions>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(2)} >{questions[id].choices[2].choiceContent}</ButtonOptions>
-                <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(3)} >{questions[id].choices[3].choiceContent}</ButtonOptions>
-            </QuestionsContainer>
-        </QuestionsImg>
+    else if(id < 12) return (
+      <QuestionsImg>
+          <GlobalFonts />
+          <QuestionsContainer >
+              <ProgressBar bgcolor="#14276b" completed={id+1} />
+              <Text1Container>개강</Text1Container>
+              <Text2Container>종강♥︎</Text2Container>
+              <QuestionWrapper >{questions[id].questionContent}</QuestionWrapper>
+              <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(0)} >{questions[id].choices[0].choiceContent}</ButtonOptions>
+              <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(1)} >{questions[id].choices[1].choiceContent}</ButtonOptions>
+              <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(2)} >{questions[id].choices[2].choiceContent}</ButtonOptions>
+              <ButtonOptions onMouseEnter={blueBackground} onMouseLeave={whiteBackground} onClick={() => onQuestions(3)} >{questions[id].choices[3].choiceContent}</ButtonOptions>
+          </QuestionsContainer>
+      </QuestionsImg>
     )
+
+    return null;
 }
 export default Questions;
