@@ -56,10 +56,10 @@ public class ChoiceRepositoryCustom {
 
 		Question question5 = questionRepository.findById(5);
 		List<Choice> choices5 = new ArrayList<>();
-		choices5.add(new Choice("자녀계획을 세워본다."));
-		choices5.add(new Choice("종강하는 그 날 까지 이 수업 있는 날은 최대한 꾸미고 간다."));
-		choices5.add(new Choice("누가 자리를 잘못 찾았나?"));
 		choices5.add(new Choice("(이미 마셨음)"));
+		choices5.add(new Choice("누가 자리를 잘못 찾았나?"));
+		choices5.add(new Choice("종강하는 그 날 까지 이 수업 있는 날은 최대한 꾸미고 간다."));
+		choices5.add(new Choice("자녀계획을 세워본다."));
 		this.saveAll(choices5, question5);
 
 		Question question6 = questionRepository.findById(6);
@@ -80,10 +80,10 @@ public class ChoiceRepositoryCustom {
 
 		Question question8 = questionRepository.findById(8);
 		List<Choice> choices8 = new ArrayList<>();
-		choices8.add(new Choice("내가 잘못 한게 있나? 카톡을 모두 훑어 본다."));
-		choices8.add(new Choice("쿨한척 하고 싶지만 계속 신경쓰여 답장을 기다린다."));
-		choices8.add(new Choice("많이 바쁜가보다 하고 그냥 넘어간다."));
 		choices8.add(new Choice("읽씹인지도 몰랐다."));
+		choices8.add(new Choice("많이 바쁜가보다 하고 그냥 넘어간다."));
+		choices8.add(new Choice("쿨한척 하고 싶지만 계속 신경쓰여 답장을 기다린다."));
+		choices8.add(new Choice("내가 잘못 한게 있나? 카톡을 모두 훑어 본다."));
 		this.saveAll(choices8, question8);
 
 		Question question9 = questionRepository.findById(9);
@@ -104,10 +104,10 @@ public class ChoiceRepositoryCustom {
 
 		Question question11 = questionRepository.findById(11);
 		List<Choice> choices11 = new ArrayList<>();
-		choices11.add(new Choice("거의 아이디어 무한리필집. 상상 속에서만 존재했던 아이디어를 마구 서술한다."));
-		choices11.add(new Choice("독창적인 아이디어를 바탕으로 내 생각을 서술한다."));
-		choices11.add(new Choice("최근 트렌트를 반영한 창업 아이템을 바탕으로 아이디어를 서술한다."));
 		choices11.add(new Choice("자금, 시간, 가능성 등 현실적인 부분을 중점으로 창업 아이디어를 서술한다."));
+		choices11.add(new Choice("최근 트렌트를 반영한 창업 아이템을 바탕으로 아이디어를 서술한다."));
+		choices11.add(new Choice("독창적인 아이디어를 바탕으로 내 생각을 서술한다."));
+		choices11.add(new Choice("거의 아이디어 무한리필집. 상상 속에서만 존재했던 아이디어를 마구 서술한다."));
 		this.saveAll(choices11, question11);
 
 		Question question12 = questionRepository.findById(12);
