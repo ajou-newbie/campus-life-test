@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 import Loader from './Loader';
 import styled from 'styled-components';
 import ResultBackImg from '../../image/result_bg_gradiant.png';
-import MobileBackImg from '../../image/m_result_bg_gradiant.png';
 import MobileBackh538 from '../../image/result_bg_w538.png';
 import FixImg from '../../image/result_bg_fix.png';
-import FixImgw384 from '../../image/result_bg_fix_w384.png'
+import FixImgw384 from '../../image/result_bg_fix_w384.png';
+import FixImgw500 from '../../image/result_bg_fix_w500.png';
+import FixImgw1024 from '../../image/result_bg_fix_w1024.png';
 import GlobalFonts from "../fonts";
 import ENTP from '../../image/MBTI_ENTP.png';
 import ISFJ from '../../image/MBTI_ISFJ.png';
 import ISFP from '../../image/MBTI_ISFP.png';
-import kakao from '../../image/kakaotalk_2x.png'
 import url from '../../image/url_2x.png'
 
 const ResultImage = styled.div`
@@ -47,12 +49,17 @@ const Footer = styled.div`
 
     @media screen and (max-width: 500px) {
         position: fixed;
-        /* background-image: url(${MobileBackImg}); */
+        background-image: url(${FixImgw500});
     }
 
     @media only screen and (max-width: 384px) {
         position: fixed;
         background-image: url(${FixImgw384});
+    }
+
+    @media only screen and (min-width: 1024px) {
+        position: fixed;
+        background-image: url(${FixImgw1024});
     }
 `;
 
@@ -80,11 +87,11 @@ const ResultContainer = styled.div`
     }
 
     @media (device-width: 414px) { 
-        width: 400px;
+        width: 390px;
     }
 
     @media (device-width: 375px) { 
-        width: 360px;
+        width: 350px;
     }
 
 `;
@@ -105,8 +112,7 @@ const MBTIResult = styled.div`
     border-radius: 35px;
     margin: 0px 10px 20px auto;
     padding: 53px 29px 53px 29px;
-    box-shadow: 1px 1px 1px 1px gray;
-
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
     @media (device-width: 360px) { 
         height: 55%;
     }
@@ -127,12 +133,48 @@ const ResultBlack = styled.div`
     font-family: 'Recipekorea';
     font-size: 35px;
     color: #343434;
+
+    @media (device-width: 360px) { 
+        font-size: 25px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        font-size: 25px;
+    }
+
+    @media (device-width: 428px) {
+        font-size: 30px;
+    }
+
+    @media (device-width: 390px) { 
+        font-size: 30px;
+    }
+
+    @media (device-width: 414px) {
+        font-size: 30px;
+    }
+
+    @media (device-width: 375px) {
+        font-size: 25px;
+    }
 `;
 
 const ResultName = styled.div`
     font-family: 'Recipekorea';
     font-size: 50px;
     color: #3369CF;
+
+    @media (device-width: 360px) { 
+        font-size: 40px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        font-size: 35px;
+    }
+
+    @media (device-width: 375px) { 
+        font-size: 45px;
+    }
 `;
 
 const ResultImg = styled.div`
@@ -162,6 +204,7 @@ const ResultText = styled.div`
     word-wrap: break-word;
     word-break: keep-all;
     text-align: justify;
+    word-spacing: -1px;
     font-weight: bold;
 `;
 
@@ -172,7 +215,7 @@ const SimiAndDiff = styled.div`
     border-radius: 35px;
     margin: 0px 0px 20px auto;
     padding: 50px;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
     text-align: center;
 
     @media (device-width: 360px) { 
@@ -181,23 +224,33 @@ const SimiAndDiff = styled.div`
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
-        height: 300px;
-        padding: 15px 5px 0px 5px;
+        height: 330px;
+        padding: 25px 10px 20px 10px;
     }
 
     @media (device-width: 390px) { 
         height: 350px;
-        padding: 20px 5px 0px 5px;
+        padding: 30px 10px 0px 10px;
     }
 
     @media (device-width: 414px) { 
         height: 350px;
-        padding: 20px 5px 0px 5px;
+        padding: 30px 10px 0px 10px;
     }
 
     @media (device-width: 375px) and (min-height: 812px) { 
-        height: 350px;
-        padding: 20px 5px 0px 5px;
+        height: 330px;
+        padding: 20px 10px 0px 10px;
+    }
+
+    @media (device-width: 428px) and (min-height: 926px) { 
+        height: 330px;
+        padding: 20px 10px 0px 10px;
+    }
+
+    @media (device-width: 375px) and (min-height: 667px) { 
+        height: 330px;
+        padding: 20px 10px 0px 10px;
     }
 
     
@@ -218,6 +271,7 @@ const SimiAndDiffText = styled.div`
 
     @media (device-width: 384px) and (device-height: 538px) {
         font-size: 15px;
+        margin: 0;
     }
 
     @media (device-width: 428px) { 
@@ -278,16 +332,31 @@ const Different = styled.div`
 
 `;
 
-const Share = styled.div`
+const Share = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 10%;
     background-color: white;
     border-radius: 35px;
     margin: 0px 0px 20px auto;
-    padding: 20px;
-    box-shadow: 1px 1px 1px 1px gray;
+    padding: 40px;
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
+    transform: translate(0%, 0%);
+    border: none;
+
+    &:hover {
+        background-color: rgb(81,138,247);
+    }
+    &:active {
+        background-color: rgb(81,138,247);
+    }
+    &:focus {
+        outline:none;
+    }
 
     @media (device-width: 360px) { 
+        padding: 20px;
         height: 7%;
     }
 
@@ -297,19 +366,46 @@ const Share = styled.div`
     }
 
     @media (device-width: 428px) { 
-        height: 5%;
-        padding: 10px 0px 10px 0px;
+        height: 7%;
+        padding: 20px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        padding: 25px;
+        height: 7%;
+    }
+
+    @media (device-width: 360px) and (device-height: 640px) { 
+        padding: 25px;
+        height: 7%;
+    }
+
+    @media (device-width: 390px) { 
+        padding: 25px;
+        height: 7%;
+    }
+
+    @media (device-width: 414px) {
+        padding: 30px;
+        height: 7%;
+    }
+
+    @media (device-width: 375px) {
+        padding: 30px;
+        height: 7%;
     }
 `;
 
 const ShareText = styled.div`
     width: 100%;
+    height: 100%;
     font-family: 'BMeU';
-    font-size: 25px;
+    font-size: 30px;
     color: #343434;
     word-wrap: break-word;
     word-break: keep-all;
-    margin-bottom: 10px;
+    text-align: center;
+    margin: 0 auto;
 
     @media (device-width: 360px) { 
         font-size: 20px;
@@ -318,31 +414,26 @@ const ShareText = styled.div`
     @media (device-width: 384px) and (device-height: 538px) { 
         font-size: 20px;
     }
-`;
-
-const Kakao = styled.div`
-    background-image: url(${kakao});
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 50%;
-    height: 10vh;
-
-    @media (device-width: 360px) { 
-        width: 20%;
-        height: 5vh;
-    }
 
     @media (device-width: 360px) and (device-height: 640px) { 
-        width: 25%;
-        height: 50px;
+        font-size: 19px;
     }
 
     @media (device-width: 428px) { 
-        width: 30%;
-        height: 70px;
+        font-size: 25px;
     }
 
+    @media (device-width: 390px) { 
+        font-size: 23px;
+    }
+
+    @media (device-width: 414px) {
+        font-size: 25px;
+    }
+
+    @media (device-width: 375px) {
+        font-size: 23px;
+    }
 `;
 
 const Url = styled.div`
@@ -350,24 +441,33 @@ const Url = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 50%;
-    height: 10vh;
+    width: 20%;
+    height: 5vh;
 
     @media (device-width: 360px) { 
-        width: 20%;
+        width: 10%;
         height: 5vh;
     }
 
-    @media (device-width: 360px) and (device-height: 640px) {
-        width: 25%;
-        height: 50px;
+    @media (device-width: 360px) and (device-height: 640px) { 
+        width: 13%;
     }
 
-    @media (device-width: 428px) { 
-        width: 30%;
-        height: 70px;
+    @media (device-width: 390px) { 
+        width: 10%;
     }
 
+    @media (device-width: 375px) {
+        width: 10%;
+    }
+
+    @media (device-width: 414px) {
+        width: 10%;
+    }
+
+    @media (device-width: 414px) and (min-height: 896px) {
+        width: 10%;
+    }
 `;
 
 const GoToStartbtn = styled.button`
@@ -382,8 +482,8 @@ const GoToStartbtn = styled.button`
     font-size: 35px;
     color: #3369CF;
     cursor: pointer;
-    box-shadow: 1px 1px 1px 1px gray;
-    
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
+
     &:hover {
         background-color: rgb(81,138,247);
     }
@@ -401,25 +501,25 @@ const GoToStartbtn = styled.button`
     @media (device-width: 384px) and (device-height: 538px) { 
         height: 70px;
     }
-`;
 
-const ContactUS = styled.button`
-    border: none;
-    border-radius: 35px;
-    width: 100%;
-    height: 100px;
-    margin: 0;
-    transform: translate(0%, 0%);
-    margin: 0px 10px 10px auto;
-    font-family: 'BMeU';
-    font-size: 35px;
-    color: #3369CF;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px 1px gray;
+    @media (device-width: 428px) { 
+        height: 70px;
+    }
+
+    @media (device-width: 390px) { 
+        height: 80px;
+    }
+
+    @media (device-width: 414px) {
+        height: 85px;
+    }
+
+    @media (device-width: 375px) {
+        height: 85px;
+    }
 `;
 
 function Result() {
-    const [url, setUrl] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const location = useLocation();
@@ -437,12 +537,19 @@ function Result() {
         }, 3000);
     };
 
+    const Toast = () => {
+        ToastsStore.success("복사에 성공했습니다!");
+    }
+
     useEffect(() => {
         fetchUsers();
     }, [])
 
     if (loading) return <Loader type="bubbles" color="white" ></Loader>
     if (error) return <div>에러가 발생했습니다.</div>
+
+    const url = window.location.href;
+
 
     return(
       <ResultImage>
@@ -477,13 +584,13 @@ function Result() {
                       <SimiAndDiffName>공부는 내일 부터</SimiAndDiffName>
                   </FlexContainer>
               </SimiAndDiff>
-              <Share>
-                  <SimiAndDiffText>나의 캠퍼스 라이프 공유하기</SimiAndDiffText>
-                  <FlexContainer>
-                      <Kakao></Kakao>
-                      <Url></Url>
-                  </FlexContainer>
-              </Share>
+              <CopyToClipboard text={url}>
+                <Share>  
+                    <Url></Url>
+                    <ShareText onClick={() => Toast()}>나의 캠퍼스 라이프 공유하기</ShareText>
+                    <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.BOTTOM_CENTER} />
+                </Share>
+              </CopyToClipboard>
               <Link to = "/" >
                   <GoToStartbtn>테스트 다시하기</GoToStartbtn>
               </Link>

@@ -19,19 +19,19 @@ public class CampusLifeTestController {
 	private final QuestionService questionService;
 	private final ResultService resultService;
 
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin(origins = "http://localhost:80")
 	@GetMapping("/index")
 	public Long getUserCount() {
 		return userCountService.count();
 	}
 
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin(origins = "http://localhost:80")
 	@GetMapping("/questions")
 	public List<QuestionResponseDto> getQuestionData() {
 		return questionService.findAll();
 	}
 
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin(origins = "http://localhost:80")
 	@PostMapping("/result")
 	public ResultResponseDto openResult(@RequestBody @Valid ResultRequestDto resultRequestDto) {
 		return resultService.getResult(resultRequestDto);
