@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './components/Main/Main';
+import Contribute from './components/Main/Contribute';
 import College from './components/College/College';
 import Questions from './components/Questions/Questions';
 import ISTJ from './components/Result/ISTJ';
@@ -15,21 +16,20 @@ import INFJ from './components/Result/INFJ';
 import INFP from './components/Result/INFP';
 import ESTP from './components/Result/ESTP';
 import ESFP from './components/Result/ESFP';
+import ESFJ from './components/Result/ESFJ';
 import ISTP from './components/Result/ISTP';
 import ISFP from './components/Result/ISFP';
-
-
-
-import { BrowserRouter as Router ,Route,Switch} from "react-router-dom";
+import { Route,Switch } from "react-router-dom";
 
 function App() {
   return (
       <Switch >
         <Route path="/" component={Main} exact/>
+        <Route path="/contribute" component={Contribute} exact/>
         <Route path="/college" component={College} />
         <Route path="/questions" component={Questions} />
         <Route path="/result/0000" component={INFP} exact/>
-        <Route path="/result/0001" component={INFJ} exact/>
+        <Route path="/result/0001" component={INFJ} exact/> 
         <Route path="/result/0010" component={INTP} exact/>
         <Route path="/result/0011" component={INTJ} exact/>
         <Route path="/result/0100" component={ISFP} exact/>
@@ -41,12 +41,9 @@ function App() {
         <Route path="/result/1010" component={ENTP} exact/>
         <Route path="/result/1011" component={ENTJ} exact/>
         <Route path="/result/1100" component={ESFP} exact/>
-        {/* ESFJ */}
-        <Route path="/result/1101" component={College} exact/>
+        <Route path="/result/1101" component={ESFJ} exact/>
         <Route path="/result/1110" component={ESTP} exact/>
         <Route path="/result/1111" component={ESTJ} exact/>
-
-
       </Switch>
   );
 }

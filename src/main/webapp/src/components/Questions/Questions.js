@@ -7,7 +7,7 @@ import MobileBackw384 from '../../image/m_question_bg_w384.png';
 import MobileBackh740 from '../../image/m_question_bg_h740.png';
 import MobileBackw1280 from '../../image/question_bg_w1280.png';
 import MobileBackw1024 from '../../image/m_question_bg_w1024.png';
-import GlobalFonts from "../fonts"
+import GlobalFonts from "../fonts";
 import { useMutex } from 'react-context-mutex';
 
 const QuestionsImg = styled.div`
@@ -48,23 +48,23 @@ const QuestionsContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         width: 300px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         width: 300px;
     }    
 
-    @media (device-width: 390px) { //iPhone 12, 12Pro
+    @media (device-width: 390px) {
         width: 350px;
     }
 
-    @media (device-width: 414px) { //iPhone 6,7,8 Plus
+    @media (device-width: 414px) {
         width: 360px;
     }
 
-    @media (device-width: 375px) { //iPhone 6,7,8 SE
+    @media (device-width: 375px) { 
         width: 330px;
     }
 
@@ -85,10 +85,13 @@ const QuestionWrapper = styled.div`
     word-break: keep-all;
     word-wrap: break-word;
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         margin: 10px 0px 15px 0px;
         font-size: 25px;
     }  
+    @media (device-width: 360px) { 
+        margin: 15px 0px 25px 0px;
+    }
 `;
 
 const Text1Container = styled.div`
@@ -98,7 +101,7 @@ const Text1Container = styled.div`
     margin: 5px;
     color: #001981;
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         font-size: 15px;
     }  
 `;
@@ -110,7 +113,7 @@ const Text2Container = styled.div`
     margin-top: -25px;
     color: #001981;
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         font-size: 15px;
     }  
 `;
@@ -129,14 +132,15 @@ const ButtonOptions = styled.button`
     margin: 0px 0px 20px 0px;
     word-wrap: break-word;
     word-break: keep-all;
-    
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
+
     cursor: pointer;
 
     &:focus {
         outline:none;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         padding: 0px 20px 0px 20px;
         height: 12vh;
     }  

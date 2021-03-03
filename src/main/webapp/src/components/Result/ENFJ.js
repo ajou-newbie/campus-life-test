@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 import Loader from './Loader';
 import styled from 'styled-components';
 import ResultBackImg from '../../image/result_bg_gradiant.png';
-import MobileBackImg from '../../image/m_result_bg_gradiant.png';
 import MobileBackh538 from '../../image/result_bg_w538.png';
 import FixImg from '../../image/result_bg_fix.png';
-import FixImgw384 from '../../image/result_bg_fix_w384.png'
+import FixImgw384 from '../../image/result_bg_fix_w384.png';
+import FixImgw500 from '../../image/result_bg_fix_w500.png';
+import FixImgw1024 from '../../image/result_bg_fix_w1024.png';
 import GlobalFonts from "../fonts";
 import ENFJ from '../../image/MBTI_ENFJ.png';
 import ISTP from '../../image/MBTI_ISTP.png';
 import ISTJ from '../../image/MBTI_ISTJ.png';
-import kakao from '../../image/kakaotalk_2x.png'
-import url from '../../image/url_2x.png'
+import url from '../../image/url_2x.png';
 
 
 const ResultImage = styled.div`
@@ -48,12 +50,17 @@ const Footer = styled.div`
 
     @media screen and (max-width: 500px) {
         position: fixed;
-        /* background-image: url(${MobileBackImg}); */
+        background-image: url(${FixImgw500});
     }
 
     @media only screen and (max-width: 384px) {
         position: fixed;
         background-image: url(${FixImgw384});
+    }
+
+    @media only screen and (min-width: 1024px) {
+        position: fixed;
+        background-image: url(${FixImgw1024});
     }
 `;
 
@@ -64,28 +71,28 @@ const ResultContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         width: 320px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         width: 320px;
     }
 
-    @media (device-width: 428px) { //iPhone 12 Pro MAX
+    @media (device-width: 428px) {
         width: 400px;
     }
 
-    @media (device-width: 390px) { //iPhone 12, 12Pro
+    @media (device-width: 390px) { 
         width: 370px;
     }
 
-    @media (device-width: 414px) { //iPhone 6,7,8 Plus
-        width: 400px;
+    @media (device-width: 414px) { 
+        width: 390px;
     }
 
-    @media (device-width: 375px) { //iPhone 6,7,8 SE
-        width: 360px;
+    @media (device-width: 375px) { 
+        width: 350px;
     }
 
 `;
@@ -106,13 +113,13 @@ const MBTIResult = styled.div`
     border-radius: 35px;
     margin: 0px 10px 20px auto;
     padding: 53px 29px 53px 29px;
-    box-shadow: 1px 1px 1px 1px gray;
-
-    @media (device-width: 360px) { //S10, S8
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
+    
+    @media (device-width: 360px) {
         height: 55%;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         height: 80%;
     }
 `;
@@ -128,12 +135,37 @@ const ResultBlack = styled.div`
     font-family: 'Recipekorea';
     font-size: 35px;
     color: #343434;
+
+    @media (device-width: 360px) { 
+        font-size: 30px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        font-size: 30px;
+    }
+
+    @media (device-width: 390px) { 
+        font-size: 30px;
+    }
+
 `;
 
 const ResultName = styled.div`
     font-family: 'Recipekorea';
     font-size: 50px;
     color: #3369CF;
+
+    @media (device-width: 360px) { 
+        font-size: 35px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        font-size: 35px;
+    }
+
+    @media (device-width: 390px) { 
+        font-size: 40px;
+    }
 `;
 
 const ResultImg = styled.div`
@@ -147,11 +179,11 @@ const ResultImg = styled.div`
     margin: 0 auto;
     margin-bottom: 10px;
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         width: 250px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         width: 280px;
     }
 `;
@@ -163,6 +195,7 @@ const ResultText = styled.div`
     word-wrap: break-word;
     word-break: keep-all;
     text-align: justify;
+    word-spacing: -1px;
     font-weight: bold;
 `;
 
@@ -173,35 +206,43 @@ const SimiAndDiff = styled.div`
     border-radius: 35px;
     margin: 0px 0px 20px auto;
     padding: 50px;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
     text-align: center;
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         height: 350px;
         padding: 30px 10px 0px 10px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
-        height: 300px;
-        padding: 15px 5px 0px 5px;
+    @media (device-width: 384px) and (device-height: 538px) { 
+        height: 330px;
+        padding: 25px 10px 20px 10px;
     }
 
-    @media (device-width: 390px) { //iPhone 12, 12Pro
+    @media (device-width: 390px) { 
         height: 350px;
-        padding: 20px 5px 0px 5px;
+        padding: 30px 10px 0px 10px;
     }
 
-    @media (device-width: 414px) { //iPhone 6,7,8 Plus
+    @media (device-width: 414px) { 
         height: 350px;
-        padding: 20px 5px 0px 5px;
+        padding: 30px 10px 0px 10px;
     }
 
-    @media (device-width: 375px) and (min-height: 812px) { //iPhone X, XS, 11Pro
-        height: 350px;
-        padding: 20px 5px 0px 5px;
+    @media (device-width: 375px) and (min-height: 812px) { 
+        height: 330px;
+        padding: 20px 10px 0px 10px;
     }
 
-    
+    @media (device-width: 428px) and (min-height: 926px) { 
+        height: 330px;
+        padding: 20px 10px 0px 10px;
+    }
+
+    @media (device-width: 375px) and (min-height: 667px) { 
+        height: 330px;
+        padding: 20px 10px 0px 10px;
+    }
 `;
 
 const SimiAndDiffText = styled.div`
@@ -213,27 +254,28 @@ const SimiAndDiffText = styled.div`
     word-break: keep-all;
     text-align: center;
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         font-size: 20px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         font-size: 15px;
+        margin: 0;
     }
 
-    @media (device-width: 428px) { //iPhone 12 Pro MAX
+    @media (device-width: 428px) { 
         font-size: 20px;
     }
 
-    @media (device-width: 390px) { //iPhone 12, 12Pro
+    @media (device-width: 390px) { 
         font-size: 20px;
     }
 
-    @media (device-width: 414px) { //iPhone 6,7,8 Plus
+    @media (device-width: 414px) { 
         font-size: 20px;
     }
 
-    @media (device-width: 375px) { //iPhone 6,7,8 SE
+    @media (device-width: 375px) { 
         font-size: 20px;
     }
 
@@ -245,7 +287,7 @@ const SimiAndDiffName = styled.div`
     font-size: 20px;
     color: #343434;
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) {
         font-size: 15px;
     }
 `;
@@ -276,74 +318,110 @@ const Different = styled.div`
     background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-
 `;
 
-const Share = styled.div`
+const Share = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 10%;
     background-color: white;
     border-radius: 35px;
     margin: 0px 0px 20px auto;
-    padding: 20px;
-    box-shadow: 1px 1px 1px 1px gray;
+    padding: 40px;
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
+    transform: translate(0%, 0%);
+    border: none;
 
-    @media (device-width: 360px) { //S10, S8
+    &:hover {
+        background-color: rgb(81,138,247);
+    }
+    &:active {
+        background-color: rgb(81,138,247);
+    }
+    &:focus {
+        outline:none;
+    }
+
+    @media (device-width: 360px) { 
+        padding: 20px;
         height: 7%;
     }
 
-    @media (device-width: 360px) and (device-height: 640px) { //16:9
+    @media (device-width: 360px) and (device-height: 640px) { 
         height: 5%;
         padding: 10px 0px 10px 0px;
     }
 
-    @media (device-width: 428px) { //iPhone 12 Pro MAX
-        height: 5%;
-        padding: 10px 0px 10px 0px;
+    @media (device-width: 428px) { 
+        height: 7%;
+        padding: 20px;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        padding: 25px;
+        height: 7%;
+    }
+
+    @media (device-width: 360px) and (device-height: 640px) { 
+        padding: 25px;
+        height: 7%;
+    }
+
+    @media (device-width: 390px) { 
+        padding: 25px;
+        height: 7%;
+    }
+
+    @media (device-width: 414px) {
+        padding: 30px;
+        height: 7%;
+    }
+
+    @media (device-width: 375px) {
+        padding: 30px;
+        height: 7%;
     }
 `;
 
 const ShareText = styled.div`
     width: 100%;
+    height: 100%;
     font-family: 'BMeU';
-    font-size: 25px;
+    font-size: 30px;
     color: #343434;
     word-wrap: break-word;
     word-break: keep-all;
-    margin-bottom: 10px;
+    text-align: center;
+    margin: 0 auto;
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         font-size: 20px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         font-size: 20px;
     }
-`;
 
-const Kakao = styled.div`
-    background-image: url(${kakao});
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 50%;
-    height: 10vh;
-
-    @media (device-width: 360px) { //S10, S8
-        width: 20%;
-        height: 5vh;
+    @media (device-width: 360px) and (device-height: 640px) { 
+        font-size: 19px;
     }
 
-    @media (device-width: 360px) and (device-height: 640px) { //16:9
-        width: 25%;
-        height: 50px;
+    @media (device-width: 428px) { 
+        font-size: 25px;
     }
 
-    @media (device-width: 428px) { //iPhone 12 Pro MAX
-        width: 30%;
-        height: 70px;
+    @media (device-width: 390px) { 
+        font-size: 23px;
     }
 
+    @media (device-width: 414px) {
+        font-size: 25px;
+    }
+
+    @media (device-width: 375px) {
+        font-size: 23px;
+    }
 `;
 
 const Url = styled.div`
@@ -351,24 +429,33 @@ const Url = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 50%;
-    height: 10vh;
+    width: 20%;
+    height: 5vh;
 
-    @media (device-width: 360px) { //S10, S8
-        width: 20%;
+    @media (device-width: 360px) { 
+        width: 10%;
         height: 5vh;
     }
 
-    @media (device-width: 360px) and (device-height: 640px) { //16:9
-        width: 25%;
-        height: 50px;
+    @media (device-width: 360px) and (device-height: 640px) { 
+        width: 13%;
     }
 
-    @media (device-width: 428px) { //iPhone 12 Pro MAX
-        width: 30%;
-        height: 70px;
+    @media (device-width: 390px) { 
+        width: 10%;
     }
 
+    @media (device-width: 375px) {
+        width: 10%;
+    }
+
+    @media (device-width: 414px) {
+        width: 10%;
+    }
+
+    @media (device-width: 414px) and (min-height: 896px) {
+        width: 10%;
+    }
 `;
 
 const GoToStartbtn = styled.button`
@@ -383,8 +470,8 @@ const GoToStartbtn = styled.button`
     font-size: 35px;
     color: #3369CF;
     cursor: pointer;
-    box-shadow: 1px 1px 1px 1px gray;
-    
+    box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
+
     &:hover {
         background-color: rgb(81,138,247);
     }
@@ -395,32 +482,32 @@ const GoToStartbtn = styled.button`
         outline:none;
     }
 
-    @media (device-width: 360px) { //S10, S8
+    @media (device-width: 360px) { 
         height: 70px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { //Fold
+    @media (device-width: 384px) and (device-height: 538px) { 
         height: 70px;
     }
-`;
 
-const ContactUS = styled.button`
-    border: none;
-    border-radius: 35px;
-    width: 100%;
-    height: 100px;
-    margin: 0;
-    transform: translate(0%, 0%);
-    margin: 0px 10px 10px auto;
-    font-family: 'BMeU';
-    font-size: 35px;
-    color: #3369CF;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px 1px gray;
+    @media (device-width: 428px) { 
+        height: 70px;
+    }
+
+    @media (device-width: 390px) { 
+        height: 80px;
+    }
+
+    @media (device-width: 414px) {
+        height: 85px;
+    }
+
+    @media (device-width: 375px) {
+        height: 85px;
+    }
 `;
 
 function Result() {
-    const [url, setUrl] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const location = useLocation();
@@ -438,6 +525,10 @@ function Result() {
         }, 3000);
     };
 
+    const Toast = () => {
+        ToastsStore.success("복사에 성공했습니다!");
+    }
+
     useEffect(() => {
         fetchUsers();
     }, [])
@@ -445,50 +536,52 @@ function Result() {
     if (loading) return <Loader type="bubbles" color="white" ></Loader>
     if (error) return <div>에러가 발생했습니다.</div>
 
-    return(
-      <ResultImage>
-          <GlobalFonts/>
-          <Footer/>
-          <ResultContainer>
-              <Header>슬기로운 대학생활</Header>
-              <MBTIResult>
-                  <ResultHeader>내가 즐기게 될 캠퍼스 라이프는?</ResultHeader>
-                  <ResultBlack>시켜줘, 그럼.</ResultBlack>
-                  <ResultName>너의 명예소방관</ResultName>
-                  <ResultImg>
-                  </ResultImg>
-                  <ResultText>- 자신보다 동기, 선후배를 먼저 생각하는 당신은 늘 주변을 기쁘게 해주려 최선을 다합니다.
-                      <br></br><br></br>- 눈치가 빨라 상대의 동기나 의도를 정확하게 파악하지만, 그렇다보니 모든 일에 의미를 부여하려는 경항이 있습니다.
-                      <br></br><br></br>- 심지어는 수업 시간 교수님의 농담까지 받아적기도 하죠.
-                      <br></br><br></br>- 친구들과 어울리는 것을 좋아하지만, 때로는 혼밥, 혼영을 하며 고독을 즐기기도 하는 당신은 F4의 고독한 바이올리니스트, 지후 선배를 연상시키는군요!
-                  </ResultText>
-              </MBTIResult>
-              <SimiAndDiff>
-                  <FlexContainer>
-                      <SimiAndDiffText>나랑 찰떡인 동기</SimiAndDiffText>
-                      <SimiAndDiffText>잘 안맞는 동기</SimiAndDiffText>
-                  </FlexContainer>
-                  <FlexContainer>
-                      <Similar/>
-                      <Different/>
-                  </FlexContainer>
-                  <FlexContainer>
-                      <SimiAndDiffName>냉철한 반인반컴</SimiAndDiffName>
-                      <SimiAndDiffName>조별과제 헌터</SimiAndDiffName>
-                  </FlexContainer>
-              </SimiAndDiff>
-              <Share>
-                  <SimiAndDiffText>나의 캠퍼스 라이프 공유하기</SimiAndDiffText>
-                  <FlexContainer>
-                      <Kakao></Kakao>
-                      <Url></Url>
-                  </FlexContainer>
-              </Share>
-              <Link to = "/" >
-                  <GoToStartbtn>테스트 다시하기</GoToStartbtn>
-              </Link>
-          </ResultContainer>
-      </ResultImage>
+    const url = window.location.href;
+
+    return(            
+    <ResultImage>
+        <GlobalFonts/>
+        <Footer/>
+        <ResultContainer>
+            <Header>슬기로운 대학생활</Header>
+            <MBTIResult>
+                <ResultHeader>내가 즐기게 될 캠퍼스 라이프는?</ResultHeader>
+                <ResultBlack>시켜줘, 그럼.</ResultBlack>
+                <ResultName>너의 명예소방관</ResultName>
+                <ResultImg>
+                </ResultImg>
+                <ResultText>- 자신보다 동기, 선후배를 먼저 생각하는 당신은 늘 주변을 기쁘게 해주려 최선을 다합니다.
+                    <br></br><br></br>- 눈치가 빨라 상대의 동기나 의도를 정확하게 파악하지만, 그렇다보니 모든 일에 의미를 부여하려는 경항이 있습니다.
+                    <br></br><br></br>- 심지어는 수업 시간 교수님의 농담까지 받아적기도 하죠.
+                    <br></br><br></br>- 친구들과 어울리는 것을 좋아하지만, 때로는 혼밥, 혼영을 하며 고독을 즐기기도 하는 당신은 F4의 고독한 바이올리니스트, 지후 선배를 연상시키는군요!
+                </ResultText>
+            </MBTIResult>
+            <SimiAndDiff>
+                <FlexContainer>
+                    <SimiAndDiffText>나랑 찰떡인 동기</SimiAndDiffText>
+                    <SimiAndDiffText>잘 안맞는 동기</SimiAndDiffText>
+                </FlexContainer>
+                <FlexContainer>
+                    <Similar/>
+                    <Different/>
+                </FlexContainer>
+                <FlexContainer>
+                    <SimiAndDiffName>냉철한 반인반컴</SimiAndDiffName>
+                    <SimiAndDiffName>조별과제 헌터</SimiAndDiffName>
+                </FlexContainer>
+            </SimiAndDiff>
+            <CopyToClipboard text={url}>
+                <Share>  
+                    <Url></Url>
+                    <ShareText onClick={() => Toast()}>나의 캠퍼스 라이프 공유하기</ShareText>
+                    <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.BOTTOM_CENTER} />
+                </Share>
+            </CopyToClipboard>
+            <Link to = "/" >
+                <GoToStartbtn>테스트 다시하기</GoToStartbtn>
+            </Link>
+        </ResultContainer>
+    </ResultImage>
     )
 }
 

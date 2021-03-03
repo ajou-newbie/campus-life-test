@@ -133,6 +133,8 @@ const WhiteText = styled.div`
       font-size: 55px;
     }
 
+    
+
 `;
 
 const YellowText = styled.div`
@@ -163,6 +165,7 @@ const FooterText = styled.div`
 
     @media (device-width: 360px) { 
       font-size: 15px;
+      margin-top: 7px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
@@ -187,11 +190,11 @@ const Input = styled.div`
   }
 
   @media (device-width: 384px) and (device-height: 538px) { 
-    width: 250px;
+    width: 290px;
   }
 
   @media (device-width: 375px) { 
-    width: 300px;
+    width: 320px;
   }
 
   input {
@@ -202,6 +205,7 @@ const Input = styled.div`
     text-align: center;
     color: #1C515A;
     padding-left: 50px;
+    border-radius: 0px;
 
     &::placeholder {
       font-family: 'Eland';
@@ -209,6 +213,10 @@ const Input = styled.div`
       padding: 5px;
       font-size: 30px;
       color: #1C515A;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
@@ -249,12 +257,12 @@ const Menu = styled.ul`
   }
 
   @media (device-width: 384px) and (device-height: 538px) { 
-    width: 250px;
+    width: 290px;
     height: 100px;
   }
 
   @media (device-width: 375px) { 
-    width: 300px;
+    width: 320px;
   }
 
 `;
@@ -311,7 +319,7 @@ const DecisionBtn = styled.button`
 
 `;
 
-const items = ['선택안함', '인문계열', '교육계열', '공학계열', '사회계열', '자연계열', '의약계열', '예체능계열']
+const items = ['예체능계열', '인문계열', '교육계열', '공학계열', '사회계열', '자연계열', '의약계열', '선택안함']
 
 function College() {
   const [selectedOption, setSelectedOption] = useState('선택안함');
@@ -341,7 +349,7 @@ function College() {
                 <WhiteText>당신의&nbsp;</WhiteText><YellowText>전공</YellowText><WhiteText>을</WhiteText>
               </FlexContainer>
               <WhiteText>알려주세요!</WhiteText>
-              <FooterText>* 가고 싶거나 관심있는 전공을 고르셔도 됩니다:)</FooterText>
+              <FooterText>* 관심있는 전공을 고르셔도 됩니다 :)</FooterText>
             </TextContainer>
             <Input>
               <input

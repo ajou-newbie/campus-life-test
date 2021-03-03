@@ -256,7 +256,7 @@ const NewbieCount = styled.p`
     text-decoration: none;
     position: absolute;
     margin: 0;
-    top: 60%;
+    top: 58%;
     left: 50%;
     width: 100%;
     -ms-transform: translate(-50%, -50%);
@@ -268,7 +268,7 @@ const NewbieCount = styled.p`
 
     @media (device-width: 360px) {
         font-size: 15px;
-        top: 56%;
+        top: 55%;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
@@ -283,17 +283,17 @@ const NewbieCount = styled.p`
 
     @media (device-width: 375px) { 
        font-size: 15px;
-       top: 56%;
+       top: 55%;
     }
 
     @media (device-width: 390px) { 
         font-size: 15px;
-        top: 57%;
+        top: 55%;
     }
 
     @media (device-width: 428px) { 
         font-size: 15px;
-        top: 57%;
+        top: 55%;
     }
 
     @media (device-width: 414px) and (min-height: 896px) { 
@@ -325,7 +325,7 @@ const MainButton = styled.button`
     height: 11vh;
     position: absolute;
     margin: 0;
-    top: 68%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
@@ -342,27 +342,85 @@ const MainButton = styled.button`
 
     @media (min-width: 360px) and (max-width: 428px) {
         width: 90%;
-        top: 63%;
+        top: 62%;
     }
     
     @media (device-width: 384px) and (device-height: 538px) { 
         width: 90%;
-        top: 64%;
+        top: 65%;
     }
 
     @media (device-width: 414px) { 
         width: 90%;
-        top: 64%;
+        top: 63%;
     }
 
     @media (device-width: 428px) { 
         width: 90%;
-        top: 64%;
+        top: 61%;
     }
 
     @media (device-width: 375px) and (min-height: 812px) { 
         width: 90%;
-        top: 64%;
+        top: 61%;
+    }
+`;
+
+const Contribute = styled.a`
+    font-family: 'ELAND';
+    font-size: 15px;
+    position: absolute;
+    top: 72%;
+    left: 46.5%;
+    text-align: center;
+    text-decoration:none;
+    color: #1C515A;
+
+    &:link{
+        color: #1C515A;
+    }
+    &:visited{
+        color: #1C515A;
+    }
+
+    @media (device-width: 360px) {
+        top: 68%;
+        left: 36%;
+    }
+
+    @media (device-width: 384px) and (device-height: 538px) {
+        top: 73%;
+        left: 41%;
+        font-size: 10px;
+    }
+
+    @media (device-width: 1024px) { 
+        left: 45%;
+    }
+
+    @media (device-width: 1112px) {
+        left: 45.5%;
+    }
+
+    @media (device-width: 1194px) {
+        left: 45.5%;
+    }
+
+    @media (device-width: 428px){
+        left: 38%;
+    }
+
+    @media (device-width: 390px) { 
+        left: 37%;
+    }   
+
+    @media (device-width: 414px) { 
+        left: 37%;
+    }
+
+    @media (device-width: 375px) { 
+        top: 70%;
+        left: 36%;
     }
 `;
 
@@ -397,6 +455,9 @@ function Main() {
           <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
           <Link to = "/college" >
               <MainButton></MainButton>
+          </Link>
+          <Link to = "/contribute" >
+              <Contribute>@ContactUs</Contribute>
           </Link>
       </MainImage>
     )
