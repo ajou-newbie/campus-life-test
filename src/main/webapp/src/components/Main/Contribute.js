@@ -1,10 +1,23 @@
 import React from "react";
 import styled from 'styled-components';
+import MainBack from '../../image/m_question_bg_w1024.png';
 import MobileBack from '../../image/m_question_bg.png';
-import MobileBackw384 from '../../image/m_question_bg_w384.png';
-import MobileBackh740 from '../../image/m_question_bg_h740.png';
-import MobileBackw1280 from '../../image/question_bg_w1280.png';
-import MobileBackw1024 from '../../image/m_question_bg_w1024.png';
+import MainFold from '../../image/m_questions_galaxy_fold.png';
+import MainS8 from '../../image/m_questions_galaxy_S8.png';
+import MainS10 from '../../image/m_questions_galaxy_S10.png';
+import Main169 from '../../image/m_questions_galaxy169.png';
+import MainTap from '../../image/m_questions_galaxyTab.png';
+import MainiPad from '../../image/m_questions_iPad.png';
+import MainiPadPro10 from '../../image/m_questions_iPadPro10.png';
+import MainiPadPro11 from '../../image/m_questions_iPadPro11.png';
+import MainiPadPro12 from '../../image/m_questions_iPadPro12.png';
+import MainiPhone11Pro from '../../image/m_questions_iPhone11Pro.png';
+import MainiPhone12ProMax from '../../image/m_questions_iPhone12ProMax.png';
+import MainiPhone12Pro from '../../image/m_questions_iPhone12Pro.png';
+import MainiPhone678Plus from '../../image/m_questions_iPhone678Plus.png';
+import MainiPhone678SE from '../../image/m_questions_iPhone678SE.png';
+import MainiPhoneXR from '../../image/m_questions_iPhoneXR.png';
+import MainWeb1366 from '../../image/m_questions_web1366.png';
 import BEAN from '../../image/JongBean.jpeg';
 import HYUNA from '../../image/HYUNA.jpeg';
 import DONGHYUN from '../../image/DONGHYUN.jpeg';
@@ -14,9 +27,9 @@ import GlobalFonts from "../fonts";
 
 const ContributeImg = styled.div`
     display: flex;
-    background-image: url(${MobileBackw1280});
+    background-image: url(${MainBack});
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     justify-content: center;
@@ -26,128 +39,175 @@ const ContributeImg = styled.div`
         background-image: url(${MobileBack});
     }
 
-    @media only screen and (max-width: 384px) {
-        background-image: url(${MobileBackw384});
-  }
+    @media (device-width: 360px) and (device-height: 740px){ 
+        background-image: url(${MainS8});
+    }       
 
-    @media only screen and (min-height: 740px) {
-        background-image: url(${MobileBackh740});
-  }
+    @media (device-width: 360px) and (device-height: 760px){ 
+        background-image: url(${MainS10});
+    }  
 
-    @media only screen and (min-width: 1024px) {
-        background-image: url(${MobileBackw1024});
-  }
+    @media (device-width: 384px) and (device-height: 538px) { 
+        background-image: url(${MainFold});
+    }
 
-    @media only screen and (min-width: 1280px) {
-        background-image: url(${MobileBackw1280});
-  }
+    @media (device-width: 360px) and (device-height: 640px) { 
+        background-image: url(${Main169});
+    }
+
+    @media (device-width: 414px) { 
+        background-image: url(${MainiPhone678Plus});
+    }
+
+    @media (device-width: 375px) and (device-height: 812px) { 
+        background-image: url(${MainiPhone11Pro});
+    }
+
+    @media (device-width: 375px) and (device-height: 667px) { 
+        background-image: url(${MainiPhone678SE});
+    }
+
+    @media (device-width: 390px) { 
+        background-image: url(${MainiPhone12Pro});
+    }
+
+    @media (device-width: 428px) { 
+        background-image: url(${MainiPhone12ProMax});
+    }
+
+    @media (device-width: 414px) and (device-height: 896px) {
+        background-image: url(${MainiPhoneXR});
+    }
+
+    @media (device-width: 1280px) and (device-height: 800px)  { 
+        background-image: url(${MainTap});
+    }
+
+    @media (device-width: 1024px) { 
+        background-image: url(${MainiPad});
+    }
+
+    @media (device-width: 1112px) { 
+        background-image: url(${MainiPadPro10});
+    }
+
+    @media (device-width: 1194px) { 
+        background-image: url(${MainiPadPro11});
+    }
+
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        background-image: url(${MainiPadPro12});
+    }
+
+    @media (device-width: 1366px) and (device-height:768px) { 
+        background-image: url(${MainWeb1366});
+    }
 `;
 
 const Container = styled.div`
     display: flex;
-    width: 70%;
-    height: 85vh;
+    width: 850px;
+    height: 700px;
     flex-wrap : wrap;
     justify-content: center;
-
-    @media (device-width: 360px) {
-        width: 90%;
-    }
+    margin-top: 10px;
 
     @media (device-width: 384px) and (device-height: 538px) {
-        width: 100%;
+        width: 380px;
+        height: 530px;
     }
 
-    @media (device-width: 1024px) { 
-        width: 100%;
+    @media (device-width: 360px) and (device-height: 640px) {
+        width: 355px;
+        height: 630px;
     }
 
-    @media (device-width: 1112px) {
-        width: 100%;
+    @media (device-width: 414px) and (device-height: 736px) {
+        width: 410px;
+        height: 720px;
     }
 
-    @media (device-width: 1194px) {
-        width: 100%;
-    }
-
-    @media (device-width: 1366px) {
-        width: 100%;
+    @media (device-width: 375px) and (device-height: 667px) {
+        width: 365px;
+        height: 655px;
     }
 
     @media (device-width: 428px) {
-        width: 100%;
+        width: 420px;
+        height: 900px;
     }
 
     @media (device-width: 390px) {
-        width: 100%;
+        width: 380px;
+        height: 820px;
     }
 
-    @media (device-width: 414px) { 
-        width: 100%;
+    @media (device-width: 375px) and (device-height: 812px) { 
+        width: 365px;
+        height: 800px;
     }
 
-    @media (device-width: 375px) {
-        width: 100%;
+    @media (device-width: 414px) and (device-height: 896px) { 
+        width: 400px;
+        height: 880px;
     }
-
 `;
 
 const ContributeCard = styled.div`
     display: flex;
     justify-content: start;
     flex-direction: column;
-    width: 25%;
-    height: 47%;
+    width: 260px;
+    height: 330px;
     background-color: white;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 5px 10px 5px;
     border-radius: 10px;
     box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
 
     @media (device-width: 360px) {
-        width: 46%;
-        height: 30%;
+        width: 165px;
+        height: 220px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) {
-        width: 46%;
-        height: 35%;
-        margin-bottom: 5px;
+        width: 170px;
+        height: 165px;
+    }
+
+    @media (device-width: 360px) and (device-height: 640px) {
+        width: 165px;
+        height: 200px;
+    }
+
+    @media (device-width: 414px) and (device-height: 736px) {
+        width: 190px;
+        height: 225px;
+    }
+
+    @media (device-width: 375px) and (device-height: 667px) {
+        width: 170px;
+        height: 205px;
     }
 
     @media (device-width: 428px) {
-        width: 46%;
-        height: 33%;
-        margin-bottom: 15px;
+        width: 195px;
+        height: 275px;
     }
 
     @media (device-width: 390px) {
-        width: 46%;
-        height: 33%;
-        margin-bottom: 15px;
-    }
-
-    @media (device-width: 414px) { 
-        width: 46%;
-        height: 33%;
-        margin-bottom: 10px;
-    }
-
-    @media (device-width: 375px) {
-        width: 46%;
-        height: 33%;
-        margin-bottom: 5px;
+        width: 180px;
+        height: 260px;
     }
 
     @media (device-width: 375px) and (device-height: 812px) { 
-        width: 46%;
-        height: 32%; 
+        width: 170px;
+        height: 250px;
     }
 
-    @media (device-width: 414px) and (min-height: 896px) {
-        height: 33%;
+    @media (device-width: 414px) and (device-height: 896px) { 
+        width: 190px;
+        height: 270px;
     }
-
-
 `;
 
 const Picture = styled.div`
@@ -155,84 +215,67 @@ const Picture = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     align-self: center;
-    width: 45%;
-    height: 40%;
-    border-radius: 150px;
+    width: 110px;
+    height: 750px;
+    border-radius: 100px;
     box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
     margin-top: 15px;
 
     @media (device-width: 360px) {
-        width: 45%;
-        height: 35%;
+        width: 80px;
+        height: 750px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) {
-        width: 40%;
-        height: 45%;
-        margin-top: 8px;
-    }
-
-    @media (device-width: 428px) {
-        width: 45%;
-        height: 35%;
-    }
-
-    @media (device-width: 390px) {
-        width: 45%;
-        height: 35%;
-    }
-
-    @media (device-width: 414px) { 
-        width: 40%;
-        height: 35%;
-    }
-
-    @media (device-width: 375px) {
-        width: 35%;
-        height: 30%;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        width: 40%;
-        height: 30%;
-    }
-
-    @media (device-width: 414px) and (min-height: 896px) {
-        width: 45%;
-        height: 35%;
-    }
-
-    @media (device-width: 1366px) and (min-height: 768px) {
-        width: 37%;
-        height: 40%;
-    }
-
-    @media (device-width: 1280px) { 
-        width: 40%;
-        height: 30%;
-        margin-bottom: 10px;
+        width: 70px;
+        height: 760px;
+        margin-top: 10px;
     }
 
     @media (device-width: 360px) and (device-height: 640px) {
-        width: 40%;
-        height: 35%;
+        width: 80px;
+        height: 900px;
+        margin-top: 10px;
     }
 
-    @media (device-width: 1366px) and (device-height:1024px) {
-        width: 45%;
-        height: 40%;
+    @media (device-width: 414px) and (device-height: 736px) {
+        width: 90px;
+        height: 910px;
     }
 
-    
+    @media (device-width: 375px) and (device-height: 667px) {
+        width: 80px;
+        height: 850px;
+        margin-top: 10px;
+    }
+
+    @media (device-width: 428px) {
+        width: 110px;
+        height: 950px;
+    }
+
+    @media (device-width: 390px) {
+        width: 100px;
+        height: 900px;
+    }
+
+    @media (device-width: 375px) and (device-height: 812px) { 
+        width: 100px;
+        height: 900px;
+    }
+
+    @media (device-width: 414px) and (device-height: 896px) { 
+        width: 100px;
+        height: 900px;
+    }
 `;
 
 const ContributeName = styled.div`
     font-family: 'Recipekorea';
     font-size: 20px;
-    align-self: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    text-align: center;
     color: #00222a;
+    margin-top: 25px;
 
     @media (device-width: 360px) {
         font-size: 15px;
@@ -244,60 +287,23 @@ const ContributeName = styled.div`
         margin-top: 10px;
     }
 
-    @media (device-width: 1024px) { 
-        margin-top: 30px;
+    @media (device-width: 414px) {
+        font-size: 17px;
     }
 
-    @media (device-width: 1112px) {
-        margin-top: 30px;
-    }
-
-    @media (device-width: 1194px) {
-        margin-top: 30px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px){
-        font-size: 25px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 15px;
-    }
-
-    @media (device-width: 375px) {
-        font-size: 15px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-       margin-bottom: 10px;
+    @media (device-width: 375px) and (device-height: 667px) {
+        font-size: 16px;
     }
 
     @media (device-width: 390px) {
-        margin-bottom: 10px;
+        font-size: 16px;
     }
-
-    @media (device-width: 414px) and (min-height: 896px) {
-        margin-bottom: 15px;
-    }
-
-    @media (device-width: 1280px) { 
-        margin-bottom: 20px;
-    }
-
-    @media (device-width: 360px) and (device-height: 640px) {
-       margin-top: 15px;
-       margin-bottom: 5px;
-    }
-    
 `;
 
 const ContributeProfile = styled.div`
     font-family: 'Recipekorea';
     font-size: 15px;
-    align-self: center;
-    margin-top: 10px;
+    text-align: center;
     color: #1C515A;
 
     @media (device-width: 360px) {
@@ -310,44 +316,26 @@ const ContributeProfile = styled.div`
         margin-top: 4px;
     }
 
-    @media (device-width: 1112px) {
-        margin-top: 15px;
+    @media (device-width: 414px) {
+        font-size: 10px;
+        margin-top: 4px;
     }
 
-    @media (device-width: 1194px) {
-        margin-top: 15px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px) {
-        font-size: 20px;
-        margin-top: 20px;
+    @media (device-width: 375px) and (device-height: 667px) {
+        font-size: 10px;
+        margin-top: 5px;
     }
 
     @media (device-width: 428px) {
-        margin-top: 15px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     @media (device-width: 390px) {
         font-size: 12px;
     }
 
-    @media (device-width: 414px) { 
-        font-size: 10px;
-    }
-
-    @media (device-width: 375px) {
-        font-size: 10px;
-    }
-
-    @media (device-width: 1366px) and (min-height: 768px) {
-        font-size: 15px;
-        margin-top: 9px;
-    }
-
-    @media (device-width: 1280px) { 
-        font-size: 15px;
-        margin-top: 15px;
+    @media (device-width: 375px) and (device-height: 812px) { 
+       font-size: 12px;
     }
 `;
 
@@ -389,6 +377,7 @@ function Contribute() {
                     <ContributeName>백현아</ContributeName>
                     <ContributeProfile>Designer</ContributeProfile>
                     <ContributeProfile>line100@ajou.ac.kr</ContributeProfile>
+                    <ContributeProfile>blog.naver.com/100_line</ContributeProfile>
                 </ContributeCard>
             </Container>
         </ContributeImg>

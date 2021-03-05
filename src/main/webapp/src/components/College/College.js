@@ -2,16 +2,28 @@ import React, { useState, createContext } from "react";
 import Downshift from "downshift";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import MobileBack from '../../image/m_main_bg.png';
-import MobileBackw384 from '../../image/m_main_bg_w384.png';
-import MobileBackh740 from '../../image/m_main_bg_h740.png';
-import MobileBackw1280 from '../../image/main_bg_w1280.png';
-import MobileBackw1024 from '../../image/main_bg_w1024.png';
+import MainBack from '../../image/main_bg.png';
+import MainMBack from '../../image/m_main_bg.png';
+import MainFold from '../../image/m_main_galaxy_fold.png';
+import MainS8 from '../../image/m_main_galaxy_S8.png';
+import MainS10 from '../../image/m_main_galaxy_S10.png';
+import Main169 from '../../image/m_main_galaxy169.png';
+import MainTap from '../../image/m_main_galaxytab10.png';
+import MainiPad from '../../image/m_main_iPad.png';
+import MainiPadPro10 from '../../image/m_main_iPadPro10.png';
+import MainiPadPro11 from '../../image/m_main_iPadPro11.png';
+import MainiPadPro12 from '../../image/m_main_iPadPro12.png';
+import MainiPhone11Pro from '../../image/m_main_iPhone11Pro.png';
+import MainiPhone12ProMax from '../../image/m_main_iPhone12Pro_Max.png';
+import MainiPhone12Pro from '../../image/m_main_iPhone12Pro.png';
+import MainiPhone678Plus from '../../image/m_main_iPhone678Plus.png';
+import MainiPhone678SE from '../../image/m_main_iPhone678SE.png';
+import MainWeb1366 from '../../image/m_main_web1366.png';
 import triangle from '../../image/mbti_tri.png'
 import GlobalFonts from "../fonts"
 
 const Main = styled.div`
-  background-image: url(${MobileBackw1280});
+  background-image: url(${MainBack});
   width: 100%;
   height: 100vh;
   background-size: 100% 100%;
@@ -21,25 +33,74 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
 
-  @media screen and (max-width: 500px) {
-        background-image: url(${MobileBack});
-  }
+  @media only screen and (max-width: 500px) {
+        background-image: url(${MainMBack});
+    }
 
-  @media only screen and (max-width: 384px) {
-        background-image: url(${MobileBackw384});
-  }
+    @media (device-width: 360px) and (device-height: 740px){ 
+        background-image: url(${MainS8});
+    }       
 
-    @media only screen and (min-height: 740px) {
-        background-image: url(${MobileBackh740});
-  }
+    @media (device-width: 360px) and (device-height: 760px){ 
+        background-image: url(${MainS10});
+    }  
 
-    @media only screen and (min-width: 1024px) {
-        background-image: url(${MobileBackw1024});
-  }
+    @media (device-width: 384px) and (device-height: 538px) { 
+        background-image: url(${MainFold});
+    }
 
-    @media only screen and (min-width: 1280px) {
-        background-image: url(${MobileBackw1280});
-  }
+    @media (device-width: 360px) and (device-height: 640px) { 
+        background-image: url(${Main169});
+    }
+
+    @media (device-width: 414px) { 
+        background-image: url(${MainiPhone678Plus});
+    }
+
+    @media (device-width: 375px) and (device-height: 812px) { 
+        background-image: url(${MainiPhone11Pro});
+    }
+
+    @media (device-width: 375px) and (device-height: 667px) { 
+        background-image: url(${MainiPhone678SE});
+    }
+
+    @media (device-width: 390px) { 
+        background-image: url(${MainiPhone12Pro});
+    }
+
+    @media (device-width: 428px) { 
+        background-image: url(${MainiPhone12ProMax});
+    }
+
+        
+    @media (device-width: 414px) and (device-height: 896px) {  //변경
+        background-image: url(${MainiPhone678Plus});
+    }
+
+    @media (device-width: 1280px) and (device-height: 800px)  { 
+        background-image: url(${MainTap});
+    }
+
+    @media (device-width: 1024px) { 
+        background-image: url(${MainiPad});
+    }
+
+    @media (device-width: 1112px) { 
+        background-image: url(${MainiPadPro10});
+    }
+
+    @media (device-width: 1194px) { 
+        background-image: url(${MainiPadPro11});
+    }
+
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        background-image: url(${MainiPadPro12});
+    }
+
+    @media (device-width: 1366px) and (device-height:768px) { 
+        background-image: url(${MainWeb1366});
+    }
 `;
 
 const TextContainer = styled.div`

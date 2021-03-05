@@ -526,7 +526,7 @@ function Result() {
   };
 
   const Toast = () => {
-    ToastsStore.success("복사에 성공했습니다!");
+    ToastsStore.success("링크 복사에 성공했습니다!");
   }
 
   useEffect(() => {
