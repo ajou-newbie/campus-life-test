@@ -9,6 +9,15 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    position: fixed;
+    overflow: hidden;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 

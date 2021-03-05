@@ -2,95 +2,156 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import MobileBack from '../../image/m_main_bg.png';
-import MobileBackw384 from '../../image/m_main_bg_w384.png';
-import MobileBackh740 from '../../image/m_main_bg_h740.png';
-import MobileBackw1280 from '../../image/main_bg_w1280.png';
-import MobileBackw1024 from '../../image/main_bg_w1024.png';
-import IndexButton from '../../image/IndexButton.png';
-import IndexButtonOnClick from '../../image/IndexButtonOnClick.png';
+import MainBack from '../../image/main_bg.png';
+import MainMBack from '../../image/m_main_bg.png';
+import MainFold from '../../image/m_main_galaxy_fold.png';
+import MainS8 from '../../image/m_main_galaxy_S8.png';
+import MainS10 from '../../image/m_main_galaxy_S10.png';
+import Main169 from '../../image/m_main_galaxy169.png';
+import MainTap from '../../image/m_main_galaxytab10.png';
+import MainiPad from '../../image/m_main_iPad.png';
+import MainiPadPro10 from '../../image/m_main_iPadPro10.png';
+import MainiPadPro11 from '../../image/m_main_iPadPro11.png';
+import MainiPadPro12 from '../../image/m_main_iPadPro12.png';
+import MainiPhone11Pro from '../../image/m_main_iPhone11Pro.png';
+import MainiPhone12ProMax from '../../image/m_main_iPhone12Pro_Max.png';
+import MainiPhone12Pro from '../../image/m_main_iPhone12Pro.png';
+import MainiPhone678Plus from '../../image/m_main_iPhone678Plus.png';
+import MainiPhone678SE from '../../image/m_main_iPhone678SE.png';
+import MainWeb1366 from '../../image/m_main_web1366.png';
 import GlobalFonts from "../fonts";
 
 
 const MainImage = styled.div`
-    background-image: url(${MobileBackw1280});
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+    background-image: url(${MainBack});
+    width: 100%;
+    height: 100%;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
 
     @media only screen and (max-width: 500px) {
-        background-image: url(${MobileBack});
+        background-image: url(${MainMBack});
     }
 
-    @media only screen and (max-width: 384px) {
-        background-image: url(${MobileBackw384});
+    @media (device-width: 360px) and (device-height: 740px){ 
+        background-image: url(${MainS8});
+    }       
+
+    @media (device-width: 360px) and (device-height: 760px){ 
+        background-image: url(${MainS10});
+    }  
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        background-image: url(${MainFold});
     }
 
-    @media only screen and (min-height: 740px) {
-        background-image: url(${MobileBackh740});
+    @media (device-width: 360px) and (device-height: 640px) { 
+        background-image: url(${Main169});
     }
 
-    @media only screen and (min-width: 1024px) {
-        background-image: url(${MobileBackw1024});
+    @media (device-width: 414px) { 
+        background-image: url(${MainiPhone678Plus});
     }
 
-    @media only screen and (min-width: 1280px) {
-        background-image: url(${MobileBackw1280});
+    @media (device-width: 375px) and (device-height: 812px) { 
+        background-image: url(${MainiPhone11Pro});
+    }
+
+    @media (device-width: 375px) and (device-height: 667px) { 
+        background-image: url(${MainiPhone678SE});
+    }
+
+    @media (device-width: 390px) { 
+        background-image: url(${MainiPhone12Pro});
+    }
+
+    @media (device-width: 428px) { 
+        background-image: url(${MainiPhone12ProMax});
+    }
+
+        
+    @media (device-width: 414px) and (device-height: 896px) {  //변경
+        background-image: url(${MainiPhone678Plus});
+    }
+
+    @media (device-width: 1280px) and (device-height: 800px)  { 
+        background-image: url(${MainTap});
+    }
+
+    @media (device-width: 1024px) { 
+        background-image: url(${MainiPad});
+    }
+
+    @media (device-width: 1112px) { 
+        background-image: url(${MainiPadPro10});
+    }
+
+    @media (device-width: 1194px) { 
+        background-image: url(${MainiPadPro11});
+    }
+
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        background-image: url(${MainiPadPro12});
+    }
+
+    @media (device-width: 1366px) and (device-height:768px) { 
+        background-image: url(${MainWeb1366});
     }
 `;
 
 const TextContainer = styled.div`
-    width: 100vw;
+    width: 100%;
     height: auto;
-    padding: 175px 0px 0px 0px;
+    padding: 165px 0px 0px 0px;
 
-    
-    @media (device-width: 360px) { 
-        padding: 210px 0px 0px 0px;
+    @media (device-width: 360px) {
+        padding: 160px 0px 0px 0px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
-        padding: 135px 0px 0px 0px;
+        padding: 110px 0px 0px 0px;
     }
 
-    @media (device-width: 360px) and (device-height: 640px) { 
-        padding: 150px 0px 0px 0px;
-    }
+    @media (device-width: 360px) and (device-height: 740px){ 
+        padding: 230px 0px 0px 0px;
+    } 
+
+    @media (device-width: 360px) and (device-height: 760px){ 
+        padding: 238px 0px 0px 0px;
+    } 
 
     @media (device-width: 414px) { 
         padding: 200px 0px 0px 0px;
     }
 
-    @media (device-width: 375px) { 
-        padding: 150px 0px 0px 0px;
-    }
-
-    @media (device-width: 390px) { 
-        padding: 250px 0px 0px 0px;
+    @media (device-width: 375px) and (device-height: 667px) { 
+        padding: 185px 0px 0px 0px;
     }
 
     @media (device-width: 428px) { 
+        padding: 290px 0px 0px 0px;
+    }
+
+    @media (device-width: 390px) { 
         padding: 270px 0px 0px 0px;
     }
 
-    @media (device-width: 375px) and (min-height: 812px) { 
-        padding: 235px 0px 0px 0px;
+    @media (device-width: 375px) and (device-height: 812px) { 
+        padding: 260px 0px 0px 0px;
     }
 
-    @media (device-width: 414px) and (min-height: 896px) {
-        padding: 255px 10px 0px 0px;
+    @media (device-width: 414px) and (device-height: 896px) {  //변경
+        padding: 260px 0px 0px 0px;
     }
 
-    @media (device-width: 1280px) { 
-        padding: 200px 10px 0px 0px;
+    @media (device-width: 1280px) and (device-height: 800px)  { 
+        padding: 205px 0px 0px 0px;
     }
 
-    @media (device-width: 1024px) { 
-        padding: 190px 10px 0px 0px;
+    @media (device-width: 1024px) and (device-height: 768px)  { 
+        padding: 190px 0px 0px 0px;
     }
 
     @media (device-width: 1112px) { 
@@ -101,110 +162,95 @@ const TextContainer = styled.div`
         padding: 215px 0px 0px 0px;
     }
 
-    @media (device-width: 1366px) { 
+    @media (device-width: 1366px) and (device-height:1024px) { 
         padding: 270px 0px 0px 0px;
     }
 
-    @media (device-width: 1366px) and (device-height: 768px) { 
-        padding: 200px 0px 0px 0px;
+    @media (device-width: 1366px) and (device-height:768px) { 
+        padding: 195px 0px 0px 0px;
     }
 
 `;
 
 const HeaderText = styled.div`
     font-family: 'DAONE';
-    font-size: 20px;
+    font-size: 23px;
     color: white;
-    padding: 0px 0px 5px 0px;
     text-align: center;
+    padding: 0px 0px 5px 0px;
 
-  
     @media (device-width: 360px) {
         font-size: 15px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 15px;
+        font-size: 17px;
     }
 
     @media (device-width: 414px) { 
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    @media (device-width: 375px) { 
-        font-size: 20px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 20px;
+    @media (device-width: 375px) and (device-height: 667px) { 
+        font-size: 16px;
     }
 
     @media (device-width: 428px) { 
-        font-size: 20px;
+        font-size: 19px;
     }
 
-    @media (device-width: 1366px) { 
-        font-size: 25px;
+    @media (device-width: 390px) { 
+        font-size: 16px;
     }
 
-    @media (device-width: 1366px) and (device-height: 768px) { 
-        font-size: 20px;
+    @media (device-width: 375px) and (device-height: 812px) { 
+        font-size: 15px;
     }
+
 `;
 
 const WhiteText = styled.div`
     font-family: 'SANDOLL';
-    font-size: 79px;
+    font-size: 86px;
     color: white;
     padding: 0px 0px 0px 30px;
     text-shadow: 4px 4px #29879599;
     letter-spacing: -0.4px;
     text-align: center;
 
-  
     @media (device-width: 360px) {
         font-size: 55px;
-        padding: 0px 0px 0px 0px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 50px;
-        padding: 0px 0px 0px 20px;
+        font-size: 58px;
     }
 
     @media (device-width: 414px) { 
-        font-size: 55px;
-        padding: 0px 0px 0px 20px;
+        font-size: 61px;
     }
 
-    @media (device-width: 375px) { 
-       font-size: 55px;
-       padding: 0px 0px 0px 20px;
-    }
-
-    @media (device-width: 390px) { 
+    @media (device-width: 375px) and (device-height: 667px) { 
         font-size: 55px;
-        padding: 0px 0px 0px 20px;
     }
 
     @media (device-width: 428px) { 
         font-size: 65px;
-        padding: 0px 0px 0px 20px;
     }
 
-    @media (device-width: 414px) and (min-height: 896px) { 
-        font-size: 65px;
-        padding: 0px 0px 0px 20px;
+    @media (device-width: 390px) { 
+        font-size: 59px;
     }
 
-    @media (device-width: 1366px) {
-        font-size: 95px;
+    @media (device-width: 375px) and (device-height: 812px) { 
+        font-size: 55px;
     }
 
-    @media (device-width: 1366px) and (device-height: 768px) { 
-        font-size: 80px;
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        font-size: 105px;
     }
-   
+
+
 `;
 
 const YellowText = styled.div`
@@ -215,212 +261,168 @@ const YellowText = styled.div`
     letter-spacing: -0.51px;
 
     @media (device-width: 360px) {
-        font-size: 80px;
+        font-size: 70px;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 68px;
+        font-size: 74px;
     }
 
     @media (device-width: 414px) { 
-        font-size: 80px;
+        font-size: 77px;
     }
 
-    @media (device-width: 375px) { 
-       font-size: 80px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 85px;
+    @media (device-width: 375px) and (device-height: 667px) { 
+        font-size: 71px;
     }
 
     @media (device-width: 428px) { 
-        font-size: 95px;
+        font-size: 83px;
     }
 
-    @media (device-width: 414px) and (min-height: 896px) { 
-        font-size: 90px;
+    @media (device-width: 390px) { 
+        font-size: 75px;
     }
 
-    @media (device-width: 1366px) { 
-        font-size: 125px;
+    @media (device-width: 375px) and (device-height: 812px) { 
+        font-size: 71px;
     }
 
-    @media (device-width: 1366px) and (device-height: 768px) { 
-        font-size: 100px;
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        font-size: 135px;
     }
 
 `;
 
 const NewbieCount = styled.p`
     text-decoration: none;
-    position: absolute;
-    margin: 0;
-    top: 58%;
-    left: 50%;
     width: 100%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     font-family: 'KoPub Dotum';
-    font-size: 3vh;
+    margin-top: 10px;
+    font-size: 20px;
 
     @media (device-width: 360px) {
         font-size: 15px;
-        top: 55%;
     }
 
     @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 15px;
-        top: 57%;
+        font-size: 17px;
     }
 
     @media (device-width: 414px) { 
-        font-size: 15px;
-        top: 57%;
+        font-size: 16.5px;
     }
 
-    @media (device-width: 375px) { 
-       font-size: 15px;
-       top: 55%;
-    }
-
-    @media (device-width: 390px) { 
+    @media (device-width: 375px) and (device-height: 667px) { 
         font-size: 15px;
-        top: 55%;
     }
 
     @media (device-width: 428px) { 
-        font-size: 15px;
-        top: 55%;
-    }
-
-    @media (device-width: 414px) and (min-height: 896px) { 
-        font-size: 17px;
-    }
-
-    @media only screen and (max-height: 1280px) { 
         font-size: 19px;
     }
 
-    @media (device-width: 1366px) { 
-        font-size: 23px;
-    }
-
-    @media (device-width: 1366px) and (device-height: 768px) { 
+    @media (device-width: 390px) { 
         font-size: 17px;
     }
 
+    @media (device-width: 375px) and (device-height: 812px) { 
+        font-size: 15px;
+    }
+
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        font-size: 28px;
+    }
 `;
 
 const MainButton = styled.button`
-    background-image: url(${IndexButton});
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
+    font-size: 37px;
+    font-family: "ELAND";
+    text-align: center;
+    text-decoration: none;
     border: none;
-    width: 100vw;
-    height: 11vh;
-    position: absolute;
-    margin: 0;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 390px;
+    height: 70px;
+    margin: 10px 0px 10px 0px;
+    border-radius: 35px;
     cursor: pointer;
+    color: #01333D;
+    background-color: white;
     
     &:hover {
-        background-image: url(${IndexButtonOnClick});
+        border: 5px solid white;
+        background-color: rgb(81,138,247);
     }
     &:active {
-        background-image: url(${IndexButtonOnClick});
+
     }
     &:focus {
         outline:none;
     }
 
-    @media (min-width: 360px) and (max-width: 428px) {
-        width: 90%;
-        top: 62%;
+    @media (device-width: 360px) {
+        font-size: 28px;
+        width: 276px;
+        height: 51px;
     }
-    
+
     @media (device-width: 384px) and (device-height: 538px) { 
-        width: 90%;
-        top: 65%;
+        font-size: 30px;
+        width: 296px;
+        height: 55px;
     }
 
     @media (device-width: 414px) { 
-        width: 90%;
-        top: 63%;
+        font-size: 30px;
+        width: 300px;
+        height: 55px;
+    }
+
+    @media (device-width: 375px) and (device-height: 667px) { 
+        font-size: 27px;
+        width: 271px;
+        height: 50px;
     }
 
     @media (device-width: 428px) { 
-        width: 90%;
-        top: 61%;
+        font-size: 33px;
+        width: 328px;
+        height: 60px;
     }
 
-    @media (device-width: 375px) and (min-height: 812px) { 
-        width: 90%;
-        top: 61%;
+    @media (device-width: 390px) { 
+        font-size: 30px;
+        width: 300px;
+        height: 55px;
+    }
+
+    @media (device-width: 375px) and (device-height: 812px) { 
+        font-size: 27px;
+        width: 271px;
+        height: 50px;
+    }
+
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        font-size: 45.5px;
+        width: 483px;
+        height: 90px;
+        border-radius: 45px;
     }
 `;
 
 const Contribute = styled.a`
     font-family: 'ELAND';
     font-size: 15px;
-    position: absolute;
-    top: 72%;
-    left: 46.5%;
     text-align: center;
-    text-decoration:none;
     color: #1C515A;
+
 
     &:link{
         color: #1C515A;
     }
     &:visited{
         color: #1C515A;
-    }
-
-    @media (device-width: 360px) {
-        top: 68%;
-        left: 36%;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) {
-        top: 73%;
-        left: 41%;
-        font-size: 10px;
-    }
-
-    @media (device-width: 1024px) { 
-        left: 45%;
-    }
-
-    @media (device-width: 1112px) {
-        left: 45.5%;
-    }
-
-    @media (device-width: 1194px) {
-        left: 45.5%;
-    }
-
-    @media (device-width: 428px){
-        left: 38%;
-    }
-
-    @media (device-width: 390px) { 
-        left: 37%;
-    }   
-
-    @media (device-width: 414px) { 
-        left: 37%;
-    }
-
-    @media (device-width: 375px) { 
-        top: 70%;
-        left: 36%;
     }
 `;
 
@@ -445,21 +447,21 @@ function Main() {
     }, [])
 
     return (
-      <MainImage>
-          <GlobalFonts/>
-          <TextContainer>
-              <HeaderText>내가 즐기게 될 캠퍼스 라이프는?</HeaderText>
-              <WhiteText>슬기로운</WhiteText>
-              <YellowText>대학생활</YellowText>
-          </TextContainer>
-          <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
-          <Link to = "/college" >
-              <MainButton></MainButton>
-          </Link>
-          <Link to = "/contribute" >
-              <Contribute>@ContactUs</Contribute>
-          </Link>
-      </MainImage>
+    <MainImage>
+        <GlobalFonts/>
+        <TextContainer>
+            <HeaderText>내가 즐기게 될 캠퍼스 라이프는?</HeaderText>
+            <WhiteText>슬기로운</WhiteText>
+            <YellowText>대학생활</YellowText>
+            <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
+            <Link to = "/college" >
+                <MainButton>대학교 입학하기</MainButton>
+            </Link>
+        </TextContainer>
+        <Link to = "/contribute" >
+            <Contribute>@Contributors</Contribute>
+        </Link>
+    </MainImage>
     )
 }
 
