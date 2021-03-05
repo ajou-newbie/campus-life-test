@@ -435,7 +435,7 @@ function Main() {
         try{
             setError(null);
             setCounts(null);
-            const getCounts = await axios.get('http://localhost:8080/index')
+            const getCounts = await axios.get('http://3.36.32.204:8080/index')
             setCounts(getCounts.data);
         } catch(e) {
             setError(e)
