@@ -516,7 +516,7 @@ function Result() {
     if (loading) return <Loader type="bubbles" color="white" ></Loader>
     if (error) return <div>에러가 발생했습니다.</div>
 
-    const url = "www.campus-life-test-kro.kr";
+    const url = window.location.href;
 
     return(
       <ResultImage>
