@@ -242,7 +242,7 @@ const ButtonOptions = styled.button`
         outline: none;
     }
     
-    @media (hover: none) and (pointer: coarse) {
+    @media (any-hover: none) and (any-pointer: coarse) {
         &:focus{
             background-color: white;
             color: #343434;
@@ -273,12 +273,6 @@ const ButtonOptions = styled.button`
     @media (min-width: 428px) and (max-width: 500px) {
         width: 400px;
     }
-
-    @media not all and (hover: none) {
-    .hoverspecificstyles:hover {
-    display: block;
-    }
-}
 `;
 
 function Questions(props) {

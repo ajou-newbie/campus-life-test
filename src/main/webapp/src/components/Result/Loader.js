@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReactLoading from 'react-loading';
 import styled from 'styled-components';
-import MainBack from '../../image/m_question_bg_w1024.png';
+import MainBack from '../../image/question_1920x1080.png';
 import MobileBack from '../../image/m_question_bg.png';
 import MainFold from '../../image/m_questions_galaxy_fold.png';
 import MainS8 from '../../image/m_questions_galaxy_S8.png';

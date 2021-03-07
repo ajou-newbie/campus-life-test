@@ -271,8 +271,12 @@ const ResultText = styled.li`
     margin-bottom: 20px;
 
     @media (min-width: 280px) and (max-width: 320px) {
-        font-size: 13px;
+        font-size: 12px;
         margin-bottom: 15px;
+    }
+
+    @media (min-width: 330px) and (max-width: 750px) {
+        font-size: 15px;
     }
 `;
 
@@ -389,7 +393,7 @@ const Share = styled.button`
         outline:none;
     }
 
-    @media (hover: none) and (pointer: coarse) {
+    @media (any-hover: none) and (any-pointer: coarse) {
         &:focus{
             background-color: white;
             color: #343434;
@@ -515,7 +519,7 @@ function Result() {
   if (loading) return <Loader type="bubbles" color="white" ></Loader>
   if (error) return <div>에러가 발생했습니다.</div>
 
-  const url = "www.campus-life-test-kro.kr";
+  const url = "www.campus-life-test.kro.kr";
 
   return(
     <ResultImage>
