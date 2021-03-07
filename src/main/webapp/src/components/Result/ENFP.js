@@ -6,95 +6,166 @@ import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toast
 import Loader from './Loader';
 import styled from 'styled-components';
 import ResultBackImg from '../../image/result_bg_gradiant.png';
-import MobileBackh538 from '../../image/result_bg_w538.png';
-import FixImg from '../../image/result_bg_fix.png';
-import FixImgw384 from '../../image/result_bg_fix_w384.png';
-import FixImgw500 from '../../image/result_bg_fix_w500.png';
-import FixImgw1024 from '../../image/result_bg_fix_w1024.png';
+import FixMImg from '../../image/result_fix_500x1080.png';
+import Fix360x740 from '../../image/result_fix_360x740.png';
+import Fix360x760 from '../../image/result_fix_360x760.png';
+import Fix384x538 from '../../image/result_fix_384x538.png';
+import Fix360x640 from '../../image/result_fix_360x640.png';
+import Fix414x896 from '../../image/result_fix_414x739.png';
+import Fix375x812 from '../../image/result_fix_375x812.png';
+import Fix375x667 from '../../image/result_fix_375x667.png';
+import Fix390x844 from '../../image/result_fix_390x844.png';
+import Fix428x926 from '../../image/result_fix_428x926.png';
+import Fix1280x800 from '../../image/result_fix_1280x800.png';
+import Fix1024x768 from '../../image/result_fix_1024x768.png';
+import Fix1112x834 from '../../image/result_fix_1112x834.png';
+import Fix1194x834 from '../../image/result_fix_1194x834.png';
+import Fix1366x1024 from '../../image/result_fix_1366x1024.png';
+import Fix1366x768 from '../../image/result_fix_1366x768.png';
+import Fix800x1280 from '../../image/result_fix_800x1280.png';
+import Fix768x1024 from '../../image/result_fix_768x1024.png';
+import Fix834x1112 from '../../image/result_fix_834x1112.png';
+import Fix834x1194 from '../../image/result_fix_834x1194.png';
+import Fix1024x1366 from '../../image/result_fix_1024x1366.png';
+import Fix1920x1080 from '../../image/result_fix_1920x1080.png';
 import GlobalFonts from "../fonts";
 import ENFP from '../../image/MBTI_ENFP.png';
 import ISTJ from '../../image/MBTI_ISTJ.png';
 import ISTP from '../../image/MBTI_ISTP.png';
 import url from '../../image/url_2x.png';
 
-
 const ResultImage = styled.div`
-    display: flex;
     background-image: url(${ResultBackImg});
     width: 100%;
-    min-height: 250%;
+    height: 100%;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
     justify-content: center;
     align-items: center;
-
-    @media screen and (max-height: 538px) {
-        background-image: url(${MobileBackh538});
-    }
-
 `;
 
-const Footer = styled.div`
+const Fix = styled.div`
     position: fixed;
-    background-image: url(${FixImg});
+    background-image: url(${Fix1920x1080});
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
     width:100%;
-    height: 100vh;
+    height: 100%;
     left: 0px;
     bottom: 0px;
     opacity: 0.8;
 
-    @media screen and (max-width: 500px) {
-        position: fixed;
-        background-image: url(${FixImgw500});
+    @media only screen and (max-width: 500px) {
+        background-image: url(${FixMImg});
     }
 
-    @media only screen and (max-width: 384px) {
-        position: fixed;
-        background-image: url(${FixImgw384});
+    @media (device-width: 360px) and (device-height: 740px){ 
+        background-image: url(${Fix360x740});
+    }       
+
+    @media (device-width: 360px) and (device-height: 760px){ 
+        background-image: url(${Fix360x760});
+    }  
+
+    @media (device-width: 384px) and (device-height: 538px) { 
+        background-image: url(${Fix384x538});
     }
 
-    @media only screen and (min-width: 1024px) {
-        position: fixed;
-        background-image: url(${FixImgw1024});
+    @media (device-width: 360px) and (device-height: 640px) { 
+        background-image: url(${Fix360x640});
+    }
+
+    @media (device-width: 414px) { 
+        background-image: url(${Fix414x896});
+    }
+
+    @media (device-width: 375px) and (device-height: 812px) { 
+        background-image: url(${Fix375x812});
+    }
+
+    @media (device-width: 375px) and (device-height: 667px) { 
+        background-image: url(${Fix375x667});
+    }
+
+    @media (device-width: 390px) {
+        background-image: url(${Fix390x844});
+    }
+
+    @media (device-width: 428px) { 
+        background-image: url(${Fix428x926});
+    }
+
+        
+    @media (device-width: 414px) and (device-height: 896px) { 
+        background-image: url(${Fix414x896});
+    }
+
+    @media (device-width: 1280px) and (device-height: 800px)  { 
+        background-image: url(${Fix1280x800});
+    }
+
+    @media (device-width: 1024px) { 
+        background-image: url(${Fix1024x768});
+    }
+
+    @media (device-width: 1112px) { 
+        background-image: url(${Fix1112x834});
+    }
+
+    @media (device-width: 1194px) { 
+        background-image: url(${Fix1194x834});
+    }
+
+    @media (device-width: 1366px) and (device-height:1024px) { 
+        background-image: url(${Fix1366x1024});
+    }
+
+    @media (device-width: 1366px) and (device-height:768px) { 
+        background-image: url(${Fix1366x768});
+    }
+
+    @media (device-width: 800px) and (device-height: 1280px) { 
+        background-image: url(${Fix800x1280});
+    }
+
+    @media (device-width: 768px) and (device-height: 1024px) { 
+        background-image: url(${Fix768x1024});
+    }
+
+    @media (device-width: 834px) and (device-height: 1112px) { 
+        background-image: url(${Fix834x1112});
+    }
+
+    @media (device-width: 834px) and (device-height: 1194px) { 
+        background-image: url(${Fix834x1194});
+    }
+
+    @media (device-width: 1024px) and (device-height: 1366px) { 
+        background-image: url(${Fix1024x1366});
     }
 `;
 
 const ResultContainer = styled.div`
     width: 500px;
-    height: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
 
-    @media (device-width: 360px) { 
-        width: 320px;
-    }
+    @media (min-width: 280px) and (max-width: 320px) {
+        width: 270px;
+    } 
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-        width: 320px;
-    }
-
-    @media (device-width: 428px) { 
-        width: 400px;
-    }
-
-    @media (device-width: 390px) { 
-        width: 370px;
-    }
-
-    @media (device-width: 414px) { 
-        width: 390px;
-    }
-
-    @media (device-width: 375px) { 
+    @media (min-width: 325px) and (max-width: 414px) {
         width: 350px;
-    }
+    } 
 
+    @media (min-width: 428px) and (max-width: 500px) {
+        width: 410px;
+    }
 `;
 
 const Header = styled.div`
@@ -103,24 +174,24 @@ const Header = styled.div`
     text-shadow: 1px 1px gray;
     color: white;
     margin: 30px 0px 30px 0px;
+
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 25px;
+        margin: 20px 0px 20px 0px;
+    }
+
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 30px;
+    } 
 `;
 
 const MBTIResult = styled.div`
     width: 100%;
-    height: 50%;
     background-color: white;
-    margin-bottom: 100px;
     border-radius: 35px;
     margin: 0px 10px 20px auto;
-    padding: 53px 29px 53px 29px;
+    padding: 53px 29px 29px 29px;
     box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
-    @media (device-width: 360px) { 
-        height: 55%;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        height: 80%;
-    }
 `;
 
 const ResultHeader = styled.div`
@@ -128,6 +199,10 @@ const ResultHeader = styled.div`
     font-size: 20px;
     color: black;
     margin-bottom: 28px;
+
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 15px;
+    }
 `;
 
 const ResultBlack = styled.div`
@@ -135,24 +210,13 @@ const ResultBlack = styled.div`
     font-size: 35px;
     color: #343434;
 
-    @media (device-width: 360px) { 
+    @media (min-width: 280px) and (max-width: 320px) {
         font-size: 20px;
     }
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 20px;
-    }
-    @media (device-width: 390px) { 
-        font-size: 25px;
-    }
 
-    @media (device-width: 375px) { 
-        font-size: 25px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 25px;
-    }
-
+    @media (min-width: 325px) and (max-width: 500px) {
+        font-size: 27px;
+    } 
 `;
 
 const ResultName = styled.div`
@@ -160,24 +224,13 @@ const ResultName = styled.div`
     font-size: 50px;
     color: #3369CF;
 
-    @media (device-width: 360px) { 
-        font-size: 38px;
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 30px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 35px;
-    }
-    @media (device-width: 390px) { 
+    @media (min-width: 325px) and (max-width: 414px) {
         font-size: 40px;
-    }
-
-    @media (device-width: 375px) { 
-        font-size: 40px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 40px;
-    }
+    } 
 `;
 
 const ResultImg = styled.div`
@@ -185,30 +238,42 @@ const ResultImg = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 300px;
+    width: 100%;
     height: 300px;
     display: block;
-    margin: 0 auto;
     margin-bottom: 10px;
 
-    @media (device-width: 360px) { 
-        width: 250px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        width: 280px;
+    @media (min-width: 280px) and (max-width: 320px) {
+        height: 240px;
     }
 `;
 
-const ResultText = styled.div`
+const Ulcontainer = styled.ul`
+    /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    padding-inline-start: 40px;
+    text-align: left;
+
+    @media (min-width: 280px) and (max-width: 414px) {
+        padding-inline-start: 10px;
+    }
+`;
+
+const ResultText = styled.li`
     font-family: 'KoPub Dotum';
-    font-size: 15px;
+    font-size: 18px;
     color: #343434;
     word-wrap: break-word;
     word-break: keep-all;
-    text-align: justify;
-    word-spacing: -1px;
-    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
 `;
 
 const SimiAndDiff = styled.div`
@@ -217,46 +282,13 @@ const SimiAndDiff = styled.div`
     background-color: white;
     border-radius: 35px;
     margin: 0px 0px 20px auto;
-    padding: 50px;
+    padding: 50px 50px 30px 50px;
     box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
     text-align: center;
 
-    @media (device-width: 360px) { 
-        height: 350px;
-        padding: 30px 10px 0px 10px;
+    @media (min-width: 280px) and (max-width: 500px) {
+        padding: 20px;
     }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        height: 330px;
-        padding: 25px 10px 20px 10px;
-    }
-
-    @media (device-width: 390px) { 
-        height: 350px;
-        padding: 30px 10px 0px 10px;
-    }
-
-    @media (device-width: 414px) { 
-        height: 350px;
-        padding: 30px 10px 0px 10px;
-    }
-
-    @media (device-width: 375px) and (min-height: 812px) { 
-        height: 330px;
-        padding: 20px 10px 0px 10px;
-    }
-
-    @media (device-width: 428px) and (min-height: 926px) { 
-        height: 330px;
-        padding: 20px 10px 0px 10px;
-    }
-
-    @media (device-width: 375px) and (min-height: 667px) { 
-        height: 330px;
-        padding: 20px 10px 0px 10px;
-    }
-
-    
 `;
 
 const SimiAndDiffText = styled.div`
@@ -268,31 +300,13 @@ const SimiAndDiffText = styled.div`
     word-break: keep-all;
     text-align: center;
 
-    @media (device-width: 360px) { 
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 16px;
+    }
+
+    @media (min-width: 325px) and (max-width: 414px) {
         font-size: 20px;
     }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 15px;
-        margin: 0;
-    }
-
-    @media (device-width: 428px) {
-        font-size: 20px;
-    }
-
-    @media (device-width: 390px) {
-        font-size: 20px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 20px;
-    }
-
-    @media (device-width: 375px) { 
-        font-size: 20px;
-    }
-
 `;
 
 const SimiAndDiffName = styled.div`
@@ -301,8 +315,12 @@ const SimiAndDiffName = styled.div`
     font-size: 20px;
     color: #343434;
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 15px;
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 14px;
+    }
+
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 18px;
     }
 `;
 
@@ -312,6 +330,10 @@ const FlexContainer = styled.div`
     margin-bottom: 20px;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 280px) and (max-width: 500px) {
+        margin-bottom: 0px;
+    }
 `;
 
 const Similar = styled.div`
@@ -323,6 +345,10 @@ const Similar = styled.div`
     height: 200px;
     border-right: 1px solid #e5e5e5;
 
+    @media (min-width: 280px) and (max-width: 320px) {
+        width: 150px;
+        height: 150px;
+    }
 `;
 
 const Different = styled.div`
@@ -333,6 +359,10 @@ const Different = styled.div`
     width: 200px;
     height: 200px;
 
+    @media (min-width: 280px) and (max-width: 320px) {
+        width: 150px;
+        height: 150px;
+    }
 `;
 
 const Share = styled.button`
@@ -340,102 +370,63 @@ const Share = styled.button`
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100px;
     background-color: white;
     border-radius: 35px;
-    margin: 0px 0px 20px auto;
-    padding: 40px;
+    margin: 0px 0px 20px 0px;
     box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14); 
     transform: translate(0%, 0%);
     border: none;
+    cursor: pointer;
 
     &:hover {
+        border: 5px solid white;
         background-color: rgb(81,138,247);
+        outline: none;
     }
-    &:active {
-        background-color: rgb(81,138,247);
-    }
+    
     &:focus {
         outline:none;
     }
 
-    @media (device-width: 360px) {
-        padding: 20px;
-        height: 7%;
+    @media (hover: none) and (pointer: coarse) {
+        &:focus{
+            background-color: white;
+            color: #343434;
+            outline: none;
+        }
+
+        &:active {
+            border: 5px solid white;
+            background-color: rgb(81,138,247);
+            color: white;
+            outline: none;
+        }
     }
 
-    @media (device-width: 360px) and (device-height: 640px) { 
-        height: 5%;
-        padding: 10px 0px 10px 0px;
+    @media (min-width: 280px) and (max-width: 320px) {
+        height: 60px;
+        border-radius: 25px;
     }
 
-    @media (device-width: 428px) { 
-        height: 7%;
-        padding: 20px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        padding: 25px;
-        height: 7%;
-    }
-
-    @media (device-width: 360px) and (device-height: 640px) { 
-        padding: 25px;
-        height: 7%;
-    }
-
-    @media (device-width: 390px) { 
-        padding: 25px;
-        height: 7%;
-    }
-
-    @media (device-width: 414px) {
-        padding: 30px;
-        height: 7%;
-    }
-
-    @media (device-width: 375px) {
-        padding: 30px;
-        height: 7%;
+    @media (min-width: 325px) and (max-width: 414px) {
+        height: 70px;
+        border-radius: 25px;
     }
 `;
 
 const ShareText = styled.div`
-    width: 100%;
-    height: 100%;
     font-family: 'BMeU';
-    font-size: 30px;
+    font-size: 35px;
     color: #343434;
-    word-wrap: break-word;
-    word-break: keep-all;
     text-align: center;
-    margin: 0 auto;
 
-    @media (device-width: 360px) { 
+    @media (min-width: 280px) and (max-width: 320px) {
         font-size: 20px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 20px;
-    }
-
-    @media (device-width: 360px) and (device-height: 640px) { 
-        font-size: 19px;
-    }
-
-    @media (device-width: 428px) { 
-        font-size: 25px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 23px;
-    }
-
-    @media (device-width: 414px) {
-        font-size: 25px;
-    }
-
-    @media (device-width: 375px) {
-        font-size: 23px;
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 30px;
     }
 `;
 
@@ -444,34 +435,16 @@ const Url = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 20%;
-    height: 5vh;
+    width: 50px;
+    height: 35px;
 
-    @media (device-width: 360px) { 
-        width: 10%;
-        height: 5vh;
+    @media (min-width: 280px) and (max-width: 320px) {
+        height: 25px;
     }
 
-    @media (device-width: 360px) and (device-height: 640px) { 
-        width: 13%;
+    @media (min-width: 325px) and (max-width: 414px) {
+        height: 30px;
     }
-
-    @media (device-width: 390px) { 
-        width: 10%;
-    }
-
-    @media (device-width: 375px) {
-        width: 10%;
-    }
-
-    @media (device-width: 414px) {
-        width: 10%;
-    }
-
-    @media (device-width: 414px) and (min-height: 896px) {
-        width: 10%;
-    }
-
 `;
 
 const GoToStartbtn = styled.button`
@@ -479,47 +452,37 @@ const GoToStartbtn = styled.button`
     border-radius: 35px;
     width: 100%;
     height: 100px;
-    margin: 0;
     transform: translate(0%, 0%);
-    margin: 0px 10px 10px auto;
+    margin-bottom: 100px;
     font-family: 'BMeU';
     font-size: 35px;
     color: #3369CF;
+    background-color: white;
     cursor: pointer;
     box-shadow: 4px 6px 0px -1px rgba(0,0,0,0.14);
         
     &:hover {
+        border: 5px solid white;
         background-color: rgb(81,138,247);
+        color: white;
     }
-    &:active {
-        background-color: rgb(81,138,247);
-    }
+   
     &:focus {
-        outline:none;
+        outline: none;
     }
 
-    @media (device-width: 360px) { 
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 20px;
+        height: 60px;
+        margin-bottom: 50px;
+        border-radius: 25px;
+    }
+
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 30px;
         height: 70px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        height: 70px;
-    }
-
-    @media (device-width: 428px) { 
-        height: 70px;
-    }
-
-    @media (device-width: 390px) { 
-        height: 80px;
-    }
-
-    @media (device-width: 414px) {
-        height: 85px;
-    }
-
-    @media (device-width: 375px) {
-        height: 85px;
+        margin-bottom: 50px;
+        border-radius: 25px;
     }
 `;
 
@@ -542,7 +505,7 @@ function Result() {
     };
 
     const Toast = () => {
-        ToastsStore.success("링크 복사에 성공했습니다!");
+        ToastsStore.success("링크 복사에 성공했어요!");
     }
 
     useEffect(() => {
@@ -552,13 +515,12 @@ function Result() {
     if (loading) return <Loader type="bubbles" color="white" ></Loader>
     if (error) return <div>에러가 발생했습니다.</div>
 
-    const url = window.location.href;
-
+    const url = "www.campus-life-test-kro.kr";
 
     return(
       <ResultImage>
           <GlobalFonts/>
-          <Footer/>
+          <Fix/>
           <ResultContainer>
               <Header>슬기로운 대학생활</Header>
               <MBTIResult>
@@ -567,13 +529,14 @@ function Result() {
                   <ResultName>자체휴강 마스터</ResultName>
                   <ResultImg>
                   </ResultImg>
-                  <ResultText>- 밖에 핀 벚꽃이 예쁘니까, 날씨가 포근하니까, 오늘은 기분이 안 좋으니까 휴강! 아무튼 휴강!
-                      <br></br><br></br>- 시험걱정은 나중에 해요. 어차피 벼락치기 잘 하거든요!
-                      <br></br><br></br>- 출튀하고 친구들과 놀기까지 한다면 금상첨화! 공부할 시간에 새로운 친구를 사귈 수 있다면 더 즐거울 것 같아요.
-                      <br></br><br></br>- 특히 이전에 해보지 않았던 새로운 무언가에 도전하는 걸 좋아해요. 하지만 쉽게 일을 벌리는 만큼 금방 질려해서 일이 흐지부지 되는 경우가 많아요
-                      <br></br><br></br>- 쉴 새 없이 말하지만, 그만큼 친구들의 이야기도 큰 리액션으로 잘 들어주기 때문에 친구들이 좋아해줘요. 당신이 없으면 허전할걸요?
-                      <br></br><br></br>- 그래도 결석 너무 많이 하면 F니까 조심해요! 맘이 에푸니까..
-                  </ResultText>
+                  <Ulcontainer>
+                      <ResultText>밖에 핀 벚꽃이 예쁘니까, 날씨가 포근하니까, 오늘은 기분이 안 좋으니까 휴강! 아무튼 휴강!</ResultText>
+                      <ResultText>시험걱정은 나중에 해요. 어차피 벼락치기 잘 하거든요!</ResultText>
+                      <ResultText>출튀하고 친구들과 놀기까지 한다면 금상첨화! 공부할 시간에 새로운 친구를 사귈 수 있다면 더 즐거울 것 같아요.</ResultText>
+                      <ResultText>특히 이전에 해보지 않았던 새로운 무언가에 도전하는 걸 좋아해요. 하지만 쉽게 일을 벌리는 만큼 금방 질려해서 일이 흐지부지 되는 경우가 많아요</ResultText>
+                      <ResultText>쉴 새 없이 말하지만, 그만큼 친구들의 이야기도 큰 리액션으로 잘 들어주기 때문에 친구들이 좋아해줘요. 당신이 없으면 허전할걸요?</ResultText>
+                      <ResultText>그래도 결석 너무 많이 하면 F니까 조심해요! 맘이 에푸니까..</ResultText>
+                  </Ulcontainer>
               </MBTIResult>
               <SimiAndDiff>
                   <FlexContainer>
@@ -590,9 +553,9 @@ function Result() {
                   </FlexContainer>
               </SimiAndDiff>
               <CopyToClipboard text={url}>
-                    <Share>  
+              <Share onClick={() => Toast()}>  
                         <Url></Url>
-                        <ShareText onClick={() => Toast()}>나의 캠퍼스 라이프 공유하기</ShareText>
+                        <ShareText>테스트 공유하기</ShareText>
                         <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.BOTTOM_CENTER} />
                     </Share>
                 </CopyToClipboard>

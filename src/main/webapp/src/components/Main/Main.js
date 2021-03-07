@@ -18,7 +18,12 @@ import MainiPhone12ProMax from '../../image/m_main_iPhone12Pro_Max.png';
 import MainiPhone12Pro from '../../image/m_main_iPhone12Pro.png';
 import MainiPhone678Plus from '../../image/m_main_iPhone678Plus.png';
 import MainiPhone678SE from '../../image/m_main_iPhone678SE.png';
-//import MainiPhoneXR from '../../image/m_main_iPhoneXR.png';
+import MainiPhoneXR from '../../image/m_main_iPhoneXR.png';
+import GalaxyTapPortrait from '../../image/m_main_GalaxyTapPortrait.png';
+import iPadPortrait from '../../image/m_main_iPadPortrait.png';
+import iPadPro10Portrait from '../../image/m_main_iPadPro10Portrait.png';
+import iPadPro11Portrait from '../../image/m_main_iPadPro11Portrait.png';
+import iPadPro12Portrait from '../../image/m_main_iPadPro12Portrait.png';
 import MainWeb1366 from '../../image/m_main_web1366.png';
 import GlobalFonts from "../fonts";
 
@@ -74,7 +79,9 @@ const MainImage = styled.div`
     }
 
         
-    
+    @media (device-width: 414px) and (device-height: 896px) { 
+        background-image: url(${MainiPhoneXR});
+    }
 
     @media (device-width: 1280px) and (device-height: 800px)  { 
         background-image: url(${MainTap});
@@ -99,6 +106,30 @@ const MainImage = styled.div`
     @media (device-width: 1366px) and (device-height:768px) { 
         background-image: url(${MainWeb1366});
     }
+
+    @media (device-width: 800px) and (device-height: 1280px) { 
+        background-image: url(${GalaxyTapPortrait});
+    }
+
+    @media (device-width: 768px) and (device-height: 1024px) { 
+        background-image: url(${iPadPortrait});
+    }
+
+    @media (device-width: 834px) and (device-height: 1112px) { 
+        background-image: url(${iPadPro10Portrait});
+    }
+
+    @media (device-width: 834px) and (device-height: 1112px) { 
+        background-image: url(${iPadPro10Portrait});
+    }
+
+    @media (device-width: 834px) and (device-height: 1194px) { 
+        background-image: url(${iPadPro11Portrait});
+    }
+
+    @media (device-width: 1024px) and (device-height: 1366px) { 
+        background-image: url(${iPadPro12Portrait});
+    }
 `;
 
 const TextContainer = styled.div`
@@ -108,7 +139,7 @@ const TextContainer = styled.div`
     align-self: center;
     flex-direction: column;
     left: 50%;
-    top: 50%;
+    top: 48%;
     transform: translate(-50%, -50%);
 `;
 
@@ -207,15 +238,21 @@ const MainButton = styled.button`
     cursor: pointer;
     color: #01333D;
     background-color: white;
-    margin-bottom: 15px;
     
     &:hover {
         border: 5px solid white;
         background-color: rgb(81,138,247);
+        color: white;
     }
-    &:active {
 
+    &:active {
+        outline: none;
     }
+
+    &:visited {
+        outline: none;
+    }
+
     &:focus {
         outline:none;
     }
@@ -242,19 +279,26 @@ const MainButton = styled.button`
 
 const Contribute = styled.div`
     font-family: 'ELAND';
-    font-size: 13px;
-    text-align: center;
-    color: #1C515A;
+    font-size: 15px;
     position: absolute;
     left: 50%;
     top: 100%;
-    transform: translate(-50%);
+    transform: translate(-50%);    
+    text-align: center;
+    color: #1C515A;
+    margin-top: 15px; 
 
     &:link{
         color: #1C515A;
     }
+    
     &:visited{
         color: #1C515A;
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
     }
 
     @media (min-width: 1900px) {
@@ -262,7 +306,7 @@ const Contribute = styled.div`
     }
 
     @media (max-width: 414px) {
-        font-size: 10px;
+        margin-top: 25px;
     } 
 `;
 
@@ -275,7 +319,7 @@ function Main(props) {
         try{
             setError(null);
             setCounts(null);
-            const getCounts = await axios.get('http://3.36.32.204:8080/index')
+            const getCounts = await axios.get('http://localhost:8080/index')
             setCounts(getCounts.data);
         } catch(e) {
             setError(e)
@@ -287,21 +331,21 @@ function Main(props) {
     }, [])
 
     return (
-      <MainImage>
-          <GlobalFonts/>
-          <TextContainer>
-              <HeaderText>내가 즐기게 될 캠퍼스 라이프는?</HeaderText>
-              <WhiteText>슬기로운</WhiteText>
-              <YellowText>대학생활</YellowText>
-              <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
-              <Link to = "/college" >
-                  <MainButton>대학교 입학하기</MainButton>
-              </Link>
-              <Link to = "/contribute" >
-                  <Contribute>@Contributors</Contribute>
-              </Link>
-          </TextContainer>
-      </MainImage>
+    <MainImage>
+        <GlobalFonts/>
+        <TextContainer>
+            <HeaderText>내가 즐기게 될 캠퍼스 라이프는?</HeaderText>
+            <WhiteText>슬기로운</WhiteText>
+            <YellowText>대학생활</YellowText>
+            <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
+            <Link to = "/college" >
+                <MainButton>대학교 입학하기</MainButton>
+            </Link>
+            <Link to = "/contribute" >
+                <Contribute>@Contributors</Contribute>
+            </Link>
+        </TextContainer>
+    </MainImage>
     )
 }
 

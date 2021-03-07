@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProgressBar = (props) => {
-  const { bgcolor, completed } = props;
+  const { completed } = props;
 
   const ContainerStyles = styled.div`
     height: 9px;
