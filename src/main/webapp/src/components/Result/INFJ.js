@@ -520,7 +520,7 @@ function Result() {
     if (loading) return <Loader type="bubbles" color="white" ></Loader>
     if (error) return <div>에러가 발생했습니다.</div>
 
-    const url = "www.campus-life-test.kro.kr";
+    const url = window.location.href;
 
     return(
       <ResultImage>
@@ -559,7 +559,7 @@ function Result() {
               <CopyToClipboard text={url}>
               <Share onClick={() => Toast()}>  
                     <Url></Url>
-                    <ShareText>테스트 공유하기</ShareText>
+                    <ShareText>테스트 결과 공유하기</ShareText>
                     <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.BOTTOM_CENTER} />
                 </Share>
               </CopyToClipboard>
