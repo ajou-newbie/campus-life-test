@@ -29,16 +29,19 @@ public class CollegeRepositoryCustom {
 		collegeRepository.deleteAll();
 	}
 
+	/*
+	//초기에 DB 생성 후 운영 시에는 주석 처리 한다.
 	@PostConstruct
 	public void init() {
 		collegeRepository.save(new College("선택안함"));
-		collegeRepository.save(new College("예체능"));
-		collegeRepository.save(new College("공학"));
-		collegeRepository.save(new College("의학"));
-		collegeRepository.save(new College("상경"));
-		collegeRepository.save(new College("인문"));
-		collegeRepository.save(new College("자연"));
-		collegeRepository.save(new College("사회"));
-		collegeRepository.save(new College("교육"));
+		collegeRepository.save(new College("인문계열"));
+		collegeRepository.save(new College("공학계열"));
+		collegeRepository.save(new College("교육계열"));
+		collegeRepository.save(new College("사회계열"));
+		collegeRepository.save(new College("상경계열"));
+		collegeRepository.save(new College("자연계열"));
+		collegeRepository.save(new College("의약계열"));
+		collegeRepository.save(new College("예체능계열"));
 	}
+	 */
 }

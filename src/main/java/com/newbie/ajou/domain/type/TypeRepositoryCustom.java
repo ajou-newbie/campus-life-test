@@ -28,6 +28,8 @@ public class TypeRepositoryCustom {
 		typeRepository.deleteAll();
 	}
 
+	/*
+	//초기에 DB 생성 후 운영 시에는 주석 처리 한다.
 	@PostConstruct
 	public void init() {
 		typeRepository.save(new Type("istj"));
@@ -47,4 +49,5 @@ public class TypeRepositoryCustom {
 		typeRepository.save(new Type("enfj"));
 		typeRepository.save(new Type("entj"));
 	}
+	 */
 }

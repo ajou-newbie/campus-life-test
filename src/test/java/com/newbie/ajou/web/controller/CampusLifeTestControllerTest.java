@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest
 class CampusLifeTestControllerTest {
-	private static final String TEST_COLLEGE_NAME = "의학";
+	private static final String TEST_COLLEGE_NAME = "공학계열";
 
 	@Autowired
 	WebApplicationContext context;
