@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import MainBack from '../../image/question_1920x1080.png';
+import MainBack from '../../image/m_question_bg_w1024.png';
 import MobileBack from '../../image/m_question_bg.png';
 import MainFold from '../../image/m_questions_galaxy_fold.png';
 import MainS8 from '../../image/m_questions_galaxy_S8.png';
@@ -237,11 +237,6 @@ const Picture = styled.div`
         width: 75px;
         height: 75px;
     } 
-
-    @media (min-width: 420px) and (max-width: 750px) {
-        width: 95px;
-        height: 95px;
-    } 
 `;
 
 const ContributeName = styled.div`
@@ -266,12 +261,13 @@ const ContributeName = styled.div`
     } 
 `;
 
-const ContributeProfile = styled.div`
+const ContributeProfileOne = styled.div`
     font-family: 'Recipekorea';
     font-size: 15px;
     text-align: center;
     color: #1C515A;
     margin-top: 15px;
+    margin-bottom: 10px;
 
     @media (min-width: 1280px) and (max-width: 1366px) {
         font-size: 11px;
@@ -284,6 +280,7 @@ const ContributeProfile = styled.div`
     @media (min-width: 280px) and (max-width: 320px) {
         font-size: 10px;
         margin-top: 5px;
+        margin-bottom: 10px;
     }
 
     @media (min-width: 325px) and (max-width: 414px) {
@@ -297,48 +294,80 @@ const ContributeProfile = styled.div`
     }
 `;
 
+const ContributeProfileTwo = styled.div`
+    font-family: 'Recipekorea';
+    font-size: 15px;
+    text-align: center;
+    color: #64939B;
+    margin-top: 10px;
+
+    @media (min-width: 1280px) and (max-width: 1366px) {
+        font-size: 11px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1200px) {
+        font-size: 12px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 10px;
+        margin-top: 6px;
+    }
+
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 10px;
+        margin-top: 10px;
+    } 
+
+    @media (min-width: 428px) and (max-width: 500px) {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+`;
+
+
 function Contribute() {
     return (
-        <ContributeImg>
-            <GlobalFonts/>
-            <Container>
-                <ContributeCard>
-                    <Picture style={{backgroundImage: `url(${JISOO})`}}/>
-                    <ContributeName>안지수</ContributeName>
-                    <ContributeProfile>Back-End</ContributeProfile>
-                    <ContributeProfile>eyerun95@ajou.ac.kr</ContributeProfile>
-                    <ContributeProfile>github.com/JayAnCode</ContributeProfile>
-                </ContributeCard>
-                <ContributeCard>
-                    <Picture style={{backgroundImage: `url(${DONGHYUN})`}}/>
-                    <ContributeName>이동헌</ContributeName>
-                    <ContributeProfile>Back-End</ContributeProfile>
-                    <ContributeProfile>opdshe@gmail.com</ContributeProfile>
-                    <ContributeProfile>github.com/opdshe</ContributeProfile>
-                </ContributeCard>
-                <ContributeCard>
-                    <Picture style={{backgroundImage: `url(${HEAIN})`}}/>
-                    <ContributeName>이해인</ContributeName>
-                    <ContributeProfile>Back-End</ContributeProfile>
-                    <ContributeProfile>odong2@ajou.ac.kr</ContributeProfile>
-                    <ContributeProfile>github.com/maetdori</ContributeProfile>
-                </ContributeCard>
-                <ContributeCard>
-                    <Picture style={{backgroundImage: `url(${BEAN})`}}/>
-                    <ContributeName>김종빈</ContributeName>
-                    <ContributeProfile>Front-End</ContributeProfile>
-                    <ContributeProfile>whddkrak@gmail.com</ContributeProfile>
-                    <ContributeProfile>github.com/Beaneee</ContributeProfile>
-                </ContributeCard>
-                <ContributeCard>
-                    <Picture style={{backgroundImage: `url(${HYUNA})`}}/>
-                    <ContributeName>백현아</ContributeName>
-                    <ContributeProfile>Designer</ContributeProfile>
-                    <ContributeProfile>line100@ajou.ac.kr</ContributeProfile>
-                    <ContributeProfile>blog.naver.com/100_line</ContributeProfile>
-                </ContributeCard>
-            </Container>
-        </ContributeImg>
+      <ContributeImg>
+          <GlobalFonts/>
+          <Container>
+              <ContributeCard>
+                  <Picture style={{backgroundImage: `url(${JISOO})`}}/>
+                  <ContributeName>안지수</ContributeName>
+                  <ContributeProfileOne>Back-End</ContributeProfileOne>
+                  <ContributeProfileTwo>eyerun95@ajou.ac.kr</ContributeProfileTwo>
+                  <ContributeProfileTwo>github.com/JayAnCode</ContributeProfileTwo>
+              </ContributeCard>
+              <ContributeCard>
+                  <Picture style={{backgroundImage: `url(${DONGHYUN})`}}/>
+                  <ContributeName>이동헌</ContributeName>
+                  <ContributeProfileOne>Back-End</ContributeProfileOne>
+                  <ContributeProfileTwo>opdshe@gmail.com</ContributeProfileTwo>
+                  <ContributeProfileTwo>github.com/opdshe</ContributeProfileTwo>
+              </ContributeCard>
+              <ContributeCard>
+                  <Picture style={{backgroundImage: `url(${HEAIN})`}}/>
+                  <ContributeName>이해인</ContributeName>
+                  <ContributeProfileOne>Back-End</ContributeProfileOne>
+                  <ContributeProfileTwo>odong2@ajou.ac.kr</ContributeProfileTwo>
+                  <ContributeProfileTwo>github.com/maetdori</ContributeProfileTwo>
+              </ContributeCard>
+              <ContributeCard>
+                  <Picture style={{backgroundImage: `url(${BEAN})`}}/>
+                  <ContributeName>김종빈</ContributeName>
+                  <ContributeProfileOne>Front-End</ContributeProfileOne>
+                  <ContributeProfileTwo>whddkrak@gmail.com</ContributeProfileTwo>
+                  <ContributeProfileTwo>github.com/Beaneee</ContributeProfileTwo>
+              </ContributeCard>
+              <ContributeCard>
+                  <Picture style={{backgroundImage: `url(${HYUNA})`}}/>
+                  <ContributeName>백현아</ContributeName>
+                  <ContributeProfileOne>Designer</ContributeProfileOne>
+                  <ContributeProfileTwo>line100@ajou.ac.kr</ContributeProfileTwo>
+                  <ContributeProfileTwo>blog.naver.com/100_line</ContributeProfileTwo>
+              </ContributeCard>
+          </Container>
+      </ContributeImg>
     )
 }
 

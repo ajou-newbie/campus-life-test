@@ -429,8 +429,7 @@ function College() {
     <Main>
       <Container>
         <GlobalFonts/>
-        <Downshift onChange={selection => onSelect(selection)
-        } onClick={console.log(selectedOption)}>
+        <Downshift onChange={selection => onSelect(selection)}>
           {({
             getInputProps,
             getItemProps,
