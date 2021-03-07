@@ -14,6 +14,7 @@ import MainiPadPro10 from '../../image/m_main_iPadPro10.png';
 import MainiPadPro11 from '../../image/m_main_iPadPro11.png';
 import MainiPadPro12 from '../../image/m_main_iPadPro12.png';
 import MainiPhone11Pro from '../../image/m_main_iPhone11Pro.png';
+//import MainiPhoneXR from '../../image/m_main_iPhoneXR.png';
 import MainiPhone12ProMax from '../../image/m_main_iPhone12Pro_Max.png';
 import MainiPhone12Pro from '../../image/m_main_iPhone12Pro.png';
 import MainiPhone678Plus from '../../image/m_main_iPhone678Plus.png';
@@ -21,19 +22,18 @@ import MainiPhone678SE from '../../image/m_main_iPhone678SE.png';
 import MainWeb1366 from '../../image/m_main_web1366.png';
 import triangle from '../../image/mbti_tri.png'
 import GlobalFonts from "../fonts"
-
+import { FaSortDown } from 'react-icons/fa';
 const Main = styled.div`
-  background-image: url(${MainBack});
-  width: 100%;
-  height: 100vh;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+   background-image: url(${MainBack});
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: fixed;
 
-  @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 500px) {
         background-image: url(${MainMBack});
     }
 
@@ -74,9 +74,7 @@ const Main = styled.div`
     }
 
         
-    @media (device-width: 414px) and (device-height: 896px) {  //변경
-        background-image: url(${MainiPhone678Plus});
-    }
+    
 
     @media (device-width: 1280px) and (device-height: 800px)  { 
         background-image: url(${MainTap});
@@ -103,70 +101,15 @@ const Main = styled.div`
     }
 `;
 
-const TextContainer = styled.div`
-    width: 100%;
-    padding: 220px 0px 0px 0px;
-
-    @media (device-width: 360px) { 
-      margin-top: 50px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-      padding: 160px 0px 0px 0px;
-    }
-
-    @media (device-width: 360px) and (device-height: 640px) { 
-      padding: 140px 0px 0px 0px;
-    }
-
-    @media (device-width: 428px) { 
-      padding: 340px 0px 0px 0px;
-    }
-
-    @media (device-width: 390px) { 
-      padding: 300px 0px 0px 0px;
-    }
-
-    @media (device-width: 414px) { 
-      padding: 230px 0px 0px 0px;
-    }
-
-    @media (device-width: 375px) { 
-      padding: 210px 0px 0px 0px;
-    }
-
-    @media (device-width: 375px) and (min-height: 812px) { 
-      padding: 300px 0px 0px 0px;
-    }
-
-    @media (device-width: 414px) and (min-height: 896px) { 
-      padding: 330px 0px 0px 0px;
-    }
-
-    @media (device-width: 1280px) { 
-      padding: 250px 0px 0px 0px;
-    }
-
-    @media (device-width: 1024px) { 
-      padding: 250px 0px 0px 0px;
-    }
-
-    @media (device-width: 1112px) { 
-      padding: 265px 0px 0px 0px;
-    }
-
-    @media (device-width: 1194px) { 
-      padding: 255px 0px 0px 0px;
-    }
-
-    @media (device-width: 1366px) { 
-      padding: 355px 0px 0px 0px;
-    }
-
-    @media (device-width: 1366px) and (device-height: 768px) { 
-        padding: 240px 0px 0px 0px;
-    }
-
+const Container = styled.div`
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
 `;
 
 const FlexContainer = styled.div`
@@ -177,103 +120,107 @@ const FlexContainer = styled.div`
 
 const WhiteText = styled.div`
     font-family: 'SANDOLL';
-    font-size: 60px;
+    font-size: 70px;
     color: white;
     text-shadow: 4px 4px #29879599;
     text-align: center;
 
-    @media (device-width: 360px) { 
+    @media (min-width: 1900px) {
+      font-size: 100px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: 325px) and (max-width: 414px) {
       font-size: 50px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-      font-size: 50px;
-    }
-
-    @media (device-width: 375px) { 
-      font-size: 55px;
-    }
-
-    
-
+    } 
 `;
 
 const YellowText = styled.div`
     font-family: 'SANDOLL';
-    font-size: 60px;
+    font-size: 70px;
     color: #FFFF00;
     text-shadow: 4px 4px #29879599;
 
-    @media (device-width: 360px) { 
-      font-size: 50px;
+    @media (min-width: 1900px) {
+      font-size: 100px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-      font-size: 50px;
+    @media (min-width: 280px) and (max-width: 320px) {
+      font-size: 40px;
     }
 
-    @media (device-width: 375px) { 
-      font-size: 55px;
-    }
+    @media (min-width: 325px) and (max-width: 414px) {
+      font-size: 50px;
+    } 
 `;
 
 const FooterText = styled.div`
     font-family: 'KoPub Dotum';
-    font-size: 15px;
+    font-size: 20px;
     color: white;
-    padding: 30px 0px 0px 0px;
     text-align: center;
+    margin-top: 15px;
 
-    @media (device-width: 360px) { 
+    @media (min-width: 1900px) {
+      font-size: 30px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
       font-size: 15px;
-      margin-top: 7px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-      font-size: 13px;
-    }
-
-    @media (device-width: 360px) and (device-height: 640px) { 
-      font-size: 13px;
+    @media (min-width: 325px) and (max-width: 414px) {
+      font-size: 16px;
     }
 `;
 
-
 const Input = styled.div`
-  margin-top: 3vh;
   display: flex;
   justify-content: center;
-  width: 350px;
-  height: 50px;
-
-  @media (device-width: 360px) { 
-    width: 290px;
+  width: 407px;
+  margin-top: 15px;
+  
+  @media (min-width: 1900px) {
+    width: 590px;
   }
 
-  @media (device-width: 384px) and (device-height: 538px) { 
-    width: 290px;
+  @media (min-width: 280px) and (max-width: 320px) {
+    width: 250px;
   }
 
-  @media (device-width: 375px) { 
-    width: 320px;
+  @media (min-width: 325px) and (max-width: 414px) {
+    width: 300px;
   }
 
   input {
     border: none;
     width: 100%;
-    font-size: 30px;
     font-family: 'Eland';
     text-align: center;
     color: #1C515A;
-    padding-left: 50px;
+    padding-left: 34px;
     border-radius: 0px;
+    font-size: 30px;
+
+    @media (min-width: 1900px) {
+      height: 70px;
+      font-size: 40px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+      height: 40px;
+      font-size: 20px;
+    }
 
     &::placeholder {
       font-family: 'Eland';
       text-align: center;
       padding: 5px;
       font-size: 30px;
-      color: #1C515A;
+      color: #1C515A; 
     }
 
     &:focus {
@@ -284,27 +231,31 @@ const Input = styled.div`
   button {
     background-image: url(${triangle});
     background-repeat: no-repeat;
+    background-size: 12px;
     background-position: center;
     background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: none;
     color: white;
-    font-size: 25px;
-    width: 40px;
-    padding: 24px;
+    padding: 25px 25px 25px 25px;
     margin: 0 auto;
     cursor: pointer;
 
     &:focus {
       outline: none;
     }
+
+    @media (min-width: 1900px) {
+      padding: 35px 35px 35px 35px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+      padding: 20px 20px 20px 20px;
+    }
   }
 `;
 
 const Menu = styled.ul`
-  width: 350px;
+  width: 407px;
   height: 200px;
   border: none;
   background-color: white;
@@ -313,17 +264,18 @@ const Menu = styled.ul`
   margin: 0px;
   padding: 0px;
 
-  @media (device-width: 360px) { 
-    width: 290px;
+  @media (min-width: 1900px) {
+    width: 590px;
+    height: 250px;
   }
 
-  @media (device-width: 384px) and (device-height: 538px) { 
-    width: 290px;
-    height: 100px;
+  @media (min-width: 280px) and (max-width: 320px) {
+    width: 250px;
+    height: 150px;
   }
 
-  @media (device-width: 375px) { 
-    width: 320px;
+  @media (min-width: 325px) and (max-width: 414px) {
+    width: 300px;
   }
 
 `;
@@ -357,18 +309,25 @@ const Items = styled.li`
     font-size: 30px;
     color: #1C515A;
     margin-bottom: 5px;
+
+    @media (min-width: 1900px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+      font-size: 20px;
+    }
 `;
 
 const DecisionBtn = styled.button`
   margin: 15px;
-  padding: 6px 6px;
+  padding: 0;
   text-decoration: none;
   width: 80px;
   height: 40px;
   border-radius: 18px;
   background-color: white;
   font-size: 20px;
-  text-align: center;
   border: 4px solid #1C515A;
   font-family: 'Eland';
   cursor: pointer;
@@ -376,6 +335,23 @@ const DecisionBtn = styled.button`
 
   &:hover {
     background-color: rgb(81,138,247);
+  }
+
+  @media (min-width: 1900px) {
+    width: 90px;
+    height: 50px;
+    border-radius: 24px;
+    margin-top: 30px;
+  }
+
+  @media (min-width: 280px) and (max-width: 320px) {
+    width: 65px;
+    height: 35px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 325px) and (max-width: 414px) {
+    margin-top: 40px;
   }
 
 `;
@@ -392,57 +368,56 @@ function College() {
 
   return (
     <Main>
-      <GlobalFonts/>
-      <Downshift onChange={selection => onSelect(selection)
-      } onClick={console.log(selectedOption)}>
-        {({
-          getInputProps,
-          getItemProps,
-          getMenuProps,
-          getToggleButtonProps,
-          isOpen,
-          highlightedIndex,
-          selectedItem,
-        }) => (
-          <div>
-            <TextContainer>
+      <Container>
+        <GlobalFonts/>
+        <Downshift onChange={selection => onSelect(selection)}>
+          {({
+            getInputProps,
+            getItemProps,
+            getMenuProps,
+            getToggleButtonProps,
+            isOpen,
+            highlightedIndex,
+            selectedItem,
+          }) => (
+            <div>
               <FlexContainer>
                 <WhiteText>당신의&nbsp;</WhiteText><YellowText>전공</YellowText><WhiteText>을</WhiteText>
               </FlexContainer>
               <WhiteText>알려주세요!</WhiteText>
               <FooterText>* 관심있는 전공을 고르셔도 됩니다 :)</FooterText>
-            </TextContainer>
-            <Input>
-              <input
-                readOnly={true}
-                placeholder="선택안함"
-                {...getInputProps()}
-              />
-              <button {...getToggleButtonProps()}></button>
-            </Input>
-            {isOpen ? (
-              <Menu {...getMenuProps()}>
-                {items.map((item, index) => (
-                  <Items
-                    highlighted={highlightedIndex === index}
-                    selected={selectedItem === item}
-                    {...getItemProps({
-                      key: item,
-                      index,
-                      item
-                    })}
-                  >
-                    {item}
-                  </Items>
-                ))}
-              </Menu>
-            ) : null}
-            <Link to ={{pathname: "./questions", state:{selectedOption}}}>
-              <DecisionBtn {...isOpen ? {style : {display:"none"}} : {style : {visibility:"visible"}} }>결정!</DecisionBtn>
-            </Link>
-          </div>
-        )}
-      </Downshift>
+              <Input>
+                <input
+                  readOnly={true}
+                  placeholder="선택안함"
+                  {...getInputProps()}
+                />
+                <button {...getToggleButtonProps()}></button>
+              </Input>
+              {isOpen ? (
+                <Menu {...getMenuProps()}>
+                  {items.map((item, index) => (
+                    <Items
+                      highlighted={highlightedIndex === index}
+                      selected={selectedItem === item}
+                      {...getItemProps({
+                        key: item,
+                        index,
+                        item
+                      })}
+                    >
+                      {item}
+                    </Items>
+                  ))}
+                </Menu>
+              ) : null}
+              <Link to ={{pathname: "./questions", state:{selectedOption}}}>
+                <DecisionBtn {...isOpen ? {style : {display:"none"}} : {style : {visibility:"visible"}} }>결정!</DecisionBtn>
+              </Link>
+            </div>
+          )}
+        </Downshift>
+      </Container>
     </Main>
   );
 }
