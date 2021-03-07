@@ -29,6 +29,8 @@ public class CollegeRepositoryCustom {
 		collegeRepository.deleteAll();
 	}
 
+	/*
+	//초기에 DB 생성 후 운영 시에는 주석 처리 한다.
 	@PostConstruct
 	public void init() {
 		collegeRepository.save(new College("선택안함"));
@@ -40,4 +42,5 @@ public class CollegeRepositoryCustom {
 		collegeRepository.save(new College("의약계열"));
 		collegeRepository.save(new College("예체능계열"));
 	}
+	 */
 }

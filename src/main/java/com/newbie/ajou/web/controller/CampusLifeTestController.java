@@ -19,19 +19,19 @@ public class CampusLifeTestController {
 	private final QuestionService questionService;
 	private final ResultService resultService;
 
-	@CrossOrigin(origins = "http://3.36.32.204")
+	@CrossOrigin(origins = "http://ajou-newbie.campus-life-test.kro.kr")
 	@GetMapping("/index")
 	public Long getUserCount() {
 		return userCountService.count();
 	}
 
-	@CrossOrigin(origins = "http://3.36.32.204")
+	@CrossOrigin(origins = "http://ajou-newbie.campus-life-test.kro.kr")
 	@GetMapping("/questions")
 	public List<QuestionResponseDto> getQuestionData() {
 		return questionService.findAll();
 	}
 
-	@CrossOrigin(origins = "http://3.36.32.204")
+	@CrossOrigin(origins = "http://ajou-newbie.campus-life-test.kro.kr")
 	@PostMapping("/result")
 	public ResultResponseDto openResult(@RequestBody @Valid ResultRequestDto resultRequestDto) {
 		return resultService.getResult(resultRequestDto);

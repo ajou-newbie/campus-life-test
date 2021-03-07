@@ -21,6 +21,8 @@ public class QuestionRepositoryCustom {
 				.orElseThrow(QuestionNotFoundException::new);
 	}
 
+	/*
+	//초기에 DB 생성 후 운영 시에는 주석 처리 한다.
 	@PostConstruct
 	public void init() {
 		questionRepository.save(new Question("대학 합격 발표 후 과 단톡방에 초대되었다. 단톡방 속 나의 행동은?"));
@@ -39,4 +41,5 @@ public class QuestionRepositoryCustom {
 		questionRepository.save(new Question("시험의 마지막 문제 ‘당신의 창업 아이디어를 서술하시오’. 나의 아이디어는?"));
 		questionRepository.save(new Question("드디어 종강! 그러나 친구는 공부한 것에 비해 학점이 좋지 않다며 우울해한다. 이때 나의 대답은?"));
 	}
+	 */
 }
