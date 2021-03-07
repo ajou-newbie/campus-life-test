@@ -531,9 +531,9 @@ function Result() {
                   <ResultImg>
                   </ResultImg>
                   <Ulcontainer>
-                      <ResultText>생각이 너무 많아 세상의 모든 굴레와 속박에 찌든 고학번같은 면모를 보이는 당신.</ResultText>
+                      <ResultText>생각이 너무 많아 세상의 모든 굴레와 속박에 찌든 고학번 같은 면모를 보이는 당신.</ResultText>
                       <ResultText>이미 상상만으로 당신은 학부 졸업까지의 모든 루트를 경험했습니다.</ResultText>
-                      <ResultText>의심이 많아 상대방이 호의를 그대로 받아들이지 못할 때가 많으며, 신세지는 것도, 피해주는 것도 싫어해서 밥약속, 술약속에서 보내줄 돈이 생기면 그 자리에서 바로 입금합니다.</ResultText>
+                      <ResultText>의심이 많아 상대방이 호의를 그대로 받아들이지 못할 때가 많으며, 신세 지는 것도, 피해 주는 것도 싫어해서 밥 약속, 술 약속에서 보내줄 돈이 생기면 그 자리에서 바로 입금합니다.</ResultText>
                       <ResultText>이러한 이유로 냉철하다는 평가를 받을 때도 있지만, 내면이 여리고 감수성이 풍부해 혼자만의 시간을 필요로 합니다.</ResultText>
                       <ResultText>누군가 나에 대해 좋은 말을 하면 그에 대해 계속 생각하며 흐뭇해하고, 안 좋은 말을 하면 그에 대해 계속 생각하며 우울해합니다.</ResultText>
                   </Ulcontainer>

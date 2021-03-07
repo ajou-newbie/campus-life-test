@@ -530,11 +530,11 @@ function Result() {
                   <ResultImg>
                   </ResultImg>
                   <Ulcontainer>
-                      <ResultText>나를 막는다면 나는 그대로 사라져 버릴거에요. 설령 그게 과제나 시험일지라도 말이에요!</ResultText>
-                      <ResultText>대표 귀차니스트인 당신은 시험이나 과제가 코 앞까지 다가올 때서야 슬금슬금 시작하는 벼락치기의 제왕이에요. 계획을 세우더라도 다 폼이거나..아니 계획을 제대로 세운 적이 있었나?</ResultText>
-                      <ResultText>하기 싫은건 저 멀리 던져두고 하고 싶은 것만 골라서 하는데, 정말 좋아하는 것이라면 쉽게 몰입해서 좋은 결과를 만들어내요.</ResultText>
+                      <ResultText>나를 막는다면 나는 그대로 사라져 버릴 거에요. 설령 그게 과제나 시험일지라도 말이에요!</ResultText>
+                      <ResultText>대표 귀차니스트인 당신은 시험이나 과제가 코앞까지 다가올 때에야 슬금슬금 시작하는 벼락치기의 제왕이에요. 계획을 세우더라도 다 폼이거나..아니 계획을 제대로 세운 적이 있었나?</ResultText>
+                      <ResultText>하기 싫은 건 저 멀리 던져두고 하고 싶은 것만 골라서 하는데, 정말 좋아하는 것이라면 쉽게 몰입해서 좋은 결과를 만들어내요.</ResultText>
                       <ResultText>그래도 민폐 끼치는 것은 정말 싫기 때문에 조별과제만큼은 정말 잘 해내지요. 예술가 기질이 있는 당신은 어쩌면 PPT의 달인일지도 몰라요!</ResultText>
-                      <ResultText>당신이 있는 조에는 갈등이 발생할 확률이 적어요. 좋은게 좋은거니까.. 굳이 갈등을 만들고 싶지 않거든요 쉽게 쉽게 살고 싶어요!</ResultText>
+                      <ResultText>당신이 있는 조에는 갈등이 발생할 확률이 낮아요. 좋은 게 좋은 거니까.. 굳이 갈등을 만들고 싶지 않거든요. 쉽게 쉽게 살고 싶어요!</ResultText>
                   </Ulcontainer>
               </MBTIResult>
               <SimiAndDiff>

@@ -530,11 +530,11 @@ function Result() {
                   <ResultImg>
                   </ResultImg>
                   <Ulcontainer>
-                      <ResultText>통제 불가능한 끼의 소유자인 학우분께는 이미 서있는 그 곳이 무대!</ResultText>
-                      <ResultText>동에 번쩍 서에 번쩍하며 온갖 끼를 펼치는 당신은 잊을만 하면 대나무숲에 올라와 범접할 수 없는 존재감을 드러내곤 하죠.</ResultText>
+                      <ResultText>통제 불가능한 끼의 소유자인 학우분께는 이미 서 있는 그곳이 무대!</ResultText>
+                      <ResultText>동에 번쩍 서에 번쩍하며 온갖 끼를 펼치는 당신은 잊을 만 하면 대나무숲에 올라와 범접할 수 없는 존재감을 드러내곤 하죠.</ResultText>
                       <ResultText>온갖 짤이란 짤은 다 수집하고 다니는 당신은 짤부자로 불리며, 카톡 채팅방에서도 역시 핵인싸!</ResultText>
-                      <ResultText>입 다물기는 죽어도 못하는 당신을 친구로 두는 한 오디오가 빌 일은 평생 없을거에요.</ResultText>
-                      <ResultText>그치만 친구들의 귀 건강을 위해 볼륨을 조금 낮출 필요는 있겠어요.</ResultText>
+                      <ResultText>입 다물기는 죽어도 못하는 당신을 친구로 두는 한 오디오가 빌 일은 평생 없을 거예요.</ResultText>
+                      <ResultText>그렇지만 친구들의 귀 건강을 위해 볼륨을 조금 낮출 필요는 있겠어요.</ResultText>
                   </Ulcontainer>
               </MBTIResult>
               <SimiAndDiff>

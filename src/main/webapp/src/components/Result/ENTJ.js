@@ -533,9 +533,9 @@ function Result() {
                   <Ulcontainer>
                       <ResultText>태어나는 순간부터 이미 리더상! 넘치는 자신감과 모두를 사로잡는 카리스마!</ResultText>
                       <ResultText>빠른 결정력과 판단력 그리고 정확성을 바탕으로 완벽한 대학 생활을 계획할 수 있어요.</ResultText>
-                      <ResultText>학생회, 동아리, 조별과제 등 단체 활동에서 스스로 리더를 자청하면 누구보다 그 역할을 잘 수행해낼 수 있어요.</ResultText>
+                      <ResultText>학생회, 동아리, 조별과제 등 단체 활동에서 리더를 자청하면 누구보다 그 역할을 잘 수행해낼 수 있어요.</ResultText>
                       <ResultText>만약 주위에 자신과 비슷한 동기들이 함께한다면 더 많은 일을 해낼 수 있을 거예요. 항상 성공한 리더 곁에는 좋은 동료들이 함께한다는 것을 잊지 마세요.</ResultText>
-                      <ResultText>타고난 리더로서의 능력을 발휘하여 주변 동기들과 함께 주체적으로 과를 이끌어 나간다면 보람찬 대학 생활을 보낼 수 있을 거예요.</ResultText>
+                      <ResultText>타고난 리더의 능력을 발휘하여 주변 동기들과 함께 주체적으로 과를 이끌어 나간다면 보람찬 대학 생활을 보낼 수 있을 거예요.</ResultText>
                   </Ulcontainer>
               </MBTIResult>
               <SimiAndDiff>

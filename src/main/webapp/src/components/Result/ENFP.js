@@ -525,16 +525,16 @@ function Result() {
               <Header>슬기로운 대학생활</Header>
               <MBTIResult>
                   <ResultHeader>내가 즐기게 될 캠퍼스 라이프는?</ResultHeader>
-                  <ResultBlack>하고 싶은게 매일 다른</ResultBlack>
+                  <ResultBlack>하고 싶은 게 매일 다른</ResultBlack>
                   <ResultName>자체휴강 마스터</ResultName>
                   <ResultImg>
                   </ResultImg>
                   <Ulcontainer>
                       <ResultText>밖에 핀 벚꽃이 예쁘니까, 날씨가 포근하니까, 오늘은 기분이 안 좋으니까 휴강! 아무튼 휴강!</ResultText>
-                      <ResultText>시험걱정은 나중에 해요. 어차피 벼락치기 잘 하거든요!</ResultText>
+                      <ResultText>시험 걱정은 나중에 해요. 어차피 벼락치기 잘하거든요!</ResultText>
                       <ResultText>출튀하고 친구들과 놀기까지 한다면 금상첨화! 공부할 시간에 새로운 친구를 사귈 수 있다면 더 즐거울 것 같아요.</ResultText>
-                      <ResultText>특히 이전에 해보지 않았던 새로운 무언가에 도전하는 걸 좋아해요. 하지만 쉽게 일을 벌리는 만큼 금방 질려해서 일이 흐지부지 되는 경우가 많아요</ResultText>
-                      <ResultText>쉴 새 없이 말하지만, 그만큼 친구들의 이야기도 큰 리액션으로 잘 들어주기 때문에 친구들이 좋아해줘요. 당신이 없으면 허전할걸요?</ResultText>
+                      <ResultText>특히 이전에 해보지 않았던 새로운 무언가에 도전하는 걸 좋아해요. 하지만 쉽게 일을 벌이는 만큼 금방 질려 해서 일이 흐지부지되는 경우가 많아요.</ResultText>
+                      <ResultText>쉴 새 없이 말하지만, 그만큼 친구들의 이야기도 큰 리액션으로 잘 들어주기 때문에 친구들이 좋아해 줘요. 당신이 없으면 허전할걸요?</ResultText>
                       <ResultText>그래도 결석 너무 많이 하면 F니까 조심해요! 맘이 에푸니까..</ResultText>
                   </Ulcontainer>
               </MBTIResult>

@@ -531,7 +531,7 @@ function Result() {
                   </ResultImg>
                   <Ulcontainer>
                       <ResultText>뜨거운 논쟁을 즐기는 당신! 천부적으로 재치 있는 입담과 풍부한 지식을 통해 학교 토론 대회에서 당신의 실력을 뽐내보세요!!</ResultText>
-                      <ResultText>당신은 그 누구보다 솔직한 사람이에요. 말을 예쁘게 순화시키지 않으며, 빙빙 돌려 말하는 것을 싫어합니다. 그래서 때로는 의도치 않게 타인에게 상처를 줄 수도 있어요.</ResultText>
+                      <ResultText>당신은 그 누구보다 솔직한 사람이에요. 말을 예쁘게 순화하지 않으며, 빙빙 돌려 말하는 것을 싫어합니다. 그래서 때로는 의도치 않게 타인에게 상처를 줄 수도 있어요.</ResultText>
                       <ResultText>하지만 그 누구보다 주변 사람이 잘 되길 바라는 당신. 언젠가는 다들 알아줄 날이 올 거에요 ..🌟</ResultText>
                       <ResultText>그래도 일단 에브리타임 키보드 배틀 4년 압수.</ResultText>
                   </Ulcontainer>

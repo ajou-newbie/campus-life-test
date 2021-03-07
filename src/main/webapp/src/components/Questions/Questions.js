@@ -301,7 +301,7 @@ function Questions(props) {
         try {
             setError(null);
             setQuestions(null);
-            const getResponse = await axios.get('http://localhost:8080/questions');
+            const getResponse = await axios.get('http://3.36.32.204:8080/questions');
             setQuestions(getResponse.data);
         } catch (e) {
             setError(e);
@@ -316,7 +316,7 @@ function Questions(props) {
         mutex.run(async () => {
             mutex.lock();
             try {
-                const postResponse = await axios.post('http://localhost:8080/result', {
+                const postResponse = await axios.post('http://3.36.32.204:8080/result', {
                     answers: questChoice,
                     college: props.location.state.selectedOption
                 });

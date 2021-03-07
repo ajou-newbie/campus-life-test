@@ -526,13 +526,13 @@ function Result() {
               <MBTIResult>
                   <ResultHeader>내가 즐기게 될 캠퍼스 라이프는?</ResultHeader>
                   <ResultBlack>랩실에서 내 세계를 펼쳐보겠어</ResultBlack>
-                  <ResultName>나혼자 랩실</ResultName>
+                  <ResultName>나 혼자 랩실</ResultName>
                   <ResultImg>
                   </ResultImg>
                   <Ulcontainer>
-                      <ResultText>평범한 것은 지겹다고 생각하기 때문에 끊임없이 사색하기 좋아하고 호기심이 많아요.</ResultText>
+                      <ResultText>평범한 것은 지겹다고 생각하기 때문에 끊임없이 사색하는 것을 좋아하고 호기심이 많아요.</ResultText>
                       <ResultText>정해진 수업시간표와 생활패턴은 지루하다고 느끼기 쉬워요. 일상에서 벗어나 혼자 생각에 몰두할 수 있는 시간이 필요해요. 랩실은 이런 시간을 가지기에 충분한 장소겠죠?</ResultText>
-                      <ResultText>랩실에서 혼자 연구하다보면 어느새 집보다 아늑하다고 느낄지도 몰라요.</ResultText>
+                      <ResultText>랩실에서 혼자 연구하다 보면 어느새 집보다 아늑하다고 느낄지도 몰라요.</ResultText>
                       <ResultText>독창적인 논리를 가지고 있기 때문에 꼬리에 꼬리를 무는 생각은 아이디어를 발전시키는 데 제격입니다.</ResultText>
                       <ResultText>사색 도중 자신에 대한 의구심과 실패에 대한 두려움이 들 수 있어요. 이러한 생각만 극복해 낸다면 더 독창적이고 기발한 아이디어를 떠올릴 수 있는 잠재력이 있어요.</ResultText>
                   </Ulcontainer>

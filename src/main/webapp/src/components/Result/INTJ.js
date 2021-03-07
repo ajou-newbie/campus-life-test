@@ -531,9 +531,9 @@ function Result() {
                   </ResultImg>
                   <Ulcontainer>
                       <ResultText>냉철한 이성과 빛나는 독창력의 소유자시군요!</ResultText>
-                      <ResultText>당신의 독창적인 아이디어는 기발한 게 다가 아니에요. 당장 실전에 투입될 정도로 충분히 실현가능성 있고 이성적 사고까지 곁들어져 있어요.</ResultText>
-                      <ResultText>학생회는 당신과 같은 능력을 가진 전략가가 필요해 보이는 군요.</ResultText>
-                      <ResultText>사람들 앞에 나서기 부담스럽다고 느낄 수 있어요.  하지만 괜찮아요. 수많은 전쟁을 승리로 이끈 제갈공명도 칼을 들고 싸우진 않았어요.</ResultText>
+                      <ResultText>당신의 독창적인 아이디어는 기발한 게 다가 아니에요. 당장 실전에 투입될 정도로 충분히 실현 가능성 있고 이성적 사고까지 곁들어져 있어요.</ResultText>
+                      <ResultText>학생회는 당신과 같은 능력을 갖춘 전략가가 필요해 보이는군요.</ResultText>
+                      <ResultText>사람들 앞에 나서기 부담스럽다고 느낄 수 있어요. 하지만 괜찮아요. 수많은 전쟁을 승리로 이끈 제갈공명도 칼을 들고 싸우진 않았어요.</ResultText>
                       <ResultText>당신의 뛰어난 계획과 전술로 학생회를 뒤에서 진두지휘하는 건 어떨까요?</ResultText>
                   </Ulcontainer>
               </MBTIResult>
