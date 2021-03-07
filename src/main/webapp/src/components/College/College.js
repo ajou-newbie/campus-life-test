@@ -14,15 +14,20 @@ import MainiPadPro10 from '../../image/m_main_iPadPro10.png';
 import MainiPadPro11 from '../../image/m_main_iPadPro11.png';
 import MainiPadPro12 from '../../image/m_main_iPadPro12.png';
 import MainiPhone11Pro from '../../image/m_main_iPhone11Pro.png';
-//import MainiPhoneXR from '../../image/m_main_iPhoneXR.png';
+import MainiPhoneXR from '../../image/m_main_iPhoneXR.png';
 import MainiPhone12ProMax from '../../image/m_main_iPhone12Pro_Max.png';
 import MainiPhone12Pro from '../../image/m_main_iPhone12Pro.png';
 import MainiPhone678Plus from '../../image/m_main_iPhone678Plus.png';
 import MainiPhone678SE from '../../image/m_main_iPhone678SE.png';
 import MainWeb1366 from '../../image/m_main_web1366.png';
+import GalaxyTapPortrait from '../../image/m_main_GalaxyTapPortrait.png';
+import iPadPortrait from '../../image/m_main_iPadPortrait.png';
+import iPadPro10Portrait from '../../image/m_main_iPadPro10Portrait.png';
+import iPadPro11Portrait from '../../image/m_main_iPadPro11Portrait.png';
+import iPadPro12Portrait from '../../image/m_main_iPadPro12Portrait.png';
 import triangle from '../../image/mbti_tri.png'
 import GlobalFonts from "../fonts"
-import { FaSortDown } from 'react-icons/fa';
+
 const Main = styled.div`
    background-image: url(${MainBack});
     width: 100%;
@@ -74,7 +79,9 @@ const Main = styled.div`
     }
 
         
-    
+    @media (device-width: 414px) and (device-height: 896px) {
+        background-image: url(${MainiPhoneXR});
+    }
 
     @media (device-width: 1280px) and (device-height: 800px)  { 
         background-image: url(${MainTap});
@@ -99,6 +106,30 @@ const Main = styled.div`
     @media (device-width: 1366px) and (device-height:768px) { 
         background-image: url(${MainWeb1366});
     }
+
+    @media (device-width: 800px) and (device-height: 1280px) { 
+        background-image: url(${GalaxyTapPortrait});
+    }
+
+    @media (device-width: 768px) and (device-height: 1024px) { 
+        background-image: url(${iPadPortrait});
+    }
+
+    @media (device-width: 834px) and (device-height: 1112px) { 
+        background-image: url(${iPadPro10Portrait});
+    }
+
+    @media (device-width: 834px) and (device-height: 1112px) { 
+        background-image: url(${iPadPro10Portrait});
+    }
+
+    @media (device-width: 834px) and (device-height: 1194px) { 
+        background-image: url(${iPadPro11Portrait});
+    }
+
+    @media (device-width: 1024px) and (device-height: 1366px) { 
+        background-image: url(${iPadPro12Portrait});
+    }
 `;
 
 const Container = styled.div`
@@ -110,6 +141,10 @@ const Container = styled.div`
     justify-content: center;
     align-self: center;
     flex-direction: column;
+
+    @media (min-width: 800px) and (max-width: 1400px) {
+      top: 35%;
+    }
 `;
 
 const FlexContainer = styled.div`
@@ -182,6 +217,7 @@ const Input = styled.div`
   justify-content: center;
   width: 407px;
   margin-top: 15px;
+  border: none;
   
   @media (min-width: 1900px) {
     width: 590px;
@@ -215,12 +251,26 @@ const Input = styled.div`
       font-size: 20px;
     }
 
+    @media (min-width: 325px) and (max-width: 414px) {
+      padding-left: 50px;
+    }
+
+    @media (min-width: 428px) and (max-width: 1366px) {
+      padding-left: 50px;
+    }
+
+
     &::placeholder {
       font-family: 'Eland';
       text-align: center;
       padding: 5px;
       font-size: 30px;
       color: #1C515A; 
+
+      @media (min-width: 280px) and (max-width: 320px) {
+      height: 40px;
+      font-size: 20px;
+      }
     }
 
     &:focus {
@@ -337,6 +387,18 @@ const DecisionBtn = styled.button`
     background-color: rgb(81,138,247);
   }
 
+  &:active {
+        outline: none;
+  }
+
+  &:visited {
+        outline: none;
+  }
+
+  &:focus {
+        outline:none;
+  }
+
   @media (min-width: 1900px) {
     width: 90px;
     height: 50px;
@@ -356,7 +418,7 @@ const DecisionBtn = styled.button`
 
 `;
 
-const items = ['예체능계열', '인문계열', '교육계열', '사회계열', '상경계열', '공학계열', '자연계열', '의약계열', '선택안함']
+const items = ['예체능계열', '인문계열', '교육계열', '공학계열','상경계열', '사회계열', '자연계열', '의약계열', '선택안함']
 
 function College() {
   const [selectedOption, setSelectedOption] = useState('선택안함');
@@ -370,7 +432,8 @@ function College() {
     <Main>
       <Container>
         <GlobalFonts/>
-        <Downshift onChange={selection => onSelect(selection)}>
+        <Downshift onChange={selection => onSelect(selection)
+        } onClick={console.log(selectedOption)}>
           {({
             getInputProps,
             getItemProps,
