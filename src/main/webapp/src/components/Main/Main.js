@@ -18,6 +18,7 @@ import MainiPhone12ProMax from '../../image/m_main_iPhone12Pro_Max.png';
 import MainiPhone12Pro from '../../image/m_main_iPhone12Pro.png';
 import MainiPhone678Plus from '../../image/m_main_iPhone678Plus.png';
 import MainiPhone678SE from '../../image/m_main_iPhone678SE.png';
+//import MainiPhoneXR from '../../image/m_main_iPhoneXR.png';
 import MainWeb1366 from '../../image/m_main_web1366.png';
 import GlobalFonts from "../fonts";
 
@@ -30,6 +31,7 @@ const MainImage = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+    position: fixed;
 
     @media only screen and (max-width: 500px) {
         background-image: url(${MainMBack});
@@ -72,9 +74,7 @@ const MainImage = styled.div`
     }
 
         
-    @media (device-width: 414px) and (device-height: 896px) {  //변경
-        background-image: url(${MainiPhone678Plus});
-    }
+    
 
     @media (device-width: 1280px) and (device-height: 800px)  { 
         background-image: url(${MainTap});
@@ -102,196 +102,75 @@ const MainImage = styled.div`
 `;
 
 const TextContainer = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 165px 0px 0px 0px;
-
-    @media (device-width: 360px) {
-        padding: 160px 0px 0px 0px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        padding: 110px 0px 0px 0px;
-    }
-
-    @media (device-width: 360px) and (device-height: 740px){ 
-        padding: 230px 0px 0px 0px;
-    } 
-
-    @media (device-width: 360px) and (device-height: 760px){ 
-        padding: 238px 0px 0px 0px;
-    } 
-
-    @media (device-width: 414px) { 
-        padding: 200px 0px 0px 0px;
-    }
-
-    @media (device-width: 375px) and (device-height: 667px) { 
-        padding: 185px 0px 0px 0px;
-    }
-
-    @media (device-width: 428px) { 
-        padding: 290px 0px 0px 0px;
-    }
-
-    @media (device-width: 390px) { 
-        padding: 270px 0px 0px 0px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        padding: 260px 0px 0px 0px;
-    }
-
-    @media (device-width: 414px) and (device-height: 896px) {  //변경
-        padding: 260px 0px 0px 0px;
-    }
-
-    @media (device-width: 1280px) and (device-height: 800px)  { 
-        padding: 205px 0px 0px 0px;
-    }
-
-    @media (device-width: 1024px) and (device-height: 768px)  { 
-        padding: 190px 0px 0px 0px;
-    }
-
-    @media (device-width: 1112px) { 
-        padding: 215px 0px 0px 0px;
-    }
-
-    @media (device-width: 1194px) { 
-        padding: 215px 0px 0px 0px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px) { 
-        padding: 270px 0px 0px 0px;
-    }
-
-    @media (device-width: 1366px) and (device-height:768px) { 
-        padding: 195px 0px 0px 0px;
-    }
-
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 `;
 
 const HeaderText = styled.div`
     font-family: 'DAONE';
-    font-size: 23px;
+    font-size: 20px;
     color: white;
-    text-align: center;
-    padding: 0px 0px 5px 0px;
+    text-align: center; 
 
-    @media (device-width: 360px) {
+    @media (min-width: 1900px) {
+        font-size: 30px;
+    }   
+
+    @media (min-width: 280px) and (max-width: 320px) {
         font-size: 15px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 17px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 18px;
-    }
-
-    @media (device-width: 375px) and (device-height: 667px) { 
-        font-size: 16px;
-    }
-
-    @media (device-width: 428px) { 
-        font-size: 19px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 16px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        font-size: 15px;
-    }
-
+    } 
+  
 `;
 
 const WhiteText = styled.div`
     font-family: 'SANDOLL';
-    font-size: 86px;
+    font-size: 80px;
     color: white;
-    padding: 0px 0px 0px 30px;
     text-shadow: 4px 4px #29879599;
     letter-spacing: -0.4px;
     text-align: center;
+    padding-left: 20px;
 
-    @media (device-width: 360px) {
-        font-size: 55px;
+    @media (min-width: 1900px) {
+        font-size: 110px;
+        padding-left: 50px;
     }
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 58px;
-    }
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 50px;
+        padding-left: 10px;
+    } 
 
-    @media (device-width: 414px) { 
-        font-size: 61px;
-    }
-
-    @media (device-width: 375px) and (device-height: 667px) { 
-        font-size: 55px;
-    }
-
-    @media (device-width: 428px) { 
-        font-size: 65px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 59px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        font-size: 55px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px) { 
-        font-size: 105px;
-    }
-
-
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 70px;
+    } 
 `;
 
 const YellowText = styled.div`
     font-family: 'SANDOLL';
-    font-size: 102px;
+    font-size: 100px;
     color: #FFFF00;
     text-shadow: 4px 4px #29879599;
     letter-spacing: -0.51px;
+    margin-bottom: 15px;
 
-    @media (device-width: 360px) {
+    @media (min-width: 1900px) {
+        font-size: 130px;
+    }
+
+    @media (max-width: 320px) {
         font-size: 70px;
-    }
+    } 
 
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 74px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 77px;
-    }
-
-    @media (device-width: 375px) and (device-height: 667px) { 
-        font-size: 71px;
-    }
-
-    @media (device-width: 428px) { 
-        font-size: 83px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 75px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        font-size: 71px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px) { 
-        font-size: 135px;
-    }
-
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 85px;
+    } 
 `;
 
 const NewbieCount = styled.p`
@@ -300,55 +179,35 @@ const NewbieCount = styled.p`
     text-align: center;
     color: white;
     font-family: 'KoPub Dotum';
-    margin-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
 
-    @media (device-width: 360px) {
+    @media (min-width: 1900px) {
+        font-size: 25px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+        font-size: 12px;
+    } 
+
+    @media (min-width: 325px) and (max-width: 414px) {
         font-size: 15px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 17px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 16.5px;
-    }
-
-    @media (device-width: 375px) and (device-height: 667px) { 
-        font-size: 15px;
-    }
-
-    @media (device-width: 428px) { 
-        font-size: 19px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 17px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        font-size: 15px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px) { 
-        font-size: 28px;
     }
 `;
 
 const MainButton = styled.button`
-    font-size: 37px;
+    font-size: 35px;
     font-family: "ELAND";
     text-align: center;
     text-decoration: none;
     border: none;
-    width: 390px;
+    width: 370px;
     height: 70px;
-    margin: 10px 0px 10px 0px;
     border-radius: 35px;
     cursor: pointer;
     color: #01333D;
     background-color: white;
+    margin-bottom: 15px;
     
     &:hover {
         border: 5px solid white;
@@ -361,62 +220,35 @@ const MainButton = styled.button`
         outline:none;
     }
 
-    @media (device-width: 360px) {
-        font-size: 28px;
-        width: 276px;
-        height: 51px;
-    }
-
-    @media (device-width: 384px) and (device-height: 538px) { 
-        font-size: 30px;
-        width: 296px;
-        height: 55px;
-    }
-
-    @media (device-width: 414px) { 
-        font-size: 30px;
-        width: 300px;
-        height: 55px;
-    }
-
-    @media (device-width: 375px) and (device-height: 667px) { 
-        font-size: 27px;
-        width: 271px;
-        height: 50px;
-    }
-
-    @media (device-width: 428px) { 
-        font-size: 33px;
-        width: 328px;
-        height: 60px;
-    }
-
-    @media (device-width: 390px) { 
-        font-size: 30px;
-        width: 300px;
-        height: 55px;
-    }
-
-    @media (device-width: 375px) and (device-height: 812px) { 
-        font-size: 27px;
-        width: 271px;
-        height: 50px;
-    }
-
-    @media (device-width: 1366px) and (device-height:1024px) { 
-        font-size: 45.5px;
-        width: 483px;
-        height: 90px;
+    @media (min-width: 1900px) {
+        width: 470px;
+        height: 80px;
+        font-size: 45px;
         border-radius: 45px;
+    }
+
+    @media (min-width: 280px) and (max-width: 320px) {
+        width: 270px;
+        height: 50px;
+        font-size: 25px;
+    } 
+
+    @media (min-width: 325px) and (max-width: 414px) {
+        font-size: 25px;
+        width: 340px;
+        height: 65px;
     }
 `;
 
-const Contribute = styled.a`
+const Contribute = styled.div`
     font-family: 'ELAND';
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
     color: #1C515A;
-
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
 
     &:link{
         color: #1C515A;
@@ -424,10 +256,18 @@ const Contribute = styled.a`
     &:visited{
         color: #1C515A;
     }
+
+    @media (min-width: 1900px) {
+        font-size: 17px;
+    }
+
+    @media (max-width: 414px) {
+        font-size: 10px;
+    } 
 `;
 
 
-function Main() {
+function Main(props) {
     const [counts, setCounts] = useState(null);
     const [error, setError] = useState(false);
 
@@ -447,21 +287,21 @@ function Main() {
     }, [])
 
     return (
-    <MainImage>
-        <GlobalFonts/>
-        <TextContainer>
-            <HeaderText>내가 즐기게 될 캠퍼스 라이프는?</HeaderText>
-            <WhiteText>슬기로운</WhiteText>
-            <YellowText>대학생활</YellowText>
-            <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
-            <Link to = "/college" >
-                <MainButton>대학교 입학하기</MainButton>
-            </Link>
-        </TextContainer>
-        <Link to = "/contribute" >
-            <Contribute>@Contributors</Contribute>
-        </Link>
-    </MainImage>
+      <MainImage>
+          <GlobalFonts/>
+          <TextContainer>
+              <HeaderText>내가 즐기게 될 캠퍼스 라이프는?</HeaderText>
+              <WhiteText>슬기로운</WhiteText>
+              <YellowText>대학생활</YellowText>
+              <NewbieCount>현재 <b>{counts}명의 새내기</b>가 입학했어요</NewbieCount>
+              <Link to = "/college" >
+                  <MainButton>대학교 입학하기</MainButton>
+              </Link>
+              <Link to = "/contribute" >
+                  <Contribute>@Contributors</Contribute>
+              </Link>
+          </TextContainer>
+      </MainImage>
     )
 }
 

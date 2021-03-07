@@ -191,6 +191,8 @@ function Questions(props) {
         mutex.run(async () => {
             mutex.lock();
             try {
+                console.log(questChoice);
+                console.log(props.location.state.selectedOption);
                 const postResponse = await axios.post('http://3.36.32.204:8080/result', {
                     answers: questChoice,
                     college: props.location.state.selectedOption

@@ -20,6 +20,8 @@ public class ChoiceRepositoryCustom {
 		choiceRepository.saveAll(choices);
 	}
 
+	/*
+	//초기에 DB 생성 후 운영 시에는 주석 처리 한다.
 	@PostConstruct
 	public void init() {
 		Question question1 = questionRepository.findById(1);
@@ -118,4 +120,5 @@ public class ChoiceRepositoryCustom {
 		choices12.add(new Choice("많이 속상했겠다...어떡해...(이미 우는 중)"));
 		this.saveAll(choices12, question12);
 	}
+	 */
 }

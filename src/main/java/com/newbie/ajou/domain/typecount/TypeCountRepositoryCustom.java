@@ -43,6 +43,8 @@ public class TypeCountRepositoryCustom {
 		typeCountRepository.deleteAll();
 	}
 
+	/*
+	//초기에 DB 생성 후 운영 시에는 주석 처리 한다.
 	@PostConstruct
 	public void init() {
 		List<Type> types = typeRepositoryCustom.findAll();
@@ -53,4 +55,5 @@ public class TypeCountRepositoryCustom {
 			}
 		}
 	}
+	 */
 }
