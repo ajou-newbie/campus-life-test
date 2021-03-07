@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 import Downshift from "downshift";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import MainBack from '../../image/main_bg.png';
+import MainBack from '../../image/main_1920x1080.png';
 import MainMBack from '../../image/m_main_bg.png';
 import MainFold from '../../image/m_main_galaxy_fold.png';
 import MainS8 from '../../image/m_main_galaxy_S8.png';
@@ -142,7 +142,7 @@ const Container = styled.div`
     align-self: center;
     flex-direction: column;
 
-    @media (min-width: 800px) and (max-width: 1400px) {
+    @media (min-width: 428px) and (max-width: 1400px) {
       top: 35%;
     }
 `;
@@ -168,7 +168,7 @@ const WhiteText = styled.div`
       font-size: 40px;
     }
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
       font-size: 50px;
     } 
 `;
@@ -187,7 +187,7 @@ const YellowText = styled.div`
       font-size: 40px;
     }
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
       font-size: 50px;
     } 
 `;
@@ -207,7 +207,7 @@ const FooterText = styled.div`
       font-size: 15px;
     }
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
       font-size: 16px;
     }
 `;
@@ -227,7 +227,7 @@ const Input = styled.div`
     width: 250px;
   }
 
-  @media (min-width: 325px) and (max-width: 414px) {
+  @media (min-width: 325px) and (max-width: 750px) {
     width: 300px;
   }
 
@@ -251,14 +251,9 @@ const Input = styled.div`
       font-size: 20px;
     }
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 1366px) {
       padding-left: 50px;
     }
-
-    @media (min-width: 428px) and (max-width: 1366px) {
-      padding-left: 50px;
-    }
-
 
     &::placeholder {
       font-family: 'Eland';
@@ -324,7 +319,7 @@ const Menu = styled.ul`
     height: 150px;
   }
 
-  @media (min-width: 325px) and (max-width: 414px) {
+  @media (min-width: 325px) and (max-width: 750px) {
     width: 300px;
   }
 
@@ -384,8 +379,10 @@ const DecisionBtn = styled.button`
   color: #1C515A;
 
   &:hover {
-    background-color: rgb(81,138,247);
-  }
+        border: 3px solid white;
+        background-color: rgb(81,138,247);
+        color: white;
+    }
 
   &:active {
         outline: none;
@@ -412,7 +409,7 @@ const DecisionBtn = styled.button`
     font-size: 15px;
   }
 
-  @media (min-width: 325px) and (max-width: 414px) {
+  @media (min-width: 325px) and (max-width: 750px) {
     margin-top: 40px;
   }
 

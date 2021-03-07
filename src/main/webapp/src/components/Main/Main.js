@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import MainBack from '../../image/main_bg.png';
+import MainBack from '../../image/main_1920x1080.png';
 import MainMBack from '../../image/m_main_bg.png';
 import MainFold from '../../image/m_main_galaxy_fold.png';
 import MainS8 from '../../image/m_main_galaxy_S8.png';
@@ -155,8 +155,7 @@ const HeaderText = styled.div`
 
     @media (min-width: 280px) and (max-width: 320px) {
         font-size: 15px;
-    } 
-  
+    }  
 `;
 
 const WhiteText = styled.div`
@@ -178,7 +177,7 @@ const WhiteText = styled.div`
         padding-left: 10px;
     } 
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
         font-size: 70px;
     } 
 `;
@@ -199,7 +198,7 @@ const YellowText = styled.div`
         font-size: 70px;
     } 
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
         font-size: 85px;
     } 
 `;
@@ -221,7 +220,7 @@ const NewbieCount = styled.p`
         font-size: 12px;
     } 
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
         font-size: 15px;
     }
 `;
@@ -270,7 +269,7 @@ const MainButton = styled.button`
         font-size: 25px;
     } 
 
-    @media (min-width: 325px) and (max-width: 414px) {
+    @media (min-width: 325px) and (max-width: 750px) {
         font-size: 25px;
         width: 340px;
         height: 65px;
@@ -305,7 +304,7 @@ const Contribute = styled.div`
         font-size: 17px;
     }
 
-    @media (max-width: 414px) {
+    @media (max-width: 750px) {
         margin-top: 25px;
     } 
 `;

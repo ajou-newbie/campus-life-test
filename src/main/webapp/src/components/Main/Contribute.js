@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import MainBack from '../../image/m_question_bg_w1024.png';
+import MainBack from '../../image/question_1920x1080.png';
 import MobileBack from '../../image/m_question_bg.png';
 import MainFold from '../../image/m_questions_galaxy_fold.png';
 import MainS8 from '../../image/m_questions_galaxy_S8.png';
@@ -236,6 +236,11 @@ const Picture = styled.div`
     @media (min-width: 325px) and (max-width: 414px) {
         width: 75px;
         height: 75px;
+    } 
+
+    @media (min-width: 420px) and (max-width: 750px) {
+        width: 95px;
+        height: 95px;
     } 
 `;
 
