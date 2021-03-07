@@ -531,10 +531,10 @@ function Result() {
                   </ResultImg>
                   <Ulcontainer>
                       <ResultText>성실하고 부지런해서 어느 것 하나 빠짐없이 열심히 하는 당신!</ResultText>
-                      <ResultText>그러나 이런 완벽한 모습 뒤에는 매일 나를 채찍질하는 나 자신이 있습니다.(지금도 채찍질 말자하고 채찍질 중...)</ResultText>
-                      <ResultText>협동하는 것을 매우 싫어하는 학우분께도 조별과제라는 시련이 종종 찾아오는데요. 팀원과의 프로젝트 회의 중 이야기가 딴 데로 새기 시작하면 그 때부터 머리가 지끈지끈거려 옵니다.</ResultText>
+                      <ResultText>그러나 이런 완벽한 모습 뒤에는 매일 나를 채찍질하는 나 자신이 있습니다. (지금도 채찍질하지 말자고 채찍질 중...)</ResultText>
+                      <ResultText>협동하는 것을 매우 싫어하는 학우분께도 조별과제라는 시련이 종종 찾아오는데요. 팀원과의 프로젝트 회의 중 이야기가 딴 데로 새기 시작하면 그때부터 머리가 지끈지끈거려 옵니다.</ResultText>
                       <ResultText>결국 어느 순간 모든 것을 혼자 하고 있는 자신을 발견하게 되죠.</ResultText>
-                      <ResultText>남에게 부탁하는 것보다는 혼자 하는게 제일 편하고 빠르다고 생각하는 조별과제 헌터의 모습입니다.</ResultText>
+                      <ResultText>남에게 부탁하는 것보다는 혼자 하는 게 제일 편하고 빠르다고 생각하는 조별과제 헌터의 모습입니다.</ResultText>
                   </Ulcontainer>
               </MBTIResult>
               <SimiAndDiff>

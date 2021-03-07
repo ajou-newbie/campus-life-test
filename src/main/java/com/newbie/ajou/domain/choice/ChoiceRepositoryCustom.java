@@ -26,8 +26,8 @@ public class ChoiceRepositoryCustom {
 	public void init() {
 		Question question1 = questionRepository.findById(1);
 		List<Choice> choices1 = new ArrayList<>();
-		choices1.add(new Choice("단톡방의 지배자는 나! 대화의 흐름이 나를 중심으로 흘러가도록 쉴 틈 없는 채팅을 선보인다."));
-		choices1.add(new Choice("처음이니깐 너무 나서진 말아야지. 다양한 리액션을 통해 나의 존재감을 조금씩 어필한다."));
+		choices1.add(new Choice("대화의 흐름이 나를 중심으로 흘러가도록 쉴 틈 없는 채팅을 선보인다."));
+		choices1.add(new Choice("처음이니까 너무 나서진 말아야지. 다양한 리액션을 통해 나의 존재감을 조금씩 어필한다."));
 		choices1.add(new Choice("필요할 때만 말한다."));
 		choices1.add(new Choice("아무도 말 걸지 마라.. 대화에 참여하지 않고 그저 지켜보기만 한다."));
 		this.saveAll(choices1, question1);
@@ -43,7 +43,7 @@ public class ChoiceRepositoryCustom {
 		Question question3 = questionRepository.findById(3);
 		List<Choice> choices3 = new ArrayList<>();
 		choices3.add(new Choice("나를 다 표현하기에 자기소개 시간은 너무 짧아! TMI를 남발한다."));
-		choices3.add(new Choice("힘을 숨긴 인싸. 굉장한 외향이지만 첫 만남부터 나대면 좀 그렇겠지? 점잖은 척한다."));
+		choices3.add(new Choice("힘을 숨긴 인싸. 굉장한 외향인이지만 첫 만남부터 나대면 좀 그렇겠지? 점잖은 척한다."));
 		choices3.add(new Choice("최대한 짧게 소개하고 자리에 앉는다."));
 		choices3.add(new Choice("내 차례가 되기 전 화장실로 잠깐 도망갈까 고민한다."));
 		this.saveAll(choices3, question3);
@@ -51,7 +51,7 @@ public class ChoiceRepositoryCustom {
 		Question question4 = questionRepository.findById(4);
 		List<Choice> choices4 = new ArrayList<>();
 		choices4.add(new Choice("모자와 마스크를 챙겨 빠르게 뛰쳐나간다."));
-		choices4.add(new Choice("우선 친구에게 카톡을 보내고 천천히 수업에 갈 준비를 한다."));
+		choices4.add(new Choice("우선 친구에게 출석을 부탁하고 수업에 갈 준비를 한다."));
 		choices4.add(new Choice("일어나 갈지 말지 고민만 5분째..."));
 		choices4.add(new Choice("다시 잔다."));
 		this.saveAll(choices4, question4);
@@ -91,7 +91,7 @@ public class ChoiceRepositoryCustom {
 		Question question9 = questionRepository.findById(9);
 		List<Choice> choices9 = new ArrayList<>();
 		choices9.add(new Choice("너를 영혼까지 털어버리겠어. 상대의 모든 논리적 허점을 반박한다."));
-		choices9.add(new Choice("조금 강하게 주장하더라도 일단 이기고 나서 생각하자."));
+		choices9.add(new Choice("조금 강하게 주장하더라도 일단 이기고 본다."));
 		choices9.add(new Choice("상대의 기분을 최대한 존중하며 토론에 임한다."));
 		choices9.add(new Choice("토론이 끝난 뒤 상대방이 느꼈을 혹시 모를 불쾌감에 대해 사과한다."));
 		this.saveAll(choices9, question9);
@@ -107,7 +107,7 @@ public class ChoiceRepositoryCustom {
 		Question question11 = questionRepository.findById(11);
 		List<Choice> choices11 = new ArrayList<>();
 		choices11.add(new Choice("자금, 시간, 가능성 등 현실적인 부분을 중점으로 창업 아이디어를 서술한다."));
-		choices11.add(new Choice("최근 트렌트를 반영한 창업 아이템을 바탕으로 아이디어를 서술한다."));
+		choices11.add(new Choice("최신 트렌트를 반영한 창업 아이템을 바탕으로 아이디어를 서술한다."));
 		choices11.add(new Choice("독창적인 아이디어를 바탕으로 내 생각을 서술한다."));
 		choices11.add(new Choice("거의 아이디어 무한리필집. 상상 속에서만 존재했던 아이디어를 마구 서술한다."));
 		this.saveAll(choices11, question11);

@@ -531,7 +531,7 @@ function Result() {
                 </ResultImg>
                 <Ulcontainer>
                     <ResultText>자신보다 동기, 선후배를 먼저 생각하는 당신은 늘 주변을 기쁘게 해주려 최선을 다합니다.</ResultText>
-                    <ResultText>눈치가 빨라 상대의 동기나 의도를 정확하게 파악하지만, 그렇다보니 모든 일에 의미를 부여하려는 경항이 있습니다.</ResultText>
+                    <ResultText>눈치가 빨라 상대의 동기나 의도를 정확하게 파악하지만, 그렇다 보니 모든 일에 의미를 부여하려는 경향이 있습니다.</ResultText>
                     <ResultText>심지어는 수업 시간 교수님의 농담까지 받아적기도 하죠.</ResultText>
                     <ResultText>친구들과 어울리는 것을 좋아하지만, 때로는 혼밥, 혼영을 하며 고독을 즐기기도 하는 당신은 F4의 고독한 바이올리니스트, 지후 선배를 연상시키는군요!</ResultText>
                 </Ulcontainer>

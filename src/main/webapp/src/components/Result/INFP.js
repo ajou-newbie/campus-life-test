@@ -530,11 +530,11 @@ function Result() {
                   <ResultImg>
                   </ResultImg>
                   <Ulcontainer>
-                      <ResultText>사람들과 어울리기 보다 집에서 쉬면서 노는게 더 재밌어요.</ResultText>
-                      <ResultText>조용한 성격 탓에 오해를 받지만 그렇다고 사람들과 어울리는게 싫은건 아니에요. 좋아하는 것은 남들보다 깊이 빠져들지만, 관심이 없는 것에 대해서는 신경을 쓰지 않아요.</ResultText>
-                      <ResultText>유행 보다는 자신의 취향이 확실한 당신! 누가 뭐라고 해도 좋아하는 것에 몰입하게 돼요.</ResultText>
-                      <ResultText>좋아하는 것은 남들보다 깊이 빠져들지만, 관심이 없는 것에 대해서는 신경을 쓰지 않아요.</ResultText>
-                      <ResultText>만약 전공을 좋아하게 된다면 당신은 전공 all A+!! 대학원에 대해서 고민해보세요. 분명 즐거울 거에요.</ResultText>
+                      <ResultText>사람들과 어울리기보다 집에서 쉬면서 노는 게 더 재밌어요. 그렇다고 사람들과 어울리는 게 싫은건 아니에요.</ResultText>
+                      <ResultText>집에서 쉬면서 사람들과 어울리기 위해 페북, 에타와 같은 SNS를 자주 이용해요.</ResultText>
+                      <ResultText>이해력과 공감력 또한 뛰어나 내가 작성한 글로 많은 사람들에게 공감을 유도해내는 재주가 있어요.</ResultText>
+                      <ResultText>유행보다는 자신의 취향이 확실한 당신! 좋아하는 것은 남들보다 깊이 빠져들지만, 관심이 없는 것에 대해서는 신경을 쓰지 않아요.</ResultText>
+                      <ResultText>만약 전공이 취향에 맞다면 당신은 전공 all A+!! 대학원에 대해서 고민해보세요. 분명 즐거울 거예요.</ResultText>
                   </Ulcontainer>
               </MBTIResult>
               <SimiAndDiff>

@@ -38,6 +38,7 @@ public class CollegeRepositoryCustom {
 		collegeRepository.save(new College("공학계열"));
 		collegeRepository.save(new College("교육계열"));
 		collegeRepository.save(new College("사회계열"));
+		collegeRepository.save(new College("상경계열"));
 		collegeRepository.save(new College("자연계열"));
 		collegeRepository.save(new College("의약계열"));
 		collegeRepository.save(new College("예체능계열"));

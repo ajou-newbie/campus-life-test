@@ -530,10 +530,10 @@ function Result() {
           <ResultImg>
           </ResultImg>
           <Ulcontainer>
-              <ResultText>혼자 있는 것보다는 남들과 즐겁게 놀러다니고 싶어요.</ResultText>
+              <ResultText>혼자 있는 것보다는 남들과 즐겁게 놀러 다니고 싶어요.</ResultText>
               <ResultText>술자리에 빠지지 않는 당신! 언제나 끝까지 남아서 주변 사람들을 잘 챙겨줘요.</ResultText>
               <ResultText>친구들 사이에서 문제가 생기면 당신이 모든 것을 해결 할거에요.</ResultText>
-              <ResultText>주변에서 고민이 생긴다면 당신에게 연락해 위로를 받고 싶어하는 사람이 많을 거에요.</ResultText>
+              <ResultText>주변에서 고민이 생긴다면 당신에게 연락해 위로를 받고 싶어하는 사람이 많을 거예요.</ResultText>
               <ResultText>리액션이 탁월하여 친구들 사이에서도 인기가 많고 수업 중에 교수님의 총애를 받을 확률이 높아요!</ResultText>
               <ResultText>친구도 많고 긍정적인 인싸인 당신! 하지만 자신을 버리면서까지 친구 관계에 몰입하게 될 수 있다는 점을 주의하세요.</ResultText>
           </Ulcontainer>
